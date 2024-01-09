@@ -1,0 +1,263 @@
+[
+    {
+        "id": 1,
+        "title": "planting_time_4h",
+        "reward_type": 0,
+        "amount": 200,
+        "goal": 4,
+        "progress": 4,
+        "progress_state": 2
+    },
+    {
+        "id": 2,
+        "title": "planting_time_3d",
+        "reward_type": 0,
+        "amount": 300,
+        "goal": 3,
+        "progress": 3,
+        "progress_state": 2
+    },
+    {
+        "id": 3,
+        "title": "planting_time_7d",
+        "reward_type": 0,
+        "amount": 400,
+        "goal": 7,
+        "progress": 7,
+        "progress_state": 2
+    },
+    {
+        "id": 4,
+        "title": "planting_time_15d",
+        "reward_type": 0,
+        "amount": 500,
+        "goal": 15,
+        "progress": 15,
+        "progress_state": 2
+    },
+    {
+        "id": 5,
+        "title": "planting_time_30d",
+        "reward_type": 0,
+        "amount": 1000,
+        "goal": 30,
+        "progress": 30,
+        "progress_state": 2
+    },
+    {
+        "id": 6,
+        "title": "continuous_3",
+        "reward_type": 0,
+        "amount": 100,
+        "goal": 3,
+        "progress": 3,
+        "progress_state": 2
+    },
+    {
+        "id": 7,
+        "title": "continuous_7",
+        "reward_type": 0,
+        "amount": 300,
+        "goal": 7,
+        "progress": 7,
+        "progress_state": 2
+    },
+    {
+        "id": 8,
+        "title": "continuous_30",
+        "reward_type": 0,
+        "amount": 1000,
+        "goal": 30,
+        "progress": 30,
+        "progress_state": 2
+    },
+    {
+        "id": 9,
+        "title": "friend_number_5",
+        "reward_type": 0,
+        "amount": 100,
+        "goal": 5,
+        "progress": 5,
+        "progress_state": 2
+    },
+    {
+        "id": 10,
+        "title": "friend_number_15",
+        "reward_type": 0,
+        "amount": 300,
+        "goal": 15,
+        "progress": 15,
+        "progress_state": 2
+    },
+    {
+        "id": 11,
+        "title": "friend_number_30",
+        "reward_type": 0,
+        "amount": 500,
+        "goal": 30,
+        "progress": 30,
+        "progress_state": 2
+    },
+    {
+        "id": 12,
+        "title": "share_count_10",
+        "reward_type": 0,
+        "amount": 200,
+        "goal": 10,
+        "progress": 10,
+        "progress_state": 2
+    },
+    {
+        "id": 13,
+        "title": "unlock_number_6",
+        "reward_type": 0,
+        "amount": 1000,
+        "goal": 6,
+        "progress": 6,
+        "progress_state": 2
+    },
+    {
+        "id": 14,
+        "title": "ranking_top_100",
+        "reward_type": 0,
+        "amount": 300,
+        "goal": 1,
+        "progress": 0,
+        "progress_state": 0
+    },
+    {
+        "id": 15,
+        "title": "ranking_top_50",
+        "reward_type": 0,
+        "amount": 500,
+        "goal": 1,
+        "progress": 0,
+        "progress_state": 0
+    },
+    {
+        "id": 16,
+        "title": "ranking_top_10",
+        "reward_type": 0,
+        "amount": 1000,
+        "goal": 1,
+        "progress": 0,
+        "progress_state": 0
+    },
+    {
+        "id": 21,
+        "title": "2019_personality_test_event",
+        "reward_type": 2,
+        "amount": 0,
+        "goal": 1,
+        "progress": 1,
+        "progress_state": 2
+    },
+    {
+        "id": 23,
+        "title": "referral_1",
+        "reward_type": 0,
+        "amount": 0,
+        "goal": 1,
+        "progress": 1,
+        "progress_state": 2
+    },
+    {
+        "id": 24,
+        "title": "referral_3",
+        "reward_type": 0,
+        "amount": 0,
+        "goal": 3,
+        "progress": 1,
+        "progress_state": 0
+    },
+    {
+        "id": 25,
+        "title": "referral_5",
+        "reward_type": 0,
+        "amount": 0,
+        "goal": 5,
+        "progress": 1,
+        "progress_state": 0
+    },
+    {
+        "id": 27,
+        "title": "xmas_2020",
+        "reward_type": 3,
+        "amount": 108,
+        "goal": 1225,
+        "progress": 1225,
+        "progress_state": 2
+    },
+    {
+        "id": 28,
+        "title": "earth_day_2021",
+        "reward_type": 2,
+        "amount": 0,
+        "goal": 1,
+        "progress": 1,
+        "progress_state": 2
+    },
+    {
+        "id": 29,
+        "title": "boost_pitch_without_initial_coin",
+        "reward_type": 0,
+        "amount": 0,
+        "goal": 1,
+        "progress": 0,
+        "progress_state": 0
+    },
+    {
+        "id": 30,
+        "title": "boost_pitch_with_initial_coin",
+        "reward_type": 0,
+        "amount": 0,
+        "goal": 1,
+        "progress": 1,
+        "progress_state": 2
+    },
+    {
+        "id": 31,
+        "title": "birthday_2021",
+        "reward_type": 0,
+        "amount": 0,
+        "goal": 420,
+        "progress": 420,
+        "progress_state": 2
+    },
+    {
+        "id": 32,
+        "title": "new_year_2022",
+        "reward_type": 3,
+        "amount": 134,
+        "goal": 2022,
+        "progress": 2022,
+        "progress_state": 2
+    },
+    {
+        "id": 33,
+        "title": "lantern_festival_2022",
+        "reward_type": 2,
+        "amount": 0,
+        "goal": 1,
+        "progress": 1,
+        "progress_state": 2
+    },
+    {
+        "id": 36,
+        "title": "xmas_2022",
+        "reward_type": 2,
+        "amount": 0,
+        "goal": 1,
+        "progress": 1,
+        "progress_state": 2
+    },
+    {
+        "id": 37,
+        "title": "birthday_2023",
+        "reward_type": 2,
+        "amount": 0,
+        "goal": 1,
+        "progress": 1,
+        "progress_state": 2
+    }
+]

@@ -1,0 +1,1892 @@
+{
+    "0": {
+        "nameZH": "雪松",
+        "nameEN": "Cedar",
+        "nameFR": "Cèdre",
+        "nameXML": "default_tree",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "1": {
+        "nameZH": "一棵开花的树",
+        "nameEN": "Flower Tree",
+        "nameFR": "Arbre fleuri",
+        "nameXML": "flower_tree",
+        "descriptionZH": "开满了白色小花的树，夏日的午後有很多人喜欢在树下野餐。",
+        "descriptionEN": "A tree with cute white flowers. People love picnicking under it.",
+        "descriptionFR": "Un arbre avec de jolies fleurs blanches. Un endroit idéal pour pique-niquer avec des amis.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "2": {
+        "nameZH": "树屋",
+        "nameEN": "Treehouse",
+        "nameFR": "Maison arboricole",
+        "nameXML": "treehouse_tree",
+        "descriptionZH": "「快把梯子放下来，让我上去！」",
+        "descriptionEN": "Carrying a treehouse is a piece of cake for this strong and big tree!",
+        "descriptionFR": "Un arbre grand et solide. Porter une maison est un jeu d'enfant pour lui !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "3": {
+        "nameZH": "鸟巢",
+        "nameEN": "Nest",
+        "nameFR": "Nid",
+        "nameXML": "nest_tree",
+        "descriptionZH": "这棵树长得像朵蘑菇，里头住着一只爱打瞌睡的小鸟。",
+        "descriptionEN": "A mushroom-shaped tree befriends a lazy bird.",
+        "descriptionFR": "Un arbre en forme de champignon où vivent des oiseaux endormis.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "4": {
+        "nameZH": "柠檬树",
+        "nameEN": "Lemon Tree",
+        "nameFR": "Citronnier",
+        "nameXML": "lemon_tree",
+        "descriptionZH": "想要一杯柠檬汁吗？",
+        "descriptionEN": "♪ All that I can see is just another lemon tree. Da da da da.... ♪",
+        "descriptionFR": "Ça vous dit un verre de limonade ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "5": {
+        "nameZH": "三兄弟",
+        "nameEN": "Triplets",
+        "nameFR": "Triplés",
+        "nameXML": "castle_tree",
+        "descriptionZH": "我们三兄弟屹立不摇，多大的风都吹不倒！",
+        "descriptionEN": "No matter how strong the wind blows, we triplets will never fall!",
+        "descriptionFR": "Peu importe la force du vent, nous les triplés tenons bons !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "6": {
+        "nameZH": "小树丛",
+        "nameEN": "Bush",
+        "nameFR": "Buisson",
+        "nameXML": "flower_bush",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "7": {
+        "nameZH": "章鱼",
+        "nameEN": "Octopus",
+        "nameFR": "Pieuvre",
+        "nameXML": "octopus_tree",
+        "descriptionZH": "「别担心，我会替自己浇水的。」章鱼先生得意地说。",
+        "descriptionEN": "\\\"Don't worry, I will water myself,\\\" said Mr. Octopus.",
+        "descriptionFR": "« Ne vous inquiétez pas, je m'arroserai moi-même. » dit M. la Pieuvre",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "8": {
+        "nameZH": "樱花",
+        "nameEN": "Cherry Blossom",
+        "nameFR": "Cerisier en fleur",
+        "nameXML": "cherry_tree",
+        "descriptionZH": "「...梅花谢後樱花绽，浅浅匀红...」唉呀，茶凉了。",
+        "descriptionEN": "Take a sip of Matcha, and enjoy the Sakura",
+        "descriptionFR": "Prenez une gorgée de Matcha, et profitez de la beauté du Sakura.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "9": {
+        "nameZH": "椰子树",
+        "nameEN": "Coconut Tree",
+        "nameFR": "Cocotier",
+        "nameXML": "coconut_tree",
+        "descriptionZH": "炎炎夏日正适合在椰子树下的吊床睡午觉，请记得佩戴安全帽。",
+        "descriptionEN": "Take a nap on the coconut hammock? May the helmet be with you.",
+        "descriptionFR": "Vous faites une sieste dans le hamac du cocotier ? Que le casque soit avec vous.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "10": {
+        "nameZH": "猫咪",
+        "nameEN": "Kitty",
+        "nameFR": "Chaton",
+        "nameXML": "cat_tree",
+        "descriptionZH": "「不要拔不要拔，那是胡须不是树枝呀喵～」。",
+        "descriptionEN": "What does the tree say? \\\"Meow~\\\"",
+        "descriptionFR": "N'arrachez pas ces branches. Ce sont mes vibrisses, miaou~",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "11": {
+        "nameZH": "一株很大的草",
+        "nameEN": "Flourishing Grass",
+        "nameFR": "Herbe florissante",
+        "nameXML": "grass_bush",
+        "descriptionZH": "一株生命力旺盛的草，猜猜是谁躲在里头？",
+        "descriptionEN": "A flourishing grass. Guess who is hiding inside?",
+        "descriptionFR": "Devinez qui se cache à l'intérieur !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "12": {
+        "nameZH": "中国松",
+        "nameEN": "Chinese Pine Tree",
+        "nameFR": "Pin de Chine",
+        "nameXML": "pine_tree",
+        "descriptionZH": "在灯影阑珊的松树下，是谁和谁留下了未尽的残局？",
+        "descriptionEN": "Who left the unfinished go game under the Chinese pine tree?",
+        "descriptionFR": "Qui a laissé le jeu de go non terminé sous le pin de Chine ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "13": {
+        "nameZH": "仙人掌球",
+        "nameEN": "Ball Cactus",
+        "nameFR": "Cactus boule",
+        "nameXML": "cactus_ball",
+        "descriptionZH": "累了吗？来我身上坐坐吧！",
+        "descriptionEN": "Tired? Please feel free to have a seat.",
+        "descriptionFR": "Besoin de vous détendre ? N'hésitez pas à vous asseoir.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "14": {
+        "nameZH": "南瓜",
+        "nameEN": "Pumpkin",
+        "nameFR": "Citrouille",
+        "nameXML": "pumpkin_tree",
+        "descriptionZH": "我希望有一天我可以当一个稻草人。",
+        "descriptionEN": "I wish one day I could be a scarecrow.",
+        "descriptionFR": "J'aimerais devenir un épouvantail un jour.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "15": {
+        "nameZH": "稻草人",
+        "nameEN": "Scarecrow",
+        "nameFR": "Épouvantail",
+        "nameXML": "scarecrow_tree",
+        "descriptionZH": "猜猜看我的万圣节装扮是什麽？",
+        "descriptionEN": "Guess what my halloween costume is this year!",
+        "descriptionFR": "Devinez ce que sera mon costume d'Halloween cette année ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "16": {
+        "nameZH": "圣诞树",
+        "nameEN": "Christmas Tree",
+        "nameFR": "Le Sapin de Noël",
+        "nameXML": "together_xmas_tree",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "17": {
+        "nameZH": "中国新年竹",
+        "nameEN": "Chinese New Year Bamboo",
+        "nameFR": "Le bambou de nouvel an chinois",
+        "nameXML": "chinese_new_year_bamboo",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "18": {
+        "nameZH": "蘑菇",
+        "nameEN": "Mushroom",
+        "nameFR": "Champignon",
+        "nameXML": "mushroom",
+        "descriptionZH": "色彩鲜艳、鲜嫩多汁的橘红色斑点蘑菇，想来一口吗？",
+        "descriptionEN": "A colorful, juicy, white-spotted orange mushroom. Wanna take a bite?",
+        "descriptionFR": "Un champignon orange juteux avec des points blancs. Vous voulez y goûter ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "19": {
+        "nameZH": "仙人掌",
+        "nameEN": "Cactus",
+        "nameFR": "Cactus",
+        "nameXML": "big_cactus",
+        "descriptionZH": "我是这个小镇最厉害的神枪手，旁边那位...是我的小跟班。",
+        "descriptionEN": "You are talking to the most infamous gunslinger cactus in town. And that is... my little sidekick.",
+        "descriptionFR": "Vous parlez au cactus bandit le plus infâme de la ville. C'est... mon petit acolyte.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "20": {
+        "nameZH": "银杏",
+        "nameEN": "Ginkgo",
+        "nameFR": "Ginkgo",
+        "nameXML": "ginkgo_tree",
+        "descriptionZH": "爷爷的爷爷当年种下的银杏树，如今枝叶繁茂，金黄一片，蔚为壮观。",
+        "descriptionEN": "Grandpa planted this ginkgo when he was a teenager. Look how gorgeous the golden leaves are. Isn't it amazing?",
+        "descriptionFR": "Papy a planté ce ginkgo quand il était adolescent. Regardez comme les feuilles dorées sont belles. N'est-ce pas incroyable ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "21": {
+        "nameZH": "紫藤",
+        "nameEN": "Wisteria",
+        "nameFR": "Glycine",
+        "nameXML": "wisteria_tree",
+        "descriptionZH": "春季紫花烂漫，繁花满树，真是别有韵致，不如在树下歇会儿吧。",
+        "descriptionEN": "Under the cozy elegant tree, why not take a nice short nap just on a whim.",
+        "descriptionFR": "Pourquoi ne pas faire une petite sieste sous cet arbre élégant ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "22": {
+        "nameZH": "西瓜",
+        "nameEN": "Watermelon",
+        "nameFR": "Pastèque",
+        "nameXML": "watermelon",
+        "descriptionZH": "今天的西瓜大又甜，客人要不要解锁一下？",
+        "descriptionEN": "Big, juicy watermelons. Wanna take a slice?",
+        "descriptionFR": "De bonnes grosses pastèques juteuses. Vous voulez une tranche ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "23": {
+        "nameZH": "竹",
+        "nameEN": "Bamboo",
+        "nameFR": "Bambou",
+        "nameXML": "bamboo",
+        "descriptionZH": "笔直翠绿的青竹，上头悬挂着许多小巧的风铃，写着旅人的寄语：“到此一游”。",
+        "descriptionEN": "The bamboo standing straight, the wind chimes come in eight.",
+        "descriptionFR": "Le bambou se tient droit, animé par ses huit carillons dorés.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "24": {
+        "nameZH": "糖果树",
+        "nameEN": "Candy Tree",
+        "nameFR": "Arbre à bonbons",
+        "nameXML": "candy_tree",
+        "descriptionZH": "我绵密的棉花糖可以生出源源不绝的糖果。",
+        "descriptionEN": "Take a sweet bite of me, sweetie.",
+        "descriptionFR": "Prend une bouchée, mon sucre d'orge.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "25": {
+        "nameZH": "向日葵",
+        "nameEN": "Sunflower",
+        "nameFR": "Tournesol",
+        "nameXML": "sunflower",
+        "descriptionZH": "昂首挺拔、朝气十足的太阳花，陪伴你度过用心专注的每一天。",
+        "descriptionEN": "The lively sunflowers will accompany you through your every focusing hour.",
+        "descriptionFR": "La lumière vive des tournesols vous accompagnera tout au long de la journée.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "26": {
+        "nameZH": "玫瑰",
+        "nameEN": "Rose",
+        "nameFR": "Rose",
+        "nameXML": "rose",
+        "descriptionZH": "七夕情人节，送她七朵娇艳欲滴、彩蝶萦绕的红色玫瑰吧！",
+        "descriptionEN": "These glamorous roses and colorful butterflies are for the apple of my eye.",
+        "descriptionFR": "Ces merveilleuses roses et ces papillons colorés sont pour ceux que j'aime.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "27": {
+        "nameZH": "枫树",
+        "nameEN": "Maple",
+        "nameFR": "Érable",
+        "nameXML": "maple",
+        "descriptionZH": "缓缓飘落的枫叶，是我对秋季的呢喃低语。",
+        "descriptionEN": "In swaying motion the maple leaves gently fall. The fall lies in the whispers I recall.",
+        "descriptionFR": "Les feuilles d'érable tombent en lentes volutes. L'automne réside dans les murmures dont je me souviens.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "28": {
+        "nameZH": "猴面包树",
+        "nameEN": "Baobab",
+        "nameFR": "Baobab",
+        "nameXML": "baobab",
+        "descriptionZH": "欢迎光临猴～面包店，要不要来份新鲜出炉、现场采摘的好吃面包呢？",
+        "descriptionEN": "Welcome to Baobakery. Wanna taste our appetizing and freshly harvested bread?",
+        "descriptionFR": "Bienvenue à la baoboulangerie. Voulez-vous goûter nos délicieux pains fraîchement cueillis ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "29": {
+        "nameZH": "大王花",
+        "nameEN": "Rafflesia",
+        "nameFR": "Rafflesia",
+        "nameXML": "rafflesia",
+        "descriptionZH": "让我加入你的森林吧！如果你不介意我有一点点...那个...臭臭的...",
+        "descriptionEN": "Let me join your forest! But just to warn you, it may smell a bit...",
+        "descriptionFR": "Laissez-moi rejoindre votre forêt! Mais j'aime autant vous prévenir, cela peut sentir un peu...",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "30": {
+        "nameZH": "香蕉",
+        "nameEN": "Banana",
+        "nameFR": "Banane",
+        "nameXML": "banana",
+        "descriptionZH": "一天一苹果，医生远离你。一天一香蕉，强身又健体！",
+        "descriptionEN": "An apple a day keeps the doctor away. A banana a day...well admit it, it tastes great.",
+        "descriptionFR": "Une pomme par jour éloigne le médecin. Une banane par jour... eh bien c'est bon.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "31": {
+        "nameZH": "摇钱树",
+        "nameEN": "Money Tree",
+        "nameFR": "Arbre doré",
+        "nameXML": "golden_tree",
+        "descriptionZH": "传说有一种树，只要抱住树干摇三下，就会有金子哗啦啦地掉下来。",
+        "descriptionEN": "Rumor has it that there is a tree that rains gold coins when a person shake its trunk three times... Sounds fortunate to me!",
+        "descriptionFR": "On raconte qu'un arbre confère des pièces d'or à celui qui secoue trois fois son tronc. Cela ressemble à un porte-bonheur, si vous voulez mon avis.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "32": {
+        "nameZH": "地球树",
+        "nameEN": "Earth Day Tree",
+        "nameFR": "Arbre de la Terre",
+        "nameXML": "earth_tree",
+        "descriptionZH": "希望有天地球能跟我一样，处处开满美丽的花。",
+        "descriptionEN": "I have a dream that one day blooming flowers can be seen in every corner of the Earth.",
+        "descriptionFR": "J'ai un rêve qu'un jour on puisse voir des fleurs fleurises dans tous les coins de la Terre.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "33": {
+        "nameZH": "康乃馨",
+        "nameEN": "Carnation",
+        "nameFR": "Œillet",
+        "nameXML": "carnation_bush",
+        "descriptionZH": "五月里开满了康乃馨花～第二个星期天送给妈妈～",
+        "descriptionEN": "Come see me every day,\nnot just on the second Sunday of May.\nThough it seems like a nagging cliche,\nwhat I want isn't just another bouquet.",
+        "descriptionFR": "Les œillets fleurissent en mai. Je vais en cueillir quelques-uns pour maman le deuxième dimanche de mai.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "34": {
+        "nameZH": "苹果树",
+        "nameEN": "Apple Tree",
+        "nameFR": "Pommier",
+        "nameXML": "apple_tree",
+        "descriptionZH": "医生推荐我、牛顿喜欢我，连白雪公主都想做我的朋友，你想不想要来一口？",
+        "descriptionEN": "The doctors recommend, even Snow White wants to befriend.\nBut since I hit his head, Newton is the one with whom I should make amends.",
+        "descriptionFR": "Les médecins me recommandent, même Blanche Neige voulait voulu m'aimer.\nMais comme c'est sur sa tête que je suis tombé, c'est à Newton que je dois m'excuser.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "35": {
+        "nameZH": "星空树",
+        "nameEN": "Starry Tree",
+        "nameFR": "L'Arbre de Ciel Étoilé",
+        "nameXML": "star_tree",
+        "descriptionZH": "如果拥有一颗流星就能够许下一个愿望，那么拥有整片星空呢？",
+        "descriptionEN": "If seeing one shooting star means you get one wish, then how about having a whole sky full of stars?",
+        "descriptionFR": "Si voir une étoile filante signifie que vous obtenez un souhait, alors que diriez-vous d'avoir un ciel rempli entièrement d'étoiles ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "36": {
+        "nameZH": "咕咕钟",
+        "nameEN": "Cuckoo Clock",
+        "nameFR": "Coucou",
+        "nameXML": "time_tree",
+        "descriptionZH": "每分每秒我都期待着，为你成功专注喝彩的时刻！",
+        "descriptionEN": "I'm counting down every second to the moment I can cheer for your success on focusing!",
+        "descriptionFR": "À chaque seconde, j'attends le moment où je pourrai pousser des cris de joie pour ton succès de concentration.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "37": {
+        "nameZH": "月亮树",
+        "nameEN": "Moon Tree",
+        "nameFR": "L'arbre de la lune",
+        "nameXML": "moon_tree",
+        "descriptionZH": "月圆人团圆，越吃人越圆！",
+        "descriptionEN": "The round moon symbolizes reunion with family and friends - a good time to stay focused!",
+        "descriptionFR": "La lune ronde symbolise l'idée de réunion familiale et entre amis- c'est aussi une bonne occasion de rester concentré !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "38": {
+        "nameZH": "彩虹花",
+        "nameEN": "Rainbow Flower",
+        "nameFR": "La fleur de l'arc-en-ciel",
+        "nameXML": "rainbow_bush",
+        "descriptionZH": "骄傲做自己，希望可以成为森林里最美的一朵花。",
+        "descriptionEN": "It stands tall and proud, hoping to become the most beautiful flower in the forest.",
+        "descriptionFR": "Soyez fier de vous-même, vous pouvez être la plus belle fleur dans la forêt.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "39": {
+        "nameZH": "幽灵草",
+        "nameEN": "Ghost Mushroom",
+        "nameFR": "Le champignon fantôme",
+        "nameXML": "ghost_bush",
+        "descriptionZH": "“喝啊～～～！”\n“.......”\n“你刚刚吓到了对吧？不...不准笑！”",
+        "descriptionEN": "\\\"Boo!\\\"\n\\\".......\\\"\n\\\"I scared you, didn't I? Hey! Don't...don't you dare laugh!\\\"",
+        "descriptionFR": "«Boo!»\n«.......»\n«Je vous ai fait peur? Hé! Ne... ne rigolez pas!»",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "40": {
+        "nameZH": "蓝色橡树",
+        "nameEN": "Blue Oak Tree",
+        "nameFR": "Chêne bleu",
+        "nameXML": "blue_oak_tree",
+        "descriptionZH": "五彩缤纷的颜色里，哪个代表你今天的心情？",
+        "descriptionEN": "Look at these dazzling colours! Which one best reflects your mood today?",
+        "descriptionFR": "Regardez ces couleurs éclatantes! Lequel reflète le mieux votre humeur aujourd'hui?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "41": {
+        "nameZH": "橡树",
+        "nameEN": "Oak Tree",
+        "nameFR": "Chêne",
+        "nameXML": "green_oak_tree",
+        "descriptionZH": "我茂密的绿叶与怀中的信，承载着希望与期盼。",
+        "descriptionEN": "My Luxuriant leaves and the letter in my bosom carry hope and expectation.",
+        "descriptionFR": "Mes feuilles luxuriantes et la lettre en mon sein apportent espoir et espérance.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "42": {
+        "nameZH": "粉红色橡树",
+        "nameEN": "Pink Oak Tree",
+        "nameFR": "Chêne rose",
+        "nameXML": "pink_oak_tree",
+        "descriptionZH": "五彩缤纷的颜色里，哪个代表你今天的心情？",
+        "descriptionEN": "Look at these dazzling colours! Which one best reflects your mood today?",
+        "descriptionFR": "Regardez ces couleurs éclatantes! Lequel reflète le mieux votre humeur aujourd'hui?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "43": {
+        "nameZH": "黄色橡树",
+        "nameEN": "Yellow Oak Tree",
+        "nameFR": "Chêne jaune",
+        "nameXML": "yellow_oak_tree",
+        "descriptionZH": "五彩缤纷的颜色里，哪个代表你今天的心情？",
+        "descriptionEN": "Look at these dazzling colours! Which one best reflects your mood today?",
+        "descriptionFR": "Regardez ces couleurs éclatantes! Lequel reflète le mieux votre humeur aujourd'hui?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "44": {
+        "nameZH": "紫色橡树",
+        "nameEN": "Purple Oak Tree",
+        "nameFR": "Chêne violet",
+        "nameXML": "purple_oak_tree",
+        "descriptionZH": "五彩缤纷的颜色里，哪个代表你今天的心情？",
+        "descriptionEN": "Look at these dazzling colours! Which one best reflects your mood today?",
+        "descriptionFR": "Regardez ces couleurs éclatantes! Lequel reflète le mieux votre humeur aujourd'hui?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "45": {
+        "nameZH": "银柳",
+        "nameEN": "Cat-tail Willow",
+        "nameFR": "Saule de chat",
+        "nameXML": "cattail_willow_bush",
+        "descriptionZH": "闪闪发亮的银白色绒毛与鲜艳美丽的红色外壳，我的小名叫银两，能为你带来财富喔！",
+        "descriptionEN": "Silver fur-like flower glistening in the light, bringing wealth and prosperity in the Chinese New Year!",
+        "descriptionFR": "Une fleur duveteuse et argentée qui brille dans la lumière, apportant la richesse et la prospérité pendant le Nouvel An chinois!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "46": {
+        "nameZH": "小蓝花",
+        "nameEN": "Blue Flower",
+        "nameFR": "Petite fleur bleue",
+        "nameXML": "small_blue_flower",
+        "descriptionZH": "有人说我的蓝是大海，碧蓝如黛。但我觉得自己更像天空，晴空万里！你觉得呢？",
+        "descriptionEN": "Some say my blue is that of the turquoise ocean, but I think my shade of blue resembles the vast sky, calm and clear! What do you think?",
+        "descriptionFR": "Certains disent que mon bleu est celui de l'océan turquoise, mais je pense qu'il ressemble au vaste ciel, calme et clair ! Et vous, qu'en pensez-vous ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "47": {
+        "nameZH": "星星珊瑚",
+        "nameEN": "Star Coral",
+        "nameFR": "Corail étoilé",
+        "nameXML": "star_grass",
+        "descriptionZH": "如果不投入一点爱，又怎能得到如此梦幻的我呢？",
+        "descriptionEN": "How can you get one as dreamlike as I am without giving your love?",
+        "descriptionFR": "Comment pouvez-vous en obtenir un aussi rêveur que moi sans me donner de l'amour ?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "48": {
+        "nameZH": "巧克力草莓蛋糕",
+        "nameEN": "Chocolate Strawberry Cake",
+        "nameFR": "Gâteau au chocolat et fraises",
+        "nameXML": "birthday_2019_cake_01",
+        "descriptionZH": "这朵如热恋般火红的花，散发着巧克力草莓蛋糕的香气。",
+        "descriptionEN": "This flaming red flower smells like Chocolate Strawberry Cake.",
+        "descriptionFR": "Cette fleur rouge flamboyante sent comme la Gâteau au chocolat et fraises.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "49": {
+        "nameZH": "樱桃起士蛋糕",
+        "nameEN": "Cherry Cheese Cake",
+        "nameFR": "Gâteau au fromage et cerises",
+        "nameXML": "birthday_2019_cake_02",
+        "descriptionZH": "这朵嫣红色的花，散发着樱桃起士蛋糕的香气。",
+        "descriptionEN": "This crimson red flower smells like Cherry Cheese Cake.",
+        "descriptionFR": "Cette fleur rouge cramoisi sent comme le Gâteau au fromage et cerises .",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "50": {
+        "nameZH": "提拉米苏",
+        "nameEN": "Tiramisu",
+        "nameFR": "Tiramisu",
+        "nameXML": "birthday_2019_cake_03",
+        "descriptionZH": "这朵咖啡色的花，散发着提拉米苏的香气。",
+        "descriptionEN": "This chestnut-coloured flower smells like Tiramisu.",
+        "descriptionFR": "Cette fleur de couleur marron a une odeur de Tiramisu .",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "51": {
+        "nameZH": "抹茶红豆蛋糕",
+        "nameEN": "Matcha Azuki Cake",
+        "nameFR": "Gâteau au matcha et haricot rouge",
+        "nameXML": "birthday_2019_cake_04",
+        "descriptionZH": "这朵淡绿色的花，散发着抹茶红豆蛋糕的香氣。",
+        "descriptionEN": "This pale green flower smells like Matcha Azuki Cake.",
+        "descriptionFR": "Cette fleur verte claire a une odeur de Gâteau au matcha et haricot rouge .",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "52": {
+        "nameZH": "柠檬蛋糕",
+        "nameEN": "Lemon Cake",
+        "nameFR": "Gâteau au citron",
+        "nameXML": "birthday_2019_cake_05",
+        "descriptionZH": "这朵黄白相间的花，散发着柠檬蛋糕的香气。",
+        "descriptionEN": "This white and yellow striped flower smells like Lemon Cake.",
+        "descriptionFR": "Cette fleur à rayures blanches et jaunes sent comme le Gâteau au citron .",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "53": {
+        "nameZH": "黑森林蛋糕",
+        "nameEN": "Black Forest Cake",
+        "nameFR": "Forêt-noire",
+        "nameXML": "birthday_2019_cake_06",
+        "descriptionZH": "这朵可可色与樱桃红交织的花，散发着黑森林蛋糕的香气。",
+        "descriptionEN": "This hazel and cherry red flower smells like Black Forest Cake.",
+        "descriptionFR": "Cette fleur rouge noisette et cerise sent comme le Forêt-noire.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "54": {
+        "nameZH": "蓝莓蛋糕",
+        "nameEN": "Blueberry Cake",
+        "nameFR": "Tarte aux myrtilles",
+        "nameXML": "birthday_2019_cake_07",
+        "descriptionZH": "这朵淡紫色的花，散发着蓝莓蛋糕的香气。",
+        "descriptionEN": "This light purple flower smells like Blueberry Cake.",
+        "descriptionFR": "Cette fleur violette claire sent comme la Tarte aux myrtilles.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "55": {
+        "nameZH": "草莓戚风蛋糕",
+        "nameEN": "Strawberry Chiffon Cake",
+        "nameFR": "Tarte chiffon aux fraises",
+        "nameXML": "birthday_2019_cake_08",
+        "descriptionZH": "这朵浅粉色的花，散发着草莓戚风蛋糕的香气。",
+        "descriptionEN": "This flamingo pink flower smells like Strawberry Chiffon Cake.",
+        "descriptionFR": "Cette fleur rose flamant sent comme la Tarte chiffon aux fraises .",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "56": {
+        "nameZH": "蛋糕树",
+        "nameEN": "Cake Tree",
+        "nameFR": "L'arbre de gâteau",
+        "nameXML": "birthday_2019_cake_tree",
+        "descriptionZH": "五彩缤纷的外表与甜蜜的滋味，让我们一同欢庆 Forest 走过的五年吧！",
+        "descriptionEN": "Let's celebrate the fifth anniversary of Forest with these eye-catching colours and alluring sweet taste!",
+        "descriptionFR": "Fêtons le cinquième anniversaire de Forest avec ces couleurs accrocheuses et ce goût sucré séduisant!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "57": {
+        "nameZH": "狗狗树",
+        "nameEN": "Doggo Tree",
+        "nameFR": "Arbre Doggo",
+        "nameXML": "dog_tree",
+        "descriptionZH": "汪汪汪！一起在森林中玩耍吧～",
+        "descriptionEN": "Woof woof woof! Let's play fetch in the forest~",
+        "descriptionFR": "Ouaf ouaf! Jouons à la baballe dans la forêt ~",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "58": {
+        "nameZH": "熊童子",
+        "nameEN": "Bear's Paw",
+        "nameFR": "Patte d'ours",
+        "nameXML": "bears_paw",
+        "descriptionZH": "摸摸我毛茸茸的熊掌，疗愈你疲惫的一天！",
+        "descriptionEN": "Touch my fluffy bear paw and all your worries will wash away!",
+        "descriptionFR": "Touchez ma douce patte d'ours et tous vos soucis disparaîtront!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "59": {
+        "nameZH": "烟花树",
+        "nameEN": "Starburst Tree",
+        "nameFR": "Arbre d'étoile rayonnante",
+        "nameXML": "starburst_tree",
+        "descriptionZH": "专注灌溉我，我将为你开出只属于你的绚烂烟花！",
+        "descriptionEN": "Nurture me with hard work and dedication, and I'll amaze you with showers of fireworks!",
+        "descriptionFR": "Nourrissez-moi de mon travail acharné et de mon dévouement, et je vous étonnerai avec une pluie de feux d'artifice!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "60": {
+        "nameZH": "独角兽树",
+        "nameEN": "Unicorn Tree",
+        "nameFR": "Arbre de licorne",
+        "nameXML": "unicorn_tree",
+        "descriptionZH": "让我住在你美丽的梦里，从此忘却烦恼与忧愁。",
+        "descriptionEN": "I'll slip into your sweet dreams and bring color to your life.",
+        "descriptionFR": "Je vais glisser dans vos rêves doux et apporter de la couleur à votre vie.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "61": {
+        "nameZH": "太空树",
+        "nameEN": "Space Tree",
+        "nameFR": "Arbre de l'Espace",
+        "nameXML": "space_tree",
+        "descriptionZH": "我的专注，始于天地创世之初，终于万物寂灭之后。",
+        "descriptionEN": "I've stay focused from the start of mankind. Only when the world stops spinning will I cease.",
+        "descriptionFR": "Je suis resté concentré depuis le début de l'humanité. Ce n'est que quand le monde cessera de tourner que je cesserai.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "62": {
+        "nameZH": "仙树",
+        "nameEN": "Celestial Tree",
+        "nameFR": "Arbre céleste",
+        "nameXML": "celestial_tree",
+        "descriptionZH": "仙瑶树影垂，历尽千秋雪。与鹤相守望，只待故人归。",
+        "descriptionEN": "Swaying in the clouds,\nStanding tall and proud.\nWaiting once again,\nWith the red-crown crane.",
+        "descriptionFR": "Se balançant dans les nuages, \n Debout et fier. \n Attendant encore une fois, \n Avec la grue à couronne rouge.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "63": {
+        "nameZH": "柳树",
+        "nameEN": "Weeping Willow",
+        "nameFR": "Saule Pleureur",
+        "nameXML": "weeping_willow_tree",
+        "descriptionZH": "翩翩的飞絮是我散落的思念，请留下来，或是带我走！",
+        "descriptionEN": "My thoughts are like my arching stems, dangling in the breeze. Should I stay or should I go?",
+        "descriptionFR": "Mes pensées sont comme mes tiges arquées, balançant dans la brise. Dois-je rester ou dois-je partir?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "64": {
+        "nameZH": "幸运草",
+        "nameEN": "Four-Leaf Clover",
+        "nameFR": "Trèfle à quatre feuilles",
+        "nameXML": "clover_bush",
+        "descriptionZH": "需要来点幸运吗？种下我，收获满满的好运！",
+        "descriptionEN": "Need a little luck? Let me join your forest and bring you all the luck in the world!",
+        "descriptionFR": "Besoin d'un peu de chance? Laissez-moi rejoindre votre forêt et vous apporter toute la chance du monde!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "65": {
+        "nameZH": "森林之心",
+        "nameEN": "Forest Spirit",
+        "nameFR": "Esprit de Forest",
+        "nameXML": "eco_tree",
+        "descriptionZH": "让我们一起拥抱这颗星球，守护你我的未来！",
+        "descriptionEN": "Let's embrace this planet and protect our future!",
+        "descriptionFR": "Embrassons cette planète et protégeons notre avenir!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "66": {
+        "nameZH": "六周年蛋糕树",
+        "nameEN": "6th Anniversary Cake Tree",
+        "nameFR": "Arbre à Gâteau de 6e Anniversaire",
+        "nameXML": "birthday_2020_tree",
+        "descriptionZH": "以独角兽的云朵为底，铺上柔滑的仙树慕斯...六周年蛋糕的秘密，你发现了吗？",
+        "descriptionEN": "Built upon the fluffy clouds of the Unicorn Tree and topped with creamy layers of mousse from the Celestial Tree...Have you discovered the secret of the 6th Anniversary Cake Tree?",
+        "descriptionFR": "Construit sur les nuages duveteux de l'arbre de la licorne et surmonté de couches crémeuses de mousse de l'arbre céleste ... Avez-vous découvert le secret de l'Arbre à Gâteau du 6e Anniversiare de Forest?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "67": {
+        "nameZH": "水之心",
+        "nameEN": "Water Spirit",
+        "nameFR": "Esprit de l'Eau",
+        "nameXML": "aqua_tree",
+        "descriptionZH": "水之心，唯有你我用心呵护，才能在森林绽放。 －以希",
+        "descriptionEN": "Nurture with love, and may the beating heart of water bloom and shine. - Sybil",
+        "descriptionFR": "Nourris-le avec amour, et que le cœur battant de l'eau s'épanouisse et brille. - Sybil",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "68": {
+        "nameZH": "圣代树",
+        "nameEN": "Sundae Tree",
+        "nameFR": "Arbre Sundae",
+        "nameXML": "sundae_tree",
+        "descriptionZH": "天气那么热，趁着森林里没人，偷吃一口圣代吧！",
+        "descriptionEN": "It's boiling hot outside. How can I resist this appetizing sundae, especially when no one's around to judge me!",
+        "descriptionFR": "Il fait chaud à l'extérieur. Comment puis-je résister à ce sundae appétissant, surtout quand personne n'est là pour me juger!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "69": {
+        "nameZH": "情人树",
+        "nameEN": "Lover Tree",
+        "nameFR": "Arbre des amants",
+        "nameXML": "lover_tree",
+        "descriptionZH": "别担心，从今以后，我们一起在这片森林生活，再也不会分开了！",
+        "descriptionEN": "Don't worry, my love! We'll live in this forest forever and ever, and nothing can keep us apart!",
+        "descriptionFR": "Ne t'inquiète pas, mon amour ! Nous vivrons dans cette forêt pour toujours et rien ne pourra nous séparer !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "70": {
+        "nameZH": "梨子树屋",
+        "nameEN": "Pear Tree House",
+        "nameFR": "Maison de Poirier",
+        "nameXML": "pear_tree_house",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "71": {
+        "nameZH": "女巫魔菇",
+        "nameEN": "Witch Mushroom",
+        "nameFR": "Champignon de Sorcière",
+        "nameXML": "witchmushroom_tree",
+        "descriptionZH": "不乖乖种树的小朋友，会被女巫抓走喔！",
+        "descriptionEN": "Lazy children are my favourites......yum yum!",
+        "descriptionFR": "Les enfants paresseux sont mes préférés ... miam miam!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "72": {
+        "nameZH": "百合花",
+        "nameEN": "Lily Flower",
+        "nameFR": "Fleur de lys",
+        "nameXML": "lily_tree",
+        "descriptionZH": "用我清新淡雅的花香，为森林更添一层迷人氛围！",
+        "descriptionEN": "Let me purify your soul, and bring peace and love to your forest!",
+        "descriptionFR": "Laissez-moi purifier votre âme et apporter la paix et l'amour dans votre forêt!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "73": {
+        "nameZH": "冬日之光",
+        "nameEN": "Twilight Guardian",
+        "nameFR": "Gardien du crépuscule",
+        "nameXML": "xmas_tree_2020",
+        "descriptionZH": "我带着冬日的祝福，随着雪花轻轻落在你的森林。",
+        "descriptionEN": "I'll be the light to guide you through this snowy winter forest.",
+        "descriptionFR": "Je serai la lumière pour vous guider à travers cette forêt hivernale enneigée.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "74": {
+        "nameZH": "郁金香",
+        "nameEN": "Tulip",
+        "nameFR": "Tulipe",
+        "nameXML": "tulip_tree",
+        "descriptionZH": "饱满的花朵寄托着爱与珍惜，为你的森林带来满满心意！",
+        "descriptionEN": "Plant the cup-shaped Tulip filled with love and cherish, and pour them into your forest!",
+        "descriptionFR": "Plantez la tulipe dont les pétales forment une coupe remplie d'amour et de bisous et versez-les dans votre forêt!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "75": {
+        "nameZH": "梅花",
+        "nameEN": "Plum Blossom",
+        "nameFR": "Fleur de prunier",
+        "nameXML": "plumblossom_tree",
+        "descriptionZH": "在寒冬中独自绽放的孤傲性格，其实蕴藏着一颗期待春天到来的心。",
+        "descriptionEN": "Blossom solitarily amidst the coldest time of the year, yet my heart awaits warm days to come.",
+        "descriptionFR": "Je fleuris seule en cette période si froide de l'année, mais mon cœur attend les jours chauds à venir.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "76": {
+        "nameZH": "山茶花",
+        "nameEN": "Camellia",
+        "nameFR": "Camélia",
+        "nameXML": "camellia_tree",
+        "descriptionZH": "错落的花瓣交织成一件件红白舞裙 — “你愿意和我跳支舞吗？ ”",
+        "descriptionEN": "Overlapping petals grow into red and white gowns - will you dance with me?",
+        "descriptionFR": "Les pétales qui se chevauchent se transforment en robes rouges et blanches - vas-tu danser avec moi?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "77": {
+        "nameZH": "Luminie",
+        "nameEN": "Luminie",
+        "nameFR": "Luminie",
+        "nameXML": "luminie_tree",
+        "descriptionZH": "源自于拉丁文字 — lumin，意为“光”",
+        "descriptionEN": "The name Luminie originates from Latin - lumin, meaning “light”",
+        "descriptionFR": "Le nom Luminie vient du latin - lumin, qui signifie «lumière»",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "78": {
+        "nameZH": "七周年蛋糕树",
+        "nameEN": "7th Anniversary Cake Tree",
+        "nameFR": "Arbre Gâteau du 7e Anniversaire",
+        "nameXML": "tree_type_78",
+        "descriptionZH": "披上百合花的香气、戴上冬日之光的底蕴...... 带着我们的回忆，一起走向下个周年！",
+        "descriptionEN": "Covered with the aroma from Lily, standing tall with the roots of Twilight Guardian... Take our memories, let's move on to the next anniversary.",
+        "descriptionFR": "Couvert de l'arôme de Lily, debout avec les racines de Twilight Guardian... Prenez nos souvenirs, passons au prochain anniversaire.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "79": {
+        "nameZH": "薰衣草",
+        "nameEN": "Lavender",
+        "nameFR": "La Lavande",
+        "nameXML": "lavender_tree",
+        "descriptionZH": "一株薰衣草小巧可人，一片薰衣草森林芳香宜人！",
+        "descriptionEN": "A bush of lavender is charming and adorable, and a field of lavender gives your forest an aromatic smell!",
+        "descriptionFR": "Un buisson de lavande est charmant et adorable, et un champ de lavande donne à votre forêt une odeur aromatique !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "80": {
+        "nameZH": "水稻",
+        "nameEN": "Rice",
+        "nameFR": "L'Oreille de Riz",
+        "nameXML": "rice_tree",
+        "descriptionZH": "快来种下金黄色的稻米，一起收获专注饱满的稻穗吧！",
+        "descriptionEN": "Sow golden rice seeds, nurture with focus, and reap ears of paddy!",
+        "descriptionFR": "Semez des graines de riz dorées, nourrissez-les avec votre concentration et récoltez des épis de riz!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "81": {
+        "nameZH": "达达石像",
+        "nameEN": "Statue of Tada",
+        "nameFR": "Statue de Tada",
+        "nameXML": "tree_type_81",
+        "descriptionZH": "世界上没有戳破一颗水球完成不了的待办任务。如果有，那就两颗！ — 海狮达达．水球清单",
+        "descriptionEN": "There's no task that can't be done by popping a water ball. If there is, then pop two! - Tada．WaterDo",
+        "descriptionFR": "Il n'y a aucune tâche qui ne puisse être accomplie en faisant éclater une boule d'eau. S'il y en a, alors faites en éclater deux! - Tada. WaterDo",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4],
+            "xmas": [4, 4, 4, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "82": {
+        "nameZH": "羽翼精灵",
+        "nameEN": "Golden Wings",
+        "nameFR": "Ailes d'or",
+        "nameXML": "tree_type_82",
+        "descriptionZH": "“需要一点温暖的时候，别忘了来森林里找我玩喔！”",
+        "descriptionEN": "Whenever you need some warmth, I will chase away your blues.",
+        "descriptionFR": "Chaque fois que vous avez besoin de réconfort, je chasserai votre blues.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "83": {
+        "nameZH": "桂花",
+        "nameEN": "Osmanthus",
+        "nameFR": "Osmanthus",
+        "nameXML": "tree_type_83",
+        "descriptionZH": "飒爽的秋天，一起拾一把桂花香，喝一盏桂花茶。",
+        "descriptionEN": "On cozy Autumn days, fancy a cup of Osmanthus tea and bathe yourself in the sweet aroma.",
+        "descriptionFR": "Lors des froides journées d'automne, savourez une tasse de thé d'Osmanthus et baignez-vous dans l'arôme sucré.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "84": {
+        "nameZH": "波斯菊",
+        "nameEN": "Cosmos",
+        "nameFR": "Cosmos",
+        "nameXML": "tree_type_84",
+        "descriptionZH": "穿上缤纷洋装，为你的森林谱出专注的七彩乐章！",
+        "descriptionEN": "Let me put on my colorful dresses and compose a delightful movement for your forest!",
+        "descriptionFR": "Laissez-moi me parer de mes plus belles robes et enchanter votre forêt!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "85": {
+        "nameZH": "祈愿树",
+        "nameEN": "Wishing Tree",
+        "nameFR": "Arbre à souhaits",
+        "nameXML": "tree_type_85",
+        "descriptionZH": "许个愿吧！在一切开花结果之前，每一颗期盼的种子都有我来守护。",
+        "descriptionEN": "Make a wish! Before your wishes bloom into beautiful flowers, I will gently guard the seeds of hope in my embrace.",
+        "descriptionFR": "Faites un vœu! Avant que vos souhaits ne se transforment en de belles fleurs, je garderai avec soin vos graines d'espoir au sein de mon tronc.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "86": {
+        "nameZH": "灯花",
+        "nameEN": "Lantern Flower",
+        "nameFR": "Fleur Lanterne",
+        "nameXML": "tree_type_86",
+        "descriptionZH": "我在夜幕中散发着幽幽光芒，是为你照亮前进的方向。",
+        "descriptionEN": "Glowing gently in the dark, I am always here to light up your way.",
+        "descriptionFR": "Brillant doucement dans l'obscurité, je suis toujours là pour éclairer votre chemin.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "87": {
+        "nameZH": "水仙花",
+        "nameEN": "Narcissus",
+        "nameFR": "Narcisse",
+        "nameXML": "tree_type_87",
+        "descriptionZH": "都怪我的笑颜实在太迷人，想要和我一起专注的人可是大排长龙。",
+        "descriptionEN": "Who can resist my alluring smile? Try to stay focused on your tasks, not my look!",
+        "descriptionFR": "Qui peut résister à mon sourire si séduisant ? Restez concentré sur vos tâches, pas sur ma beauté!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "88": {
+        "nameZH": "TinyTAN - RM （铁线莲）",
+        "nameEN": "TinyTAN - RM (Clematis)",
+        "nameFR": "TinyTAN - RM (Clématite)",
+        "nameXML": "tree_type_88",
+        "descriptionZH": "一杯咖啡，一本好书，要不要跟我一起沉浸在专注的海洋中呢？",
+        "descriptionEN": "Grab some coffee and a book. Will you join me in the focus flow?",
+        "descriptionFR": "Prenez du café et un livre. Me rejoindrez-vous dans le flux de concentration?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": true,
+            "hasActive": true,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "89": {
+        "nameZH": "TinyTAN - Jin （酸模）",
+        "nameEN": "TinyTAN - Jin (Rumex)",
+        "nameFR": "TinyTAN - Jin (Oseille)",
+        "nameXML": "tree_type_89",
+        "descriptionZH": "觉得累了的话，那就借你我的肩膀休息一下啰！",
+        "descriptionEN": "If you ever feel tired, you can lean on my shoulders!",
+        "descriptionFR": "Si jamais vous vous sentez fatigué, vous pouvez vous reposer sur mes épaules!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": true,
+            "hasActive": true,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "90": {
+        "nameZH": "TinyTAN - SUGA （落叶松）",
+        "nameEN": "TinyTAN - SUGA (Larch)",
+        "nameFR": "TinyTAN - SUGA (Mélèze)",
+        "nameXML": "tree_type_90",
+        "descriptionZH": "不要再偷懒了，时间是不等人的！快来一起专注吧！",
+        "descriptionEN": "Stop slacking off! Time doesn't wait for anyone, so let's get focused now!",
+        "descriptionFR": "Ne vous relâchez pas! Le temps n'attend personne, alors concentrons-nous maintenant!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": true,
+            "hasActive": true,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "91": {
+        "nameZH": "TinyTAN - j-hope （毛茛）",
+        "nameEN": "TinyTAN - j-hope (Buttercup)",
+        "nameFR": "TinyTAN - j-hope (Bouton d'or)",
+        "nameXML": "tree_type_91",
+        "descriptionZH": "今天也是充满希望的一天，一起有活力地度过专注的一天吧！",
+        "descriptionEN": "Today is another day full of hope. Let's make the most of today!",
+        "descriptionFR": "Aujourd'hui est un jour empli d'espoir. Profitons-en au maximum!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": true,
+            "hasActive": true,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "92": {
+        "nameZH": "TinyTAN - Jimin （绣线菊）",
+        "nameEN": "TinyTAN - Jimin (Spirea)",
+        "nameFR": "TinyTAN - Jimin (Spirée)",
+        "nameXML": "tree_type_92",
+        "descriptionZH": "哎一古～ 总是分心的话... 那就让我来陪你专注吧！",
+        "descriptionEN": "Ah! If you feel distracted, let me stay focused with you!",
+        "descriptionFR": "Ah! Si vous vous sentez distrait, concentrez-vous avec moi!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": true,
+            "hasActive": true,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "93": {
+        "nameZH": "TinyTAN - V （蜡梅）",
+        "nameEN": "TinyTAN - V (Wintersweet)",
+        "nameFR": "TinyTAN - V (Wintersweet)",
+        "nameXML": "tree_type_93",
+        "descriptionZH": "专注的人最有魅力了，今天也要成为有魅力的人！",
+        "descriptionEN": "People who stay focused are so charming. Be charming today!",
+        "descriptionFR": "Les personnes qui restent concentrés sont si charmantes. Soyez charmants aujourd'hui!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": true,
+            "hasActive": true,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "94": {
+        "nameZH": "TinyTAN - Jung Kook （卷丹）",
+        "nameEN": "TinyTAN - Jung Kook (Tiger Flower)",
+        "nameFR": "TinyTAN - Jung Kook (Fleur du Tigre)",
+        "nameXML": "tree_type_94",
+        "descriptionZH": "最适合专注的日子莫过于今日了，你还在等什么呢？",
+        "descriptionEN": "The best time to stay focused is now! What are you waiting for?",
+        "descriptionFR": "Le meilleur moment pour rester concentré est maintenant ! Qu'attendez-vous?",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": true,
+            "hasActive": true,
+            "hasIdle": true,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "95": {
+        "nameZH": "八周年蛋糕树",
+        "nameEN": "8th Anniversary Cake Tree",
+        "nameFR": "Arbre Gâteau du 8e Anniversaire",
+        "nameXML": "tree_type_95",
+        "descriptionZH": "装点几颗稻穗米粒、再添一些桂花的鲜活香气...... 一边制作达克瓦兹一边庆森八！",
+        "descriptionEN": "Add in some Rice with Osmanthus petals... Make a Dacquoise and join the birthday party!",
+        "descriptionFR": "Ajoutez du L'Oreille de Riz avec des pétales Osmanthus... préparez une dacquoise et participez à la fête d'anniversaire!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "96": {
+        "nameZH": "荷花",
+        "nameEN": "Lotus",
+        "nameFR": "Lotus",
+        "nameXML": "tree_type_96",
+        "descriptionZH": "在荷花池畔阅读夏季，一叶是静心，一瓣是凉意",
+        "descriptionEN": "Grab your summer reads and relax by the lotus pond. Keep calm and chill out!",
+        "descriptionFR": "Apportez vos livres d'été autour du lac et relaxez-vous en regardant les lotus qui y flottent!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "97": {
+        "nameZH": "橘子树",
+        "nameEN": "Tangerine Tree",
+        "nameFR": "Mandarinier",
+        "nameXML": "tree_type_97",
+        "descriptionZH": "冬日的果园里暖阳煦煦，枝上结出了橙橘颜色的饱满果实，一起出发采集吧！",
+        "descriptionEN": "The warm sunshine filters through green leaves, landing on ripe tangerines to glow in orange color! Here, grab some!",
+        "descriptionFR": "Le soleil chaud luit à travers les feuilles vertes sur les mandarines mûres pour briller d'un orangé éclatant! Tenez, prenez-en une!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "98": {
+        "nameZH": "黄金风铃木",
+        "nameEN": "Golden Trumpet Tree",
+        "nameFR": "Arbre aux Trompettes d’Or",
+        "nameXML": "tree_type_98",
+        "descriptionZH": "暖阳作词、春风谱曲，快来加入我的春日演奏会！",
+        "descriptionEN": "Sunshine, a fresh breeze and a Trumpet Tree make a lovely spring day!",
+        "descriptionFR": "Un rayon de soleil, une légère brise et un chèvrefeuille aux trompettes d'or, voilà une belle journée de printemps!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "99": {
+        "nameZH": "九周年蛋糕树",
+        "nameEN": "9th Anniversary Cake Tree",
+        "nameFR": "Arbre Gâteau du 9e Anniversaire",
+        "nameXML": "tree_type_99",
+        "descriptionZH": "挤上一圈橘子味奶霜，再撒几瓣浪漫风铃木，飘着荷花香的森日蛋糕让我尝到了努力专注的甜美回忆。",
+        "descriptionEN": "With Tangerine-flavored frosting, delicate petals from the Golden Trumpet Tree, and the fragrance of the blooming lotus, the Cake Tree has become a delightful treat that carries the sweet memories of focus determination.",
+        "descriptionFR": "Avec un glaçage aromatisé à la mandarine, des pétales délicats de l’Arbre aux Trompettes d'Or et le parfum du lotus en fleurs, l'Arbre Gâteau est devenu une friandise délicieuse qui porte les doux souvenirs de vos moments de concentration.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "100": {
+        "nameZH": "蓝花楹",
+        "nameEN": "Jacaranda",
+        "nameFR": "Jacaranda",
+        "nameXML": "tree_type_100",
+        "descriptionZH": "我愿和你打造一片梦幻花海，一同沉浸在这场紫色浪漫…",
+        "descriptionEN": "Let's craft a dreamy field of blossoms, where we can immerse ourselves in this enchanting sea of purple...",
+        "descriptionFR": "Créons un champ de fleurs de rêve pour nous plonger dans cette mer de pourpre enchanteur...",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "hasStart": false,
+            "hasActive": false,
+            "hasIdle": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    }
+}
