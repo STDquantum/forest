@@ -1797,6 +1797,21 @@
         "sale_starts_at": null,
         "sale_ends_at": null,
         "sale_price": null,
+        "is_pinned": false
+    },
+    {
+        "id": 167,
+        "title": "geranium,",
+        "price": 1200,
+        "consumable": false,
+        "use_price_tier": false,
+        "productable_type": "TreeType",
+        "productable_gid": 101,
+        "purchase_type": "coin",
+        "icon_url": "https://example.org",
+        "sale_starts_at": null,
+        "sale_ends_at": null,
+        "sale_price": null,
         "is_pinned": true
     }
 ]

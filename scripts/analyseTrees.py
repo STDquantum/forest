@@ -4,19 +4,13 @@ import time
 import matplotlib.pyplot as plt
 
 
-def get_curpath():
-    import sys
-
-    return sys.path[0]
-
-
 def printf(path, things):
     with open(path, "w", encoding="utf-8") as f:
         f.write(things)
 
 
 def init_from_database():
-    conn = sqlite3.connect(get_curpath() + "\\..\\" + "databases\\Forest.db")
+    conn = sqlite3.connect(rootDir + "databases\\Forest.db")
     c = conn.cursor()
     d = c.execute("SELECT id, start_time, end_time FROM Plants")
     conn.commit()
@@ -55,7 +49,7 @@ def init_from_database():
 
 def treeType_not_planted(choice):
     d = json.load(
-        open(get_curpath() + "\\..\\" + "treeType.json", "r", encoding="utf-8")
+        open(rootDir + "treeType.json", "r", encoding="utf-8")
     )
     vis = [False for i in range(len(d))]
 
@@ -79,16 +73,16 @@ def treeType_not_planted(choice):
 
 def init_from_json():
     d = json.load(
-        open(get_curpath() + "\\..\\" + "treeType.json", "r", encoding="utf-8")
+        open(rootDir + "treeType.json", "r", encoding="utf-8")
     )
     user = json.load(
-        open(get_curpath() + "\\..\\" + "databases\\user.json", "r", encoding="utf-8")
+        open(rootDir + "databases\\user.json", "r", encoding="utf-8")
     )
     trees = json.load(
-        open(get_curpath() + "\\..\\" + "databases\\plant.json", "r", encoding="utf-8")
+        open(rootDir + "databases\\plant.json", "r", encoding="utf-8")
     )
     rooms = json.load(
-        open(get_curpath() + "\\..\\" + "databases\\rooms.json", "r", encoding="utf-8")
+        open(rootDir + "databases\\rooms.json", "r", encoding="utf-8")
     )
 
     room = {}
@@ -150,4 +144,6 @@ def trees_planted():
 
 
 if __name__ == "__main__":
-    printf(get_curpath() + "\\..\\" + "plants.txt", trees_planted())
+    from os.path import dirname
+    rootDir = dirname(__file__) + "\\..\\"
+    printf(rootDir + "plants.txt", trees_planted())
