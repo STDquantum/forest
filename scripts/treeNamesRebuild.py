@@ -25,8 +25,8 @@ if __name__ == "__main__":
         data[treeId]["nameXML"] = info[treeId]
 
     apkRootDir = forestRootDir
-    apkFile = os.path.join(apkRootDir, "Forest 专注森林.apk")
-    apkContentDir = f"{apkRootDir}\\a"
+    apkFile = os.path.join(apkRootDir, "cc.forestapp.apk")
+    apkContentDir = f"{apkRootDir}\\testa"
     while os.path.exists(apkContentDir):
         apkContentDir += "(1)"
     os.system(f"echo y | apktool d \"{apkFile}\" -o \"{apkContentDir}\"")
@@ -44,16 +44,16 @@ if __name__ == "__main__":
         phase = file.split("_phase_")[1].split('.')[0]
         phaseInfo[curRoot].append(phase)
     
-    dynamicFileDir = os.path.join(apkContentDir, "res\\drawable")
-    dynamicStorageDir = f"{forestRootDir}\\treesDynamic"
-    files = [x[2] for x in os.walk(dynamicFileDir)][0]
-    isDynamic = {key: [False, False, False] for key in info}
-    switch = {'s': 0, 'a': 1, 'i': 2}
-    for file in files:
-        if not file.startswith("frame_") or not file.endswith("webp"): continue
-        treeId = file.split('_')[4]
-        isDynamic[treeId][switch[file[6]]] = True
-        treeFileToBeCopied.append((f"{dynamicFileDir}\\{file}", f"{dynamicStorageDir}\\{file}"))
+    # dynamicFileDir = os.path.join(apkContentDir, "res\\drawable")
+    # dynamicStorageDir = f"{forestRootDir}\\treesDynamic"
+    # files = [x[2] for x in os.walk(dynamicFileDir)][0]
+    # isDynamic = {key: [False, False, False] for key in info}
+    # switch = {'s': 0, 'a': 1, 'i': 2}
+    # for file in files:
+    #     if not file.startswith("frame_") or not file.endswith("webp"): continue
+    #     treeId = file.split('_')[4]
+    #     isDynamic[treeId][switch[file[6]]] = True
+    #     treeFileToBeCopied.append((f"{dynamicFileDir}\\{file}", f"{dynamicStorageDir}\\{file}"))
 
     allPhaseInfo = {key: {} for key in info}
     for treeId in info:
@@ -69,9 +69,9 @@ if __name__ == "__main__":
         if len(xmas) == 1: xmas = [xmas[0] for i in range(4)]
         treePhaseInfo["hasDead"] = dead
         treePhaseInfo["hasChristmas"] = christmas
-        treePhaseInfo["hasStart"] = isDynamic[treeId][0]
-        treePhaseInfo["hasActive"] = isDynamic[treeId][1]
-        treePhaseInfo["hasIdle"] = isDynamic[treeId][2]
+        # treePhaseInfo["hasStart"] = isDynamic[treeId][0]
+        # treePhaseInfo["hasActive"] = isDynamic[treeId][1]
+        # treePhaseInfo["hasIdle"] = isDynamic[treeId][2]
         treePhaseInfo["growth"] = growth
         if xmas: treePhaseInfo["xmas"] = xmas
         if len(growth) == 4:

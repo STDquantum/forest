@@ -7,9 +7,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -26,9 +23,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -45,9 +39,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -64,9 +55,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -83,9 +71,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -102,9 +87,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -118,9 +100,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -137,9 +116,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -156,9 +132,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -175,9 +148,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -194,9 +164,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -213,9 +180,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -232,9 +196,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -251,9 +212,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -270,9 +228,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -289,9 +244,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -305,9 +257,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -320,9 +269,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -338,9 +284,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -357,9 +300,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -376,9 +316,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -395,9 +332,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -414,9 +348,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -433,9 +364,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -452,9 +380,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -471,9 +396,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -490,9 +412,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -509,9 +428,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -528,9 +444,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -547,9 +460,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -566,9 +476,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -585,9 +492,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
         }
@@ -603,9 +507,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -622,9 +523,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -641,9 +539,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -660,9 +555,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -679,9 +571,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -698,9 +587,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -717,9 +603,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -736,9 +619,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -755,9 +635,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -774,9 +651,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -793,9 +667,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -812,9 +683,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -831,9 +699,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -850,9 +715,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -868,9 +730,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -887,9 +746,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -906,9 +762,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -925,9 +778,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -944,9 +794,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -963,9 +810,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -982,9 +826,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1001,9 +842,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1020,9 +858,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1039,9 +874,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1058,9 +890,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1077,9 +906,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1096,9 +922,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1115,9 +938,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1134,9 +954,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1153,9 +970,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1172,9 +986,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1191,9 +1002,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1210,9 +1018,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1229,9 +1034,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1248,9 +1050,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1267,9 +1066,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1286,9 +1082,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1305,9 +1098,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1321,9 +1111,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1340,9 +1127,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1359,9 +1143,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1378,9 +1159,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1397,9 +1175,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1416,9 +1191,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1435,9 +1207,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1454,9 +1223,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1473,9 +1239,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1492,9 +1255,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1511,9 +1271,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1530,9 +1287,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4],
             "xmas": [4, 4, 4, 4],
             "forest": [4, 4, 4, 4]
@@ -1549,9 +1303,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1568,9 +1319,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1587,9 +1335,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1606,9 +1351,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1625,9 +1367,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1644,9 +1383,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1663,9 +1399,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": true,
-            "hasActive": true,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -1681,9 +1414,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": true,
-            "hasActive": true,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -1699,9 +1429,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": true,
-            "hasActive": true,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -1717,9 +1444,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": true,
-            "hasActive": true,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -1735,9 +1459,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": true,
-            "hasActive": true,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -1753,9 +1474,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": true,
-            "hasActive": true,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -1771,9 +1489,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
-            "hasStart": true,
-            "hasActive": true,
-            "hasIdle": true,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
@@ -1789,9 +1504,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1808,9 +1520,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1827,9 +1536,6 @@
         "phase": {
             "hasDead": true,
             "hasChristmas": true,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
@@ -1845,11 +1551,9 @@
         "descriptionFR": "Un rayon de soleil, une légère brise et un chèvrefeuille aux trompettes d'or, voilà une belle journée de printemps!",
         "phase": {
             "hasDead": true,
-            "hasChristmas": false,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
+            "hasChristmas": true,
             "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
         }
     },
@@ -1863,11 +1567,9 @@
         "descriptionFR": "Avec un glaçage aromatisé à la mandarine, des pétales délicats de l’Arbre aux Trompettes d'Or et le parfum du lotus en fleurs, l'Arbre Gâteau est devenu une friandise délicieuse qui porte les doux souvenirs de vos moments de concentration.",
         "phase": {
             "hasDead": true,
-            "hasChristmas": false,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
+            "hasChristmas": true,
             "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
         }
     },
@@ -1881,11 +1583,25 @@
         "descriptionFR": "Créons un champ de fleurs de rêve pour nous plonger dans cette mer de pourpre enchanteur...",
         "phase": {
             "hasDead": true,
-            "hasChristmas": false,
-            "hasStart": false,
-            "hasActive": false,
-            "hasIdle": false,
+            "hasChristmas": true,
             "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "101": {
+        "nameZH": "天竺葵",
+        "nameEN": "Geraniums",
+        "nameFR": "Géraniums",
+        "nameXML": "tree_type_101",
+        "descriptionZH": "我高贵的香气，能让你的专注时光增添一丝优雅的氛围！",
+        "descriptionEN": "My sophisticated scent will elevate your focus moments with a touch of elegance!",
+        "descriptionFR": "Mon parfum sophistiqué apportera de l'élégance à vos sessions de concentration!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
         }
     }

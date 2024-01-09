@@ -1,3 +1,9 @@
+## 使用方法
+
+需要在 treeInfo.json 注册一下树种在 XML 里的名字，到后面都标准化了，直接写 tree_type_102 之类的就行。
+
+把 apk 扔到项目根目录，名字复制到 scripts/treeNamesRebuild.py 28行，直接跑。
+
 ## Some tips in case forget
 
 ```python
