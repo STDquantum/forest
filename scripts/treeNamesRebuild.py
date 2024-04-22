@@ -84,6 +84,7 @@ if __name__ == "__main__":
         xmlFile = f"{apkContentDir}\\res\\{language[lan]}\\strings.xml"
         root = ET.parse(xmlFile).getroot()
         for treeId in info:
+            print(info[treeId])
             name = root.find(f"*[@name='{info[treeId]}_title']").text
             if name.find("'") != -1 or name.find("\n") != -1: name = name[1 : -1]
             data[treeId][f"name{lan}"] = name

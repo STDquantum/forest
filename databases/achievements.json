@@ -259,5 +259,14 @@
         "goal": 1,
         "progress": 1,
         "progress_state": 2
+    },
+    {
+        "id": 38,
+        "title": "earthday_2024",
+        "reward_type": 3,
+        "amount": 150,
+        "goal": 422,
+        "progress": 422,
+        "progress_state": 2
     }
 ]
