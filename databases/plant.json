@@ -92146,5 +92146,110 @@
                 "phase": 7
             }
         ]
+    },
+    {
+        "id": 339973928,
+        "tag": 12,
+        "note": "电工电子学",
+        "is_success": true,
+        "start_time": "2024-05-12T05:33:06.000Z",
+        "end_time": "2024-05-12T08:33:06.000Z",
+        "created_at": "2024-05-12T16:20:34.089Z",
+        "updated_at": "2024-05-12T16:20:34.089Z",
+        "user_id": 12146,
+        "has_left": false,
+        "deleted": false,
+        "theme": 0,
+        "cheating": false,
+        "room_id": null,
+        "tree_type_gid": 32,
+        "tree_count": 4,
+        "mode": "countup",
+        "trees": [
+            {
+                "created_at": "2024-05-12T16:20:34.089Z",
+                "updated_at": "2024-05-12T16:20:34.089Z",
+                "tree_type": 32,
+                "is_dead": false,
+                "phase": 4
+            },
+            {
+                "created_at": "2024-05-12T16:20:34.089Z",
+                "updated_at": "2024-05-12T16:20:34.089Z",
+                "tree_type": 32,
+                "is_dead": false,
+                "phase": 5
+            },
+            {
+                "created_at": "2024-05-12T16:20:34.089Z",
+                "updated_at": "2024-05-12T16:20:34.089Z",
+                "tree_type": 32,
+                "is_dead": false,
+                "phase": 6
+            },
+            {
+                "created_at": "2024-05-12T16:20:34.089Z",
+                "updated_at": "2024-05-12T16:20:34.089Z",
+                "tree_type": 32,
+                "is_dead": false,
+                "phase": 7
+            }
+        ]
+    },
+    {
+        "id": 341552149,
+        "tag": 12,
+        "note": "",
+        "is_success": true,
+        "start_time": "2024-05-23T11:30:20.000Z",
+        "end_time": "2024-05-23T11:41:12.000Z",
+        "created_at": "2024-05-23T11:41:16.890Z",
+        "updated_at": "2024-05-23T11:41:16.890Z",
+        "user_id": 12146,
+        "has_left": false,
+        "deleted": false,
+        "theme": 0,
+        "cheating": false,
+        "room_id": null,
+        "tree_type_gid": 105,
+        "tree_count": 1,
+        "mode": "countup",
+        "trees": [
+            {
+                "created_at": "2024-05-23T11:41:16.890Z",
+                "updated_at": "2024-05-23T11:41:16.890Z",
+                "tree_type": 105,
+                "is_dead": false,
+                "phase": 4
+            }
+        ]
+    },
+    {
+        "id": 341553584,
+        "tag": 12,
+        "note": "",
+        "is_success": true,
+        "start_time": "2024-05-23T11:41:19.000Z",
+        "end_time": "2024-05-23T11:51:54.000Z",
+        "created_at": "2024-05-23T11:51:57.187Z",
+        "updated_at": "2024-05-23T11:51:57.187Z",
+        "user_id": 12146,
+        "has_left": false,
+        "deleted": false,
+        "theme": 0,
+        "cheating": false,
+        "room_id": null,
+        "tree_type_gid": 104,
+        "tree_count": 1,
+        "mode": "countup",
+        "trees": [
+            {
+                "created_at": "2024-05-23T11:51:57.187Z",
+                "updated_at": "2024-05-23T11:51:57.187Z",
+                "tree_type": 104,
+                "is_dead": false,
+                "phase": 4
+            }
+        ]
     }
 ]

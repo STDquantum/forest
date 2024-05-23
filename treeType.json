@@ -1604,5 +1604,41 @@
             "xmas": [4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
         }
+    },
+    "103": {
+        "nameZH": "十周年蛋糕树",
+        "nameEN": "10th Anniversary Cake Tree",
+        "nameFR": "Arbre Gâteau du 10e Anniversaire",
+        "nameXML": "tree_type_103",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "104": {
+        "nameZH": "蓝花楹仙子",
+        "nameEN": "Jacaranda fairy",
+        "nameFR": "Fée du Jacaranda",
+        "nameXML": "tree_type_104",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "105": {
+        "nameZH": "天竺葵仙子",
+        "nameEN": "Geraniums fairy",
+        "nameFR": "Fée des Géraniums",
+        "nameXML": "tree_type_105",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
     }
 }
