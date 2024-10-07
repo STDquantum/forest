@@ -1610,6 +1610,9 @@
         "nameEN": "10th Anniversary Cake Tree",
         "nameFR": "Arbre Gâteau du 10e Anniversaire",
         "nameXML": "tree_type_103",
+        "descriptionZH": "由蓝花楹仙子和天竺葵仙子精心制作的水果蛋糕！因为添加了回忆的味道，每次尝起来都有不同的滋味呢！",
+        "descriptionEN": "A fruit cake meticulously crafted by the Jacaranda fairy and the Geraniums fairy! With the added flavor of memories, each bite tastes different every time!",
+        "descriptionFR": "Un gâteau aux fruits méticuleusement élaboré par la Fée du Jacaranda et la Fée des Géraniums! Avec la saveur supplémentaire des souvenirs, chaque bouchée a un goût différent à chaque fois!",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1622,6 +1625,9 @@
         "nameEN": "Jacaranda fairy",
         "nameFR": "Fée du Jacaranda",
         "nameXML": "tree_type_104",
+        "descriptionZH": "充满活力，脸上总是挂着笑容的蓝花楹仙子，在你需要时帮你加油打气！",
+        "descriptionEN": "The lively Jacaranda fairy is always smiling and ready to cheer you on when you need a boost!",
+        "descriptionFR": "La Fée du Jacaranda est toujours souriante et prête à vous encourager lorsque vous avez besoin d’un coup de pouce!",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1634,6 +1640,54 @@
         "nameEN": "Geraniums fairy",
         "nameFR": "Fée des Géraniums",
         "nameXML": "tree_type_105",
+        "descriptionZH": "安静沉稳的天竺葵仙子，总是能在心浮气躁时让人保持专注。",
+        "descriptionEN": "The calm and composed Geraniums fairy helps you stay focused whenever you're feeling restless.",
+        "descriptionFR": "La Fée des Géraniums calme et sereine vous aide à rester concentré chaque fois que vous vous sentez agité.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "106": {
+        "nameZH": "龟背竹",
+        "nameEN": "Monstera",
+        "nameFR": "Monstera",
+        "nameXML": "tree_type_106",
+        "descriptionZH": "萌发出爱心的嫩芽，治愈你专注的每时每刻！但森林下雨时，可别拿我当伞哦！",
+        "descriptionEN": "Seek focus with a heart-shaped sprout by your side—just don’t seek shelter from me when it rains!",
+        "descriptionFR": "Cherchez à vous concentrer avec une petite pousse en forme de cœur à vos côtés - mais ne cherchez pas à vous abriter sous mes feuilles quand il pleut!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "107": {
+        "nameZH": "月饼树",
+        "nameEN": "Mooncake Tree",
+        "nameFR": "Gâteau de Lune",
+        "nameXML": "tree_type_107",
+        "descriptionZH": "没事多吃点月饼，反正树也不会数你的卡路里！",
+        "descriptionEN": "Enjoy mooncakes whenever you want; this tree won’t count your calories!",
+        "descriptionFR": "Dégustez des Gâteaux de Lune comme vous le désirez; cet arbre ne comptera pas vos calories!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "108": {
+        "nameZH": "云月树",
+        "nameEN": "Cloud Moon Tree",
+        "nameFR": "Lune Céleste",
+        "nameXML": "tree_type_108",
+        "descriptionZH": "让云月树反射你内心的专注光芒，赶走浮躁和拖延症！",
+        "descriptionEN": "The Cloud Moon Tree reflects your focused light, banishing all distractions and procrastination!",
+        "descriptionFR": "La Lune Céleste reflète votre lumière de concentration, bannissant toutes les distractions et la procrastination!",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
