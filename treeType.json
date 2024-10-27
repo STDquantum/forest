@@ -1694,5 +1694,35 @@
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
         }
+    },
+    "109": {
+        "nameZH": "阴森森树",
+        "nameEN": "Spooky Tree",
+        "nameFR": "Arbre Effrayant",
+        "nameXML": "tree_type_109",
+        "descriptionZH": "我这张可怖的脸只会在你分心时出现，保持专注，我立刻消失无踪！",
+        "descriptionEN": "My spooky face only shows up when you’re distracted. Stay focused, and I’ll disappear in a flash!",
+        "descriptionFR": "Mon visage effrayant n'apparaît que lorsque vous êtes distrait. Restez concentré et je disparaîtrai en un clin d'œil!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "110": {
+        "nameZH": "白雪木",
+        "nameEN": "Snowflake Bush",
+        "nameFR": "Buisson enneigé",
+        "nameXML": "tree_type_110",
+        "descriptionZH": "梦幻雪景森林可不是冬季限定，让我随时带给你银白色的浪漫！",
+        "descriptionEN": "A dreamy snow-covered forest isn’t just for winter—let me bring you that silvery romance all year long!",
+        "descriptionFR": "Qui ne rêve pas d'avoir une forêt enneigée même quand l'hiver se termine? — Laissez-moi draper votre forêt avec une belle robe argentée tout au long de l'année!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
     }
 }
