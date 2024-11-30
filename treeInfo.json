@@ -101,6 +101,7 @@
     "99":  "tree_type_99",
     "100":  "tree_type_100",
     "101":  "tree_type_101",
+    "102":  "tree_type_102",
     "103":  "tree_type_103",
     "104":  "tree_type_104",
     "105": "tree_type_105",
@@ -108,5 +109,8 @@
     "107": "tree_type_107",
     "108": "tree_type_108",
     "109": "tree_type_109",
-    "110": "tree_type_110"
+    "110": "tree_type_110",
+    "111": "tree_type_111",
+    "112": "tree_type_112",
+    "113": "tree_type_113"
 }

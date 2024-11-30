@@ -4,7 +4,7 @@ import os
 import shutil
 
 
-if __name__ == "__main__":
+def main():
     forestRootDir = os.path.dirname(__file__) + "\\.."
 
     language = {"ZH": "values-zh-rCN", "EN": "values", "FR": "values-fr"}
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     phaseInfo = {key: [] for key in info}
     treeFileToBeCopied = []
     for file in files:
-        if not file.startswith("tree_type_") or file.endswith("launch.png"):
+        if not file.startswith("tree_type_") or file.find("launch") != -1:
             continue
         curRoot = file.split("_phase_")[0].split("tree_type_")[1]
         phase = file.split("_phase_")[1].split(".")[0]
@@ -86,9 +86,13 @@ if __name__ == "__main__":
         root = ET.parse(xmlFile).getroot()
         for treeId in info:
             print(info[treeId])
-            name = root.find(f"*[@name='{info[treeId]}_title']").text
-            if name.find("'") != -1 or name.find("\n") != -1:
-                name = name[1:-1]
+            name = root.find(f"*[@name='{info[treeId]}_title']")
+            if name != None and name.text != None:
+                name = name.text
+                if name.find("'") != -1 or name.find("\n") != -1:
+                    name = name[1:-1]
+            else:
+                name = ""
             data[treeId][f"name{lan}"] = name
             element = root.find(f"*[@name='{info[treeId]}_description']")
             if element != None:
@@ -121,3 +125,6 @@ if __name__ == "__main__":
         shutil.move(src, dst)
 
     os.system(f"rmdir {apkContentDir} /S/Q")
+
+if __name__ == "__main__":
+    main()

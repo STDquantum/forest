@@ -1605,6 +1605,19 @@
             "forest": [4, 5, 6, 7]
         }
     },
+    "102": {
+        "nameZH": "",
+        "nameEN": "",
+        "nameFR": "",
+        "nameXML": "tree_type_102",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": true,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "xmas": [4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
     "103": {
         "nameZH": "十周年蛋糕树",
         "nameEN": "10th Anniversary Cake Tree",
@@ -1723,6 +1736,46 @@
             "hasChristmas": false,
             "growth": [1, 2, 3, 4, 5, 6, 7],
             "forest": [4, 5, 6, 7]
+        }
+    },
+    "111": {
+        "nameZH": "",
+        "nameEN": "2024聖誕樹",
+        "nameFR": "",
+        "nameXML": "tree_type_111",
+        "descriptionEN": "2024聖誕樹2024聖誕樹",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "112": {
+        "nameZH": "槲寄生花圈",
+        "nameEN": "Mistletoe Wreath",
+        "nameFR": "",
+        "nameXML": "tree_type_112",
+        "descriptionZH": "传闻只要在森林中种下槲寄生，圣诞夜就会发生意想不到的浪漫惊喜...",
+        "descriptionEN": "Legend has it that planting mistletoe in the forest brings unexpected romantic surprises on Christmas Eve...",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "113": {
+        "nameZH": "",
+        "nameEN": "White Calla Lily",
+        "nameFR": "",
+        "nameXML": "tree_type_113",
+        "descriptionEN": "The elegant White Calla Lily symbolizes pure love, steadfastly accompanying you in every moment of focus.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
         }
     }
 }
