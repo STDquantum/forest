@@ -1754,10 +1754,11 @@
     "112": {
         "nameZH": "槲寄生花圈",
         "nameEN": "Mistletoe Wreath",
-        "nameFR": "",
+        "nameFR": "Couronne de Gui",
         "nameXML": "tree_type_112",
         "descriptionZH": "传闻只要在森林中种下槲寄生，圣诞夜就会发生意想不到的浪漫惊喜...",
         "descriptionEN": "Legend has it that planting mistletoe in the forest brings unexpected romantic surprises on Christmas Eve...",
+        "descriptionFR": "La légende raconte que planter du gui dans la forêt fait naître de surprenantes rencontres romantiques le soir de Noël...",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1766,16 +1767,45 @@
         }
     },
     "113": {
-        "nameZH": "",
+        "nameZH": "纯白海芋",
         "nameEN": "White Calla Lily",
-        "nameFR": "",
+        "nameFR": "Lys blanc Calla",
         "nameXML": "tree_type_113",
+        "descriptionZH": "优雅洁白的海芋诉说着纯洁的爱，坚定不移地陪伴你的每次专注。",
         "descriptionEN": "The elegant White Calla Lily symbolizes pure love, steadfastly accompanying you in every moment of focus.",
+        "descriptionFR": "L’élégant lys blanc Calla symbolise l’amour pur, vous accompagne fidèlement dans chacun de vos moments de concentration.",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
+        }
+    },
+    "114": {
+        "nameZH": "祈愿花",
+        "nameEN": "Wishing Flower",
+        "nameFR": "Fleur à souhaits",
+        "nameXML": "tree_type_114",
+        "descriptionZH": "种下你的新希望，让他们在森林里发光绽放！",
+        "descriptionEN": "Plant your wishes and let them bloom in your forest.",
+        "descriptionFR": "Semez vos souhaits et laissez-les fleurir au cœur de votre forêt.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "115": {
+        "nameZH": "",
+        "nameEN": "",
+        "nameFR": "",
+        "nameXML": "tree_type_115",
+        "phase": {
+            "hasDead": false,
+            "hasChristmas": false,
+            "growth": [],
+            "forest": []
         }
     }
 }
