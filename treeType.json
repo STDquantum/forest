@@ -1739,11 +1739,13 @@
         }
     },
     "111": {
-        "nameZH": "",
-        "nameEN": "2024聖誕樹",
-        "nameFR": "",
+        "nameZH": "冬夜星辰",
+        "nameEN": "Winter Starlight",
+        "nameFR": "Étoile du Nord",
         "nameXML": "tree_type_111",
-        "descriptionEN": "2024聖誕樹2024聖誕樹",
+        "descriptionZH": "冬夜下最闪耀的那颗星辰，为你点亮专注的旅途！",
+        "descriptionEN": "Let the brightest star of winter night lights up your focus journey!",
+        "descriptionFR": "Laissez l'Étoile du Nord guider votre concentration!",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1752,7 +1754,7 @@
         }
     },
     "112": {
-        "nameZH": "槲寄生花圈",
+        "nameZH": "槲寄生花环",
         "nameEN": "Mistletoe Wreath",
         "nameFR": "Couronne de Gui",
         "nameXML": "tree_type_112",
@@ -1797,15 +1799,96 @@
         }
     },
     "115": {
-        "nameZH": "",
-        "nameEN": "",
+        "nameZH": "蝴蝶兰",
+        "nameEN": "Moth Orchid",
         "nameFR": "",
         "nameXML": "tree_type_115",
         "phase": {
-            "hasDead": false,
+            "hasDead": true,
             "hasChristmas": false,
-            "growth": [],
-            "forest": []
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "116": {
+        "nameZH": "桔梗",
+        "nameEN": "Balloon Flower",
+        "nameFR": "Campanule à grandes fleurs",
+        "nameXML": "tree_type_116",
+        "descriptionZH": "我以一朵紫色花瓣许诺，温柔守护你每一瞬的专注时光。",
+        "descriptionEN": "With a single purple petal, I promise to gently protect every moment of your focused time.",
+        "descriptionFR": "Avec un délicat pétale violet, je veille tendrement sur tous ces moments où vous vous concentrez pleinement.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "117": {
+        "nameZH": "白玫瑰",
+        "nameEN": "White Rose",
+        "nameFR": "",
+        "nameXML": "tree_type_117",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "118": {
+        "nameZH": "鸢尾花",
+        "nameEN": "Iris",
+        "nameFR": "",
+        "nameXML": "tree_type_118",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "119": {
+        "nameZH": "招财树",
+        "nameEN": "Money Fortune Tree",
+        "nameFR": "",
+        "nameXML": "tree_type_119",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "120": {
+        "nameZH": "金运竹",
+        "nameEN": "Golden Prosperity Bowl",
+        "nameFR": "Bol d'or de prospérité",
+        "nameXML": "tree_type_120",
+        "descriptionZH": "我有一个特别的技能，就是可以召唤好运，为你的梦想助力！",
+        "descriptionEN": "I’ve got a special talent—calling in good luck to supercharge your dreams!",
+        "descriptionFR": "J'ai un don particulier: celui d'invoquer la chance pour donner des ailes à vos rêves!",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "124": {
+        "nameZH": "風鈴草",
+        "nameEN": "Bellflower",
+        "nameFR": "Muguet",
+        "nameXML": "tree_type_124",
+        "descriptionZH": "每当微风拂过，铃铛般的花瓣轻轻摇曳，像在低语着—「谢谢你一直以来的努力！」",
+        "descriptionEN": "As the breeze gently passes by, the bell-like petals sway softly, as if whispering, \\\"Thank you for all your hard work.\\\"",
+        "descriptionFR": "Alors que la brise passe doucement, les pétales semblables à des clochettes se balancent délicatement, comme pour murmurer : « Merci pour tous vos efforts. »",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
         }
     }
 }
