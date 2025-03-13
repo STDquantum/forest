@@ -1771,10 +1771,10 @@
     "113": {
         "nameZH": "纯白海芋",
         "nameEN": "White Calla Lily",
-        "nameFR": "Lys blanc Calla",
+        "nameFR": "Lys Calla blanc",
         "nameXML": "tree_type_113",
         "descriptionZH": "优雅洁白的海芋诉说着纯洁的爱，坚定不移地陪伴你的每次专注。",
-        "descriptionEN": "The elegant White Calla Lily symbolizes pure love, steadfastly accompanying you in every moment of focus.",
+        "descriptionEN": "The elegant White Calla Lily speaks of pure love, standing by your side through every focus moment.",
         "descriptionFR": "L’élégant lys blanc Calla symbolise l’amour pur, vous accompagne fidèlement dans chacun de vos moments de concentration.",
         "phase": {
             "hasDead": true,
@@ -1801,7 +1801,7 @@
     "115": {
         "nameZH": "蝴蝶兰",
         "nameEN": "Moth Orchid",
-        "nameFR": "",
+        "nameFR": "Orchidée Papillon",
         "nameXML": "tree_type_115",
         "phase": {
             "hasDead": true,
@@ -1828,7 +1828,7 @@
     "117": {
         "nameZH": "白玫瑰",
         "nameEN": "White Rose",
-        "nameFR": "",
+        "nameFR": "Rose blanche",
         "nameXML": "tree_type_117",
         "phase": {
             "hasDead": true,
@@ -1840,7 +1840,7 @@
     "118": {
         "nameZH": "鸢尾花",
         "nameEN": "Iris",
-        "nameFR": "",
+        "nameFR": "Iris",
         "nameXML": "tree_type_118",
         "phase": {
             "hasDead": true,
@@ -1852,7 +1852,7 @@
     "119": {
         "nameZH": "招财树",
         "nameEN": "Money Fortune Tree",
-        "nameFR": "",
+        "nameFR": "Arbre de la Fortune",
         "nameXML": "tree_type_119",
         "phase": {
             "hasDead": true,
@@ -1876,8 +1876,35 @@
             "forest": [4, 5, 6, 7]
         }
     },
+    "121": {
+        "nameZH": "虞美人",
+        "nameEN": "Corn Poppy",
+        "nameFR": "Coquelicot",
+        "nameXML": "tree_type_121",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "122": {
+        "nameZH": "茱丽叶",
+        "nameEN": "Juliet",
+        "nameFR": "Juliette",
+        "nameXML": "tree_type_122",
+        "descriptionZH": "无论我的名字是什么，我依旧在你的森林里芬芳如初。",
+        "descriptionEN": "Whatever name I wear, my fragrance remains in your forest, timeless as ever.",
+        "descriptionFR": "Le nom que je porte peut changer, mais mon parfum continue d'habiter votre forêt, aussi éternel qu'au premier jour.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
     "124": {
-        "nameZH": "風鈴草",
+        "nameZH": "风铃草",
         "nameEN": "Bellflower",
         "nameFR": "Muguet",
         "nameXML": "tree_type_124",
@@ -1889,6 +1916,36 @@
             "hasChristmas": false,
             "growth": [1, 2, 3, 4],
             "forest": [4, 4, 4, 4]
+        }
+    },
+    "126": {
+        "nameZH": "昙花",
+        "nameEN": "Epiphyllum",
+        "nameFR": "Epiphyllum",
+        "nameXML": "tree_type_126",
+        "descriptionZH": "昙花一现，惊鸿一瞥！尽管绽放一瞬仍是无可取代的绝美瞬间。",
+        "descriptionEN": "A bloom of instant, a glimpse of wonder! Though an ephemeral bloom, the Epiphyllum remains an irreplaceable moment of beauty.",
+        "descriptionFR": "Un épanouissement instantané, une vision merveilleuse ! Bien que sa floraison soit éphémère, l'Epiphyllum nous offre un moment de beauté à jamais irremplaçable.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "131": {
+        "nameZH": "金盏花",
+        "nameEN": "Calendula",
+        "nameFR": "Calendula",
+        "nameXML": "tree_type_131",
+        "descriptionZH": "当金盏花向阳绽放，每一缕阳光都成为森林茁壮的见证。",
+        "descriptionEN": "As Calendula turns its petals to the sun, every ray of light celebrates the forest’s thrive.",
+        "descriptionFR": "À l'image du Calendula qui oriente ses pétales vers le soleil, chaque rayon illumine l'harmonie de la forêt.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
         }
     }
 }
