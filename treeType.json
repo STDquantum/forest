@@ -1803,6 +1803,9 @@
         "nameEN": "Moth Orchid",
         "nameFR": "Orchidée Papillon",
         "nameXML": "tree_type_115",
+        "descriptionZH": "送给自己一株蝴蝶兰，让优雅与祝福在日常专注里悄然盛开",
+        "descriptionEN": "Gift yourself a Moth Orchid, letting grace and blessings quietly bloom in your everyday focus.",
+        "descriptionFR": "Offrez-vous une Orchidée Papillon, laissant grâce et bénédictions s'épanouir silencieusement dans votre concentration quotidienne.",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1830,6 +1833,9 @@
         "nameEN": "White Rose",
         "nameFR": "Rose blanche",
         "nameXML": "tree_type_117",
+        "descriptionZH": "一袭白色衣裳，捧着最真挚的祝福；白玫瑰在你的专注里，默默温暖每一个瞬间。",
+        "descriptionEN": "Wrapped in snowy petals, it holds a simple, genuine promise—softly brightening every second you spend in focus.",
+        "descriptionFR": "Enveloppé de pétales neigeux, il renferme une promesse simple et authentique — illuminant doucement chaque seconde que vous consacrez à votre concentration.",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1842,6 +1848,9 @@
         "nameEN": "Iris",
         "nameFR": "Iris",
         "nameXML": "tree_type_118",
+        "descriptionZH": "鸢尾花轻绽，承载远古希腊女神的祝福，赋予你奔赴自由的勇气。",
+        "descriptionEN": "Carrying the blessings of the ancient Greek rainbow goddess, it grants you both the wisdom and drive to stay focused!",
+        "descriptionFR": "Portant les bénédictions de l’ancienne déesse grecque de l’arc-en-ciel, l'Iris vous accorde à la fois la sagesse et la volonté de rester concentré !",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1854,6 +1863,9 @@
         "nameEN": "Money Fortune Tree",
         "nameFR": "Arbre de la Fortune",
         "nameXML": "tree_type_119",
+        "descriptionZH": "一点一滴投资你的专注力，就是最珍贵的财富！",
+        "descriptionEN": "Invest in your focus, step by step – that's the richest wealth of all!",
+        "descriptionFR": "Investissez dans votre concentration, petit à petit - c'est là que réside la véritable richesse !",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1881,6 +1893,9 @@
         "nameEN": "Corn Poppy",
         "nameFR": "Coquelicot",
         "nameXML": "tree_type_121",
+        "descriptionZH": "鲜红的花朵在荒地里依然坚韧绽放，为你点燃每次无畏的前程！",
+        "descriptionEN": "Bright red blooms thrive in barren soil, igniting your fearless journey ahead!",
+        "descriptionFR": "Des fleurs d'un rouge éclatant s'épanouissent dans un sol aride, illuminant votre courageux voyage à venir !",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1891,7 +1906,7 @@
     "122": {
         "nameZH": "茱丽叶",
         "nameEN": "Juliet",
-        "nameFR": "Juliette",
+        "nameFR": "Juliet",
         "nameXML": "tree_type_122",
         "descriptionZH": "无论我的名字是什么，我依旧在你的森林里芬芳如初。",
         "descriptionEN": "Whatever name I wear, my fragrance remains in your forest, timeless as ever.",
@@ -1903,6 +1918,21 @@
             "forest": [4, 4, 4, 4]
         }
     },
+    "123": {
+        "nameZH": "仙客来",
+        "nameEN": "Cyclamen",
+        "nameFR": "Cyclamen",
+        "nameXML": "tree_type_123",
+        "descriptionZH": "向上翻飞的花瓣就像森林里的小灯笼，点亮你专注的每一步！",
+        "descriptionEN": "Petals soaring upward like little lanterns in the forest, lighting up every step of your focused journey!",
+        "descriptionFR": "Des pétales qui s'élèvent comme de petites lanternes dans la forêt, illuminant chaque étape de votre parcours de concentration !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
     "124": {
         "nameZH": "风铃草",
         "nameEN": "Bellflower",
@@ -1911,6 +1941,21 @@
         "descriptionZH": "每当微风拂过，铃铛般的花瓣轻轻摇曳，像在低语着—「谢谢你一直以来的努力！」",
         "descriptionEN": "As the breeze gently passes by, the bell-like petals sway softly, as if whispering, \\\"Thank you for all your hard work.\\\"",
         "descriptionFR": "Alors que la brise passe doucement, les pétales semblables à des clochettes se balancent délicatement, comme pour murmurer : « Merci pour tous vos efforts. »",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "125": {
+        "nameZH": "文心兰",
+        "nameEN": "Dancing Lady Orchid",
+        "nameFR": "Oncidium",
+        "nameXML": "tree_type_125",
+        "descriptionZH": "金黄花朵在森林中跳舞，专注的你也在心流中闪闪发亮！",
+        "descriptionEN": "Golden blossoms dance through the forest, just like you shine in the flow of deep focus!",
+        "descriptionFR": "Les fleurs dorées dansent à travers la forêt, tout comme vous brillez quand vous êtes pleinement concentré !",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
@@ -1933,6 +1978,66 @@
             "forest": [4, 5, 6, 7]
         }
     },
+    "127": {
+        "nameZH": "杏花",
+        "nameEN": "Apricot Tree",
+        "nameFR": "Abricotier",
+        "nameXML": "tree_type_127",
+        "descriptionZH": "每次的专注就彷佛我那细小的花瓣，终将积累成繁茂盛开的景色！",
+        "descriptionEN": "Every moment of focus is like a tiny petal that will one day bloom into a lush, breathtaking view!",
+        "descriptionFR": "Chaque instant de focus est tel un minuscule pétale qui fleurira un jour en un panorama verdoyant à couper le souffle !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "128": {
+        "nameZH": "金鱼草",
+        "nameEN": "Snapdragons",
+        "nameFR": "Mufliers",
+        "nameXML": "tree_type_128",
+        "descriptionZH": "别让你的专注力和我的记忆一样短",
+        "descriptionEN": "Sure, my petals look like a mouth, and of course, I’d remind you to focus!",
+        "descriptionFR": "Bien sûr, mes pétales ressemblent à une bouche et bien entendu, je serais là pour vous rappeler de rester concentré !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "129": {
+        "nameZH": "风信子",
+        "nameEN": "Hyacinth",
+        "nameFR": "Jacinthe",
+        "nameXML": "tree_type_129",
+        "descriptionZH": "每个小花朵就像你的专注时光，累积起来，就能成为最闪耀的风景！",
+        "descriptionEN": "Each focused moment is like one of my little flowers—together, they make the forest shine!",
+        "descriptionFR": "Chaque moment de concentration est comme l'une de mes petites fleurs—ensemble, elles font briller toute la forêt !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
+    "130": {
+        "nameZH": "大丽花",
+        "nameEN": "Dahlia",
+        "nameFR": "Dahlia",
+        "nameXML": "tree_type_130",
+        "descriptionZH": "花瓣层层绽放，在森林的舞台上，我盛装登场！",
+        "descriptionEN": "Layer by layer, my petals unfurl as I make a dazzling debut on the forest stage!",
+        "descriptionFR": "Pétale après pétale, mes fleurs s'épanouissent tandis que je fais une entrée éblouissante sur la scène de la forêt !",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4],
+            "forest": [4, 4, 4, 4]
+        }
+    },
     "131": {
         "nameZH": "金盏花",
         "nameEN": "Calendula",
@@ -1941,6 +2046,36 @@
         "descriptionZH": "当金盏花向阳绽放，每一缕阳光都成为森林茁壮的见证。",
         "descriptionEN": "As Calendula turns its petals to the sun, every ray of light celebrates the forest’s thrive.",
         "descriptionFR": "À l'image du Calendula qui oriente ses pétales vers le soleil, chaque rayon illumine l'harmonie de la forêt.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "132": {
+        "nameZH": "森绿球",
+        "nameEN": "Greensphere",
+        "nameFR": "ÉcoSphère",
+        "nameXML": "tree_type_132",
+        "descriptionZH": "把绿色带进生活，让我们种下的每一株绿意都承载更美好的未来。",
+        "descriptionEN": "Bring a touch of green into your everyday, and watch each seed you plant grow into a brighter tomorrow.",
+        "descriptionFR": "Invitez un peu de verdure dans votre quotidien, et admirez chaque graine semée se transformer en un futur plus éclatant.",
+        "phase": {
+            "hasDead": true,
+            "hasChristmas": false,
+            "growth": [1, 2, 3, 4, 5, 6, 7],
+            "forest": [4, 5, 6, 7]
+        }
+    },
+    "133": {
+        "nameZH": "十一周年蛋糕树",
+        "nameEN": "11th Anniversary Cake Tree",
+        "nameFR": "Arbre Gâteau du 11e anniversaire",
+        "nameXML": "tree_type_133",
+        "descriptionZH": "缤纷甜蜜的马卡龙上，点缀着浪漫的白雪木、茱丽叶还有风铃草！你的专注是不是也这么多采多姿呢？",
+        "descriptionEN": "A colorful macaron sprinkled with dreamy Snowflake Bush, Juliet, and Bellflower—are your moments of focus just as vibrant?",
+        "descriptionFR": "Un macaron aux couleurs vives saupoudré de rêveuses touches de Buisson enneigé, de Juliet et de Muguet — vos instants de focus sont-ils aussi éclatants ?",
         "phase": {
             "hasDead": true,
             "hasChristmas": false,
