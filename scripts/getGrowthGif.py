@@ -29,20 +29,29 @@ def convert(path, dstX, dstY):
 
 if __name__ == "__main__":
     root = os.path.dirname(__file__) + "\\.."
+
+    treeMap = {}
+    treesFileNames = os.listdir(os.path.join(root, "trees"))
+    for tree in treesFileNames:
+        treeName = os.path.splitext(tree)[0]
+        treeMap[treeName] = tree
+
     d = json.load(open(os.path.join(root, "treeType.json"), "r", encoding="utf-8"))
     for b in d:
         name = f"tree_type_{b}"
         nameEN = d[b]["nameEN"]
+        if nameEN == "":
+            continue
         growth = []
-        treeRootPath = os.path.join(root, f"trees\\{name}")
+        treeRootPath = os.path.join(root, f"trees\\")
         for i in d[b]["phase"]["growth"]:
-            growth.append(f"{treeRootPath}_phase_{i}.png")
+            growth.append(os.path.join(treeRootPath, treeMap[f"{name}_phase_{i}"]))
         if d[b]["phase"]["hasChristmas"] == True:
             l1 = d[b]["phase"]["xmas"]
             l1 = list(set(l1))
             for i in l1:
-                growth.append(f"{treeRootPath}_phase_{i}_christmas.png")
-        growth.append(f"{treeRootPath}_phase_dead.png")
+                growth.append(os.path.join(treeRootPath, treeMap[f"{name}_phase_{i}_christmas"]))
+        growth.append(os.path.join(treeRootPath, treeMap[f"{name}_phase_dead"]))
 
         x = 0x3F3F3F3F
         y = 0x3F3F3F3F

@@ -4,6 +4,7 @@ from json import load
 import random
 from math import ceil, sqrt
 import time
+import os
 
 default, christmas, tinytan = 0, 1, 2
 
@@ -87,14 +88,21 @@ def init_from_json():
     return res, total
 
 def personnalization():
+    d = load(open(rootDir + "treeType.json", "r", encoding = "utf-8"))
+
     res = []
     total = 0
-    trees = load(open(rootDir + "test.json", "r"))
-    for tree in trees:
-        info = list((tree[1], tree[2:]))
-        for i in range(tree[0]):
+    # trees = load(open(rootDir + "test.json", "r"))
+    # for tree in trees:
+    #     info = list((tree[1], tree[2:]))
+    #     for i in range(tree[0]):
+    #         res.append(info)
+    #     total += (len(tree) - 2) * tree[0]
+    for i, tree in d.items():
+        if int(i) > 100:
+            info = list((int(i), [3, 4, 5, 6]))
             res.append(info)
-        total += (len(tree) - 2) * tree[0]
+            total += 4
     return res, total
 
 def combine(img, pos: Pos):
@@ -106,6 +114,13 @@ def combine(img, pos: Pos):
         bg[Y1 : Y2, X1 : X2, i] = dstAlpha * bg[Y1 : Y2, X1 : X2, i] + srcAlpha * img[:, :, i]
 
 def forest(trees, edgeLen, theme = default, isRandom = False):
+    # 建立从文件名称到图片的映射
+    treeMap = {}
+    treesFileNames = os.listdir(rootDir + "trees")
+    for tree in treesFileNames:
+        treeName = os.path.splitext(tree)[0]
+        treeMap[treeName] = tree
+    
     piecePosList = []
     leftGroundPosList = []
     rightGroundPosList = []
@@ -126,23 +141,21 @@ def forest(trees, edgeLen, theme = default, isRandom = False):
         y = canvasHeight - earthHeight
     )
 
-    for i in range(edgeLen):
-        iPosX = initialPos.x + (pieceWidth / 2) * i
-        iPosY = initialPos.y + (pieceHeight / 2) * i
-        for j in range(edgeLen):
-            posX = iPosX - j * (pieceWidth / 2)
-            posY = iPosY + j * (pieceHeight / 2)
-            piecePosList.append(Pos(posX, posY));
-
-    if isRandom:
-        random.shuffle(piecePosList)
+    for j in range(edgeLen):  # 外层循环改为列
+        # 计算列的起始位置
+        jPosX = initialPos.x - (pieceWidth / 2) * j
+        jPosY = initialPos.y + (pieceHeight / 2) * j
+        for i in range(edgeLen):  # 内层循环改为行
+            posX = jPosX + (pieceWidth / 2) * i
+            posY = jPosY + (pieceHeight / 2) * i
+            piecePosList.append(Pos(posX, posY))
 
     initialGroundLPosX = initialPos.x - (edgeLen - 1) * (pieceWidth / 2)
     initialGroundLPoxY = initialPos.y + edgeLen * (pieceHeight / 2)
     for i in range(edgeLen):
         leftGroundPosList.append(Pos(
             initialGroundLPosX + i * (pieceWidth / 2),
-            initialGroundLPoxY + i * (pieceHeight / 2)
+            initialGroundLPoxY + i * (pieceHeight / 2) - 1
         ))
 
     initialGroundRPosX = initialPos.x + edgeLen * (pieceWidth / 2)
@@ -150,7 +163,7 @@ def forest(trees, edgeLen, theme = default, isRandom = False):
     for i in range(edgeLen):
         rightGroundPosList.append(Pos(
             initialGroundRPosX - i * (pieceWidth / 2),
-            initialGroundRPoxY + i * (pieceHeight / 2)
+            initialGroundRPoxY + i * (pieceHeight / 2) - 1
         ))
 
     global bg
@@ -174,7 +187,7 @@ def forest(trees, edgeLen, theme = default, isRandom = False):
         2: "tinytan_ground_left_side.png"
     }
     groundL = cv2.imread(rootDir + f"background\\{groundLPng[theme]}", cv2.IMREAD_UNCHANGED)
-    groundL = cv2.resize(groundL, dsize = (edgeWidth, edgeHeight))
+    groundL = cv2.resize(groundL, dsize = (edgeWidth + 1, edgeHeight))
     for pos in leftGroundPosList:
         combine(groundL, pos)
 
@@ -195,23 +208,25 @@ def forest(trees, edgeLen, theme = default, isRandom = False):
     for tree, phases in trees:
         gid = str(tree)
         nameFile = f"tree_type_{gid}"
-        base = rootDir + f"trees\\{nameFile}_phase_"
+        base = rootDir + f"trees\\"
         for phase in phases:
             if phase == 7:
                 if treeData[gid]["phase"]["hasDead"] == True:
-                    fileList.append(base + "dead.png")
+                    fileList.append(os.path.join(base, treeMap[f"{nameFile}_phase_dead"]))
             elif phase in [3, 4, 5, 6]:
                 now = treeData[gid]["phase"]["forest"][phase - 3]
                 if theme == christmas and treeData[gid]["phase"]["hasChristmas"] == True:
-                    fileList.append(base + f"{now}_christmas.png")
+                    fileList.append(os.path.join(base, treeMap[f"{nameFile}_phase_{now}_christmas"]))
                 else:
-                    fileList.append(base + f"{now}.png")
+                    fileList.append(os.path.join(base, treeMap[f"{nameFile}_phase_{now}"]))
     posCnt = edgeLen * edgeLen
     emptyPosList = numpy.random.randint(posCnt, size = posCnt - len(fileList))
 
     # trees
     treeImg = {}
     now = 0
+    if isRandom:
+        random.shuffle(fileList)
     for file in fileList:
         while now in emptyPosList:
             now += 1
@@ -233,8 +248,8 @@ if __name__ == "__main__":
     from os.path import dirname
     rootDir = dirname(__file__) + "\\..\\"
     s = time.time()
-    # trees, total = personnalization()
-    trees, total = init_from_json()
-    forest(trees, ceil(sqrt(total)), theme = christmas, isRandom = True)
+    # trees, total = init_from_json()
+    trees, total = personnalization()
+    forest(trees, ceil(sqrt(total)), theme=default, isRandom=False)
     e = time.time()
     print("%.3fs" % float(e - s))
