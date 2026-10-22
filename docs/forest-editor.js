@@ -90,7 +90,7 @@
   function transform(){const scale=view.fit*view.zoom;return {scale,x:(view.width-geometry.width*scale)/2+view.panX,y:(view.height-geometry.height*scale)/2+view.panY-5};}
   function world(clientX,clientY){const r=canvas.getBoundingClientRect(),t=transform();return {x:(clientX-r.left-t.x)/t.scale,y:(clientY-r.top-t.y)/t.scale};}
   function resize(){
-    const r=shell.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);
+    const r=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);
     view.width=r.width;view.height=r.height;canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);
     if(scene)refreshScene();
   }
@@ -416,7 +416,7 @@
       let saved=null;try{const raw=localStorage.getItem(STORE);if(raw)saved=C.validateScene(JSON.parse(raw),themes.map(t=>t.id));}catch(error){notify('已保存的布局无法读取，已载入示例');}
       scene=saved||example();chosen=data.phases[117]?117:data.trees[0][0];phase=mature(chosen);geometry=C.geometry(scene.size);
       restorePreferences();
-      new ResizeObserver(resize).observe(shell);resize();renderLibrary();renderStages();renderThemes();updateRandomMode();refreshScene();save();
+      new ResizeObserver(resize).observe(canvas);resize();renderLibrary();renderStages();renderThemes();updateRandomMode();refreshScene();save();
       if(['localhost','127.0.0.1','[::1]'].includes(location.hostname)){await synchronize();setInterval(synchronize,5000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)synchronize();});}
     }catch(error){$('data-status').textContent=error.message;notify(error.message);}
   }
