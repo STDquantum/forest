@@ -3,3 +3,4 @@ test*
 a
 __pycache__
 growth/ball
+.vscode
