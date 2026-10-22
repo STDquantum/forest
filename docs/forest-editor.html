@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>森林造景 · Forest Studio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232a5b45'/%3E%3Cpath d='M32 9 12 43h15v12h10V43h15Z' fill='%23b6dba6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="forest-editor.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="forest-editor.html"><span class="brand-mark">♧</span><span>森林造景<small>FOREST STUDIO</small></span></a>
+  <div class="project-name"><input id="forest-title" aria-label="森林名称" maxlength="80" value="我的森林"><span id="save-state">正在载入…</span></div>
+  <nav class="top-actions"><a href="index.html" class="quiet-link">返回主网页 ↗</a><button id="import-layout">导入布局</button><button id="export-layout">保存布局</button><button id="export-image" class="primary">导出森林图 <span>↗</span></button></nav>
+</header>
+<main class="workspace">
+  <aside class="library panel">
+    <div class="panel-heading"><div><span class="eyebrow">TREE LIBRARY</span><h1>挑选一棵树</h1></div><span id="library-count" class="number-tag">—</span></div>
+    <label class="search-box"><span>⌕</span><input id="tree-search" placeholder="搜索名称或 ID" aria-label="搜索树种"></label>
+    <div class="library-tabs" role="tablist" aria-label="树种分类"><button class="active" data-filter="all" role="tab" aria-selected="true">全部树种</button><button data-filter="seasonal" role="tab" aria-selected="false">圣诞系列</button></div>
+    <div class="batch-options"><button id="random-mode" aria-pressed="false">⚄ 随机树种 <small>仅阶段 4+</small></button><label id="random-scope-label" class="field-label" hidden>随机外观<select id="random-scope" aria-label="随机树种外观范围"><option value="normal">普通系列</option><option value="christmas">圣诞系列</option><option value="mixed">两种混合</option></select></label><p id="random-info" class="microcopy" hidden></p></div>
+    <div id="tree-library" class="tree-library" aria-label="树种列表"></div>
+    <div class="stage-picker"><div class="section-line"><h2 id="chosen-name">选择树种</h2><span id="chosen-id"></span></div><label class="field-label variant-control">树木外观<select id="tree-skin" aria-label="选择种植的树木外观"><option value="normal">普通外观</option><option value="christmas">圣诞外观</option></select></label><p class="microcopy">选择阶段，拖到任意地皮上的空位。</p><div id="stage-list" class="stage-list" aria-label="生长阶段"></div></div>
+    <div id="data-status" hidden></div>
+  </aside>
+
+  <section class="canvas-panel" aria-label="森林编辑区">
+    <div class="scene-header"><div><span class="eyebrow">YOUR LITTLE WORLD</span><h2 id="scene-title">我的森林</h2></div><div class="scene-meta"><span id="placed-count">0 棵树</span><span class="dot"></span><span id="land-count">12 × 12 地皮</span></div></div>
+    <div class="canvas-shell" id="canvas-shell">
+      <canvas id="forest-canvas" aria-label="等距森林画布，选择树木后点击空地种植，也可拖动阶段图片到空位" tabindex="0"></canvas>
+      <div class="canvas-tools" role="toolbar" aria-label="画布工具">
+        <button data-tool="place" class="active" title="种植 (B)" aria-label="种植工具" aria-pressed="true">♧<span>种植</span></button>
+        <button data-tool="select" title="选择与移动 (V)" aria-label="选择移动工具" aria-pressed="false">↖<span>移动</span></button>
+        <button data-tool="hand" title="平移 (H / 空格)" aria-label="平移工具" aria-pressed="false">✥<span>平移</span></button>
+        <button data-tool="erase" title="移除 (E)" aria-label="移除工具" aria-pressed="false">−<span>移除</span></button>
+        <button data-tool="fill" title="框选种植 (R)" aria-label="框选种植工具" aria-pressed="false">▧<span>框种</span></button>
+        <button data-tool="remove-area" title="框选删除 (X)" aria-label="框选删除工具" aria-pressed="false">▨<span>框删</span></button>
+        <div class="tool-divider"></div><button id="undo" title="撤销 (Ctrl+Z)" aria-label="撤销">↶</button><button id="redo" title="重做 (Ctrl+Y)" aria-label="重做">↷</button>
+      </div>
+      <div id="empty-help" class="empty-help" hidden><strong>从一棵树开始</strong><span>拖入左侧的阶段图片，或选择后点击空地。</span></div>
+      <div class="view-controls"><button id="zoom-out" aria-label="缩小">−</button><span id="zoom-label">100%</span><button id="zoom-in" aria-label="放大">＋</button><span class="vertical-line"></span><button id="fit-view">适应画布</button></div>
+      <div id="hover-label" class="hover-label" hidden></div>
+    </div>
+    <footer class="canvas-footer"><span id="interaction-hint">按住鼠标涂抹种植 · 空格拖动画布</span><label>笔刷 <select id="brush-size" aria-label="笔刷大小"><option value="1">1 × 1</option><option value="3">3 × 3</option><option value="5">5 × 5</option></select></label><label><input type="checkbox" id="show-grid"> 网格</label></footer>
+  </section>
+
+  <aside class="settings panel">
+    <div class="panel-heading"><div><span class="eyebrow">LAND & ATMOSPHERE</span><h2>地皮与主题</h2></div></div>
+    <div id="theme-list" class="theme-list" aria-label="地皮主题"></div><p class="microcopy theme-help">地皮与树木外观独立，可自由混搭。</p>
+    <div class="setting-block"><div class="section-line"><h2>地皮大小</h2><output id="size-label">12 × 12</output></div><label class="size-control"><span>边长</span><input id="land-size" type="number" min="3" max="32" value="12" aria-label="地皮边长"><button id="apply-size">应用</button></label><p class="microcopy">3–32 格；缩小时超出的树可通过撤销找回。</p></div>
+    <div class="setting-block selection-block"><div class="section-line"><h2>选中的树</h2><span id="selection-cell">—</span></div><div id="selection-empty" class="microcopy">点击画布上的树，查看或调整它的生长阶段。</div><div id="selection-details" hidden><div class="selection-preview"><img id="selection-img" alt=""><div><strong id="selection-name"></strong><span id="selection-position"></span></div></div><label class="field-label variant-control">树木外观<select id="selection-skin" aria-label="调整选中树木外观"><option value="normal">普通外观</option><option value="christmas">圣诞外观</option></select></label><label class="field-label">生长阶段<select id="selection-phase" aria-label="调整选中树木阶段"></select></label><button id="delete-selected" class="danger-text">移除这棵树</button></div></div>
+    <div class="setting-block"><div class="section-line"><h2>批量操作</h2></div><p class="microcopy">框种 / 框删：从一格拖到另一格。按住种植 / 移除工具可连续涂抹，每一笔支持一次撤销。</p><button id="fill-empty" class="fill-empty">用当前模式种满空地</button></div>
+    <div class="setting-block"><div class="section-line"><h2>场景</h2></div><div class="preset-actions"><button id="load-example">载入示例森林</button><button id="clear-forest">清空地皮</button></div><label class="field-label export-background">导出背景<select id="export-background"><option value="transparent">透明背景</option><option value="black">黑色背景（参考图）</option><option value="cream">浅色背景</option></select></label><p class="microcopy">PNG 使用原图绘制，导出时不包含网格、选框和工具栏。</p></div>
+    <p class="source-note">原版地皮与树木贴图<br>等距排列 · 按深度遮挡 · 自动保存</p>
+  </aside>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<input id="layout-file" type="file" accept=".json,application/json" hidden>
+<script>if(location.protocol==='file:')document.write('<script src="forest-local-textures.js"><'+'/script>');</script>
+<script src="forest-bootstrap.js"></script><script src="forest-core.js"></script><script src="forest-editor.js"></script>
+</body></html>

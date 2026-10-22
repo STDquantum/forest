@@ -1,0 +1,147 @@
+[
+  {
+    "id": "default",
+    "name": "经典草地",
+    "description": "回到熟悉的绿色草地，让森林保留最纯粹的模样。",
+    "color": "#a6cd49",
+    "tile": "assets/ground/default-tile.webp",
+    "left": "assets/ground/default-left.webp",
+    "right": "assets/ground/default-right.webp",
+    "plant": {
+      "name": "经典草地",
+      "sub": "回到熟悉的绿色草地，让森林保留最纯粹的模样。",
+      "ball": "assets/ball/plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#A3D9C6,#8BC7B2 55%,#74B29D)"
+    }
+  },
+  {
+    "id": "xmas",
+    "name": "霜白雪原",
+    "description": "白雪覆盖大地，把森林带进宁静冬日。",
+    "color": "#e3f1f5",
+    "tile": "assets/ground/xmas-tile.webp",
+    "left": "assets/ground/xmas-left.webp",
+    "right": "assets/ground/xmas-right.webp",
+    "plant": {
+      "name": "霜白雪原",
+      "sub": "白雪覆盖大地，把森林带进宁静冬日。",
+      "ball": "assets/ball/plant_ball_christmas.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#3C4F77,#2B3A5C 48%,#1E2A44)",
+      "snow": true
+    }
+  },
+  {
+    "id": "tinytan",
+    "name": "TinyTAN 主题",
+    "description": "让梦幻紫色走进森林，打造充满陪伴感的专属天地。",
+    "color": "#b6c19a",
+    "tile": "assets/ground/tinytan-tile.webp",
+    "left": "assets/ground/tinytan-left.webp",
+    "right": "assets/ground/tinytan-right.webp",
+    "plant": {
+      "name": "TinyTAN 主题",
+      "sub": "让梦幻紫色走进森林，打造充满陪伴感的专属天地。",
+      "ball": "assets/ball/tinytan_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#FCE9C4,#F7D9A0 52%,#EFC685)"
+    }
+  },
+  {
+    "id": "softpink",
+    "name": "落樱缤纷",
+    "description": "沉浸在粉色包围的森林里，让思绪随花瓣慢慢安定。",
+    "color": "#edb4c8",
+    "tile": "assets/ground/softpink-tile.webp",
+    "left": "assets/ground/softpink-left.webp",
+    "right": "assets/ground/softpink-right.webp",
+    "plant": {
+      "name": "落樱缤纷",
+      "sub": "沉浸在粉色包围的森林里，让思绪随花瓣慢慢安定。",
+      "ball": "assets/ball/ground03_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#FBDEE6,#F5C6D4 55%,#EBB2C4)"
+    }
+  },
+  {
+    "id": "oceanblue",
+    "name": "苏打涟漪",
+    "description": "让植物在粼粼水光之间生长，让森林染上一抹沁凉蓝意。",
+    "color": "#8bd5e0",
+    "tile": "assets/ground/oceanblue-tile.webp",
+    "left": "assets/ground/oceanblue-left.webp",
+    "right": "assets/ground/oceanblue-right.webp",
+    "plant": {
+      "name": "苏打涟漪",
+      "sub": "让植物在粼粼水光之间生长，让森林染上一抹沁凉蓝意。",
+      "ball": "assets/ball/ground04_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#BDE7F2,#8FD3E8 52%,#6BBEDD)"
+    }
+  },
+  {
+    "id": "creammeadow",
+    "name": "棉绵水洼",
+    "description": "柔软蓬松的土地迎接每一株新芽，让森林变得轻盈又温柔。",
+    "color": "#e4dab0",
+    "tile": "assets/ground/creammeadow-tile.webp",
+    "left": "assets/ground/creammeadow-left.webp",
+    "right": "assets/ground/creammeadow-right.webp",
+    "plant": {
+      "name": "棉绵水洼",
+      "sub": "柔软蓬松的土地迎接每一株新芽，让森林变得轻盈又温柔。",
+      "ball": "assets/ball/ground05_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#F0EDD6,#E2E3B8 52%,#CBD9A2)"
+    }
+  },
+  {
+    "id": "sunlitlime",
+    "name": "青柠草毯",
+    "description": "踏进明亮绿意，为森林添上一点阳光活力！",
+    "color": "#dfdc91",
+    "tile": "assets/ground/sunlitlime-tile.webp",
+    "left": "assets/ground/sunlitlime-left.webp",
+    "right": "assets/ground/sunlitlime-right.webp",
+    "plant": {
+      "name": "青柠草毯",
+      "sub": "踏进明亮绿意，为森林添上一点阳光活力！",
+      "ball": "assets/ball/ground06_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#F7F3CE,#EBEFB0 52%,#DDE391)"
+    }
+  },
+  {
+    "id": "blossomingturf",
+    "name": "繁花草茵",
+    "description": "在花草环绕的天地中，让专注盛放成缤纷森林。",
+    "color": "#9dc87b",
+    "tile": "assets/ground/blossomingturf-tile.webp",
+    "left": "assets/ground/blossomingturf-left.webp",
+    "right": "assets/ground/blossomingturf-right.webp",
+    "plant": {
+      "name": "繁花草茵",
+      "sub": "在花草环绕的天地中，让专注盛放成缤纷森林。",
+      "ball": "assets/ball/ground07_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#D9F2DC,#BCE7C6 52%,#9AD8AC)"
+    }
+  },
+  {
+    "id": "pineapple",
+    "color": "#f4d64d",
+    "name": "凤梨蜜境",
+    "description": "明亮金黄色铺满土地，把森林变成甜美又俏皮的热带秘境！",
+    "tile": "assets/ground/pineapple-tile.webp",
+    "left": "assets/ground/pineapple-left.webp",
+    "right": "assets/ground/pineapple-right.webp",
+    "plant": {
+      "name": "凤梨蜜境",
+      "sub": "明亮金黄色铺满土地，把森林变成甜美又俏皮的热带秘境！",
+      "ball": "assets/ball/ground08_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#d3f6c3,#f5efa6)"
+    }
+  }
+]
