@@ -2,7 +2,9 @@
 
 双击根目录的 `打开网页.bat`，或直接打开 `docs/index.html`。主网页左上角可进入森林编辑器，浏览器自动保存收藏、布局和上次的选择。
 
-更新根目录的 APK 后运行 `python main.py`（需要 Java 和 Apktool），树图、地皮和网页数据会直接更新到 `docs/`。本机同步服务可用 `python scripts/serve_forest_web.py --open` 启动。
+双击根目录的 `一键更新.bat`，会自动从官网下载最新 APK，再更新树种、树图、地皮和网页数据到 `docs/`（需要 Python、Java 和 Apktool）。执行结束自动退出，无需按键；失败时停止后续步骤。本地更新不执行 Git 提交或推送。Python 查找方式与车模项目一致：优先使用 `PYTHON_HOME`，其次使用本机 `D:\conda\env3.10\python.exe`，最后使用 `py -3`。
+
+已有 APK 时也可直接运行 `python main.py`。本机同步服务可用 `python scripts/serve_forest_web.py --open` 启动。
 
 树种信息保存在 `docs/treeType.json`。
 
@@ -16,4 +18,4 @@ GitHub Pages 发布目录：`main` 分支的 `/docs`。
 
 本地也可运行 `python scripts/download_forest_apk.py` 下载最新 APK，或加 `--resolve-only` 仅检查下载地址。Actions 通过 `APKTOOL_JAR` 指定 JAR，本地继续支持 PATH 中的 `apktool`（Windows 为 `apktool.bat`）。
 
-注意：`GITHUB_TOKEN` 自动推送的提交不会触发基于分支的 GitHub Pages 构建；此工作流负责更新仓库数据。如果需要自动发布网页，需要另外配置 Pages 的 Actions 部署流程。
+网页发布沿用仓库现有的 `main` 分支 `/docs` 设置。首次自动更新后，应核对该提交是否产生成功的 Pages 部署记录；如果没有，再配置显式的 Pages Actions 部署流程。GitHub 文档描述了 `GITHUB_TOKEN` 提交不触发 Pages 构建的限制，但同账号的 `sparkmodel-monitor` 仓库已存在机器人提交后自动构建并部署成功的实际记录，不能据此断言本仓库一定不会自动发布。
