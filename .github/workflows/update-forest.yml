@@ -1,0 +1,55 @@
+name: Update Forest resources
+
+on:
+  schedule:
+    # Sunday 12:00 Asia/Shanghai = Sunday 04:00 UTC.
+    - cron: '0 4 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-forest-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      APKTOOL_VERSION: '3.0.3'
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install Apktool
+        shell: bash
+        run: |
+          APKTOOL_JAR="$RUNNER_TEMP/apktool.jar"
+          curl --fail --location --retry 3 --output "$APKTOOL_JAR" \
+            "https://github.com/iBotPeaches/Apktool/releases/download/v${APKTOOL_VERSION}/apktool_${APKTOOL_VERSION}.jar"
+          java -jar "$APKTOOL_JAR" --version
+          echo "APKTOOL_JAR=$APKTOOL_JAR" >> "$GITHUB_ENV"
+      - name: Download Forest from the official website
+        run: python scripts/download_forest_apk.py
+      - name: Rebuild tree metadata, textures and web snapshots
+        run: python main.py
+      - name: Commit updated web resources
+        shell: bash
+        run: |
+          git add -- docs/
+          if git diff --cached --quiet; then
+            echo 'Forest resources are already up to date.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: update Forest resources from official Android APK'
+          git push origin "HEAD:${GITHUB_REF_NAME}"

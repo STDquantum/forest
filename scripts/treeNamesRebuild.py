@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -190,9 +191,16 @@ def main():
     if decoded_dir.resolve().parent != project_dir.resolve():
         raise ValueError("解包目录不能指向工作区外部")
     decoded_dir.mkdir(exist_ok=True)
-    # apktool is installed as a Windows .bat file, which must run through cmd.exe.
+    # CI uses a pinned JAR; local installations may use a native wrapper.
+    apktool_jar = os.environ.get("APKTOOL_JAR")
+    if apktool_jar:
+        command = ["java", "-jar", apktool_jar]
+    elif os.name == "nt":
+        command = ["cmd.exe", "/d", "/c", "apktool.bat"]
+    else:
+        command = ["apktool"]
     subprocess.run(
-        ["cmd.exe", "/d", "/c", "apktool.bat", "d", "-f", str(apk_file), "-o", str(decoded_dir)],
+        command + ["d", "-s", "-f", str(apk_file), "-o", str(decoded_dir)],
         check=True,
         input="",
         text=True,

@@ -32,8 +32,8 @@ def catalog():
             selected[key] = file
     for key, file in selected.items():
         tid, phase, suffix, _ = TREE_FILE.fullmatch(file.name).groups()
-        stat = file.stat()
-        paths[key] = f'assets/trees/{file.name}?v={stat.st_mtime_ns}-{stat.st_size}'
+        revision = hashlib.sha256(file.read_bytes()).hexdigest()[:16]
+        paths[key] = f'assets/trees/{file.name}?v={revision}'
         if not suffix and phase.isdigit():
             phases.setdefault(tid, set()).add(int(phase))
     for file in sorted((WEB / 'assets' / 'frames').iterdir()):
