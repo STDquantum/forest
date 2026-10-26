@@ -10,7 +10,7 @@
 <header class="topbar">
   <a class="brand" href="forest-editor.html"><span class="brand-mark">♧</span><span>森林造景<small>FOREST STUDIO</small></span></a>
   <div class="project-name"><input id="forest-title" aria-label="森林名称" maxlength="80" value="我的森林"><span id="save-state">正在载入…</span></div>
-  <nav class="top-actions"><a href="index.html" class="quiet-link">返回主网页 ↗</a><button id="import-layout">导入布局</button><button id="export-layout">保存布局</button><button id="export-image" class="primary">导出森林图 <span>↗</span></button></nav>
+  <nav class="top-actions"><select id="editor-language" aria-label="语言"><option value="zh">中文</option><option value="en">English</option><option value="fr">Français</option></select><a href="index.html" class="quiet-link">返回主网页 ↗</a><button id="import-layout">导入布局</button><button id="export-layout">保存布局</button><button id="export-image" class="primary">导出森林图 <span>↗</span></button></nav>
 </header>
 <main class="workspace">
   <aside class="library panel">
@@ -57,5 +57,5 @@
 <div id="toast" role="status" aria-live="polite"></div>
 <input id="layout-file" type="file" accept=".json,application/json" hidden>
 <script>if(location.protocol==='file:')document.write('<script src="forest-local-textures.js"><'+'/script>');</script>
-<script src="forest-bootstrap.js"></script><script src="forest-core.js"></script><script src="forest-editor.js"></script>
+<script src="forest-bootstrap.js"></script><script src="forest-core.js"></script><script src="forest-i18n.js"></script><script src="forest-editor-i18n.js"></script><script src="forest-editor.js"></script>
 </body></html>

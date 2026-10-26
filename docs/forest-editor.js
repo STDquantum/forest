@@ -5,6 +5,7 @@
   const canvas=$('forest-canvas'),ctx=canvas.getContext('2d'),shell=$('canvas-shell');
   const STORE='forest-studio-layout-v1';
   const PREFS='forest-studio-preferences-v1';
+  const e=editorTr;
   let data=window.FOREST_BOOTSTRAP?.catalog,themes=window.FOREST_BOOTSTRAP?.themes||[];
   let scene,chosen=0,chosenSkin='normal',phase='7',filter='all',tool='place',selection=null,hover=null,drag=null,space=false;
   let geometry,view={width:0,height:0,fit:1,zoom:1,panX:0,panY:0},drawPending=false;
@@ -35,9 +36,12 @@
     if(['transparent','black','cream'].includes(prefs.background))$('export-background').value=prefs.background;
   }
   const uid=()=>crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);
-  const name=id=>data?.metadata[id]?.nameZH||data?.metadata[id]?.nameEN||'树 #'+id;
-  const phaseName=p=>p==='dead'?'枯萎':'阶段 '+p;
-  function notify(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3000);}
+  const name=id=>{const meta=data?.metadata[id]||{},suffix={zh:'ZH',en:'EN',fr:'FR'}[forestLanguage];return meta['name'+suffix]||meta.nameEN||meta.nameZH||e('树 #')+id;};
+  const phaseName=p=>p==='dead'?e('枯萎'):e('阶段 {n}',{n:p});
+  const landName=skin=>FOREST_THEME_MESSAGES[forestLanguage]?.[skin.id]?.[0]||skin.name;
+  const landDescription=skin=>FOREST_THEME_MESSAGES[forestLanguage]?.[skin.id]?.[1]||skin.description;
+  let saveMessage='已自动保存';
+  function notify(text){$('toast').textContent=e(text);$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3000);}
   function image(url){
     if(!url)return null;
     if(!images.has(url)){
@@ -61,8 +65,9 @@
   function mature(id,skin='normal'){const values=stages(id,skin).filter(p=>/^\d+$/.test(p));return values.at(-1)||'1';}
   function theme(){return themes.find(t=>t.id===scene.theme)||themes[0];}
   function save(){
-    try{localStorage.setItem(STORE,JSON.stringify(scene));$('save-state').textContent='已自动保存';}
-    catch(error){$('save-state').textContent='浏览器存储不可用，请保存布局';}
+    try{localStorage.setItem(STORE,JSON.stringify(scene));saveMessage='已自动保存';}
+    catch(error){saveMessage='浏览器存储不可用，请保存布局';}
+    $('save-state').textContent=e(saveMessage);
   }
   function commit(change){
     const before=JSON.stringify(scene);change();remember(before);
@@ -80,8 +85,8 @@
     for(const tree of scene.trees)if(tree.phase==='product')tree.phase=mature(tree.id,tree.skin);
     geometry=C.geometry(scene.size);
     view.fit=Math.max(.01,Math.min((view.width-64)/geometry.width,(view.height-84)/geometry.height));
-    $('forest-title').value=scene.title;$('scene-title').textContent=scene.title||'我的森林';
-    $('placed-count').textContent=scene.trees.length+' 棵树';$('land-count').textContent=scene.size+' × '+scene.size+' 地皮';
+    $('forest-title').value=scene.title;$('scene-title').textContent=scene.title||e('我的森林');
+    $('placed-count').textContent=e('{n} 棵树',{n:scene.trees.length});$('land-count').textContent=e('{n} × {n} 地皮',{n:scene.size});
     $('size-label').textContent=scene.size+' × '+scene.size;$('land-size').value=scene.size;
     $('empty-help').hidden=scene.trees.length!==0;$('undo').disabled=!undoStack.length;$('redo').disabled=!redoStack.length;
     updateInspector();scheduleDraw();
@@ -130,7 +135,7 @@
       if(shadow)target.drawImage(shadow,r.x,r.y+125,160,50);
       target.drawImage(img,r.x,r.y,r.width,r.height);
     }else{
-      const p=C.center(geometry,tree.row,tree.col);target.fillStyle='#72935c';target.font='16px sans-serif';target.textAlign='center';target.fillText(url?'载入中…':'图片缺失',p.x,p.y);
+      const p=C.center(geometry,tree.row,tree.col);target.fillStyle='#72935c';target.font='16px sans-serif';target.textAlign='center';target.fillText(url?e('载入中…'):e('图片缺失'),p.x,p.y);
     }
     target.restore();
   }
@@ -185,20 +190,20 @@
   function setTool(value){
     tool=value;hover=null;document.querySelectorAll('[data-tool]').forEach(button=>{button.classList.toggle('active',button.dataset.tool===tool);button.setAttribute('aria-pressed',String(button.dataset.tool===tool));});
     canvas.style.cursor=tool==='hand'?'grab':tool==='select'?'default':tool==='erase'?'not-allowed':'crosshair';
-    $('interaction-hint').textContent={place:randomMode?'按住涂抹随机种植 · 只种阶段 4+ 的树':'按住鼠标涂抹种植 · 已占用地块自动跳过',select:'点击选中树木 · 拖到空地移动 · Delete 移除',hand:'拖动画布平移 · 滚轮缩放 · 适应画布还原',erase:'按住鼠标经过地块，连续删除 · 一笔可撤销',fill:'拖出一个地块区域，批量种植空位', 'remove-area':'拖出一个地块区域，批量删除区域内的树'}[tool];scheduleDraw();
+    $('interaction-hint').textContent={place:randomMode?e('按住涂抹随机种植 · 只种阶段 4+ 的树'):e('按住鼠标涂抹种植 · 已占用地块自动跳过'),select:e('点击选中树木 · 拖到空地移动 · Delete 移除'),hand:e('拖动画布平移 · 滚轮缩放 · 适应画布还原'),erase:e('按住鼠标经过地块，连续删除 · 一笔可撤销'),fill:e('拖出一个地块区域，批量种植空位'), 'remove-area':e('拖出一个地块区域，批量删除区域内的树')}[tool];scheduleDraw();
   }
   function chooseTree(id){randomMode=false;updateRandomMode();chosen=id;chosenSkin=filter==='seasonal'?'christmas':'normal';phase=mature(id,chosenSkin);setTool('place');renderLibrary();renderStages();}
   function renderLibrary(){
     const box=$('tree-library'),scroll=box.scrollTop,kw=$('tree-search').value.trim().toLowerCase();box.replaceChildren();
-    const rows=data.trees.filter(t=>(filter!=='seasonal'||t[5])&&(!kw||[t[0],t[1],t[2]].some(v=>String(v).toLowerCase().includes(kw))));
+    const rows=data.trees.filter(t=>(filter!=='seasonal'||t[5])&&(!kw||[t[0],t[1],t[2],data.metadata[t[0]]?.nameFR].some(v=>String(v||'').toLowerCase().includes(kw))));
     $('library-count').textContent=rows.length;
     for(const t of rows){
-      const button=document.createElement('button');button.className='tree-card'+(t[0]===chosen?' active':'');button.setAttribute('aria-label','选择树种 '+t[1]);button.setAttribute('aria-pressed',String(t[0]===chosen));
+      const button=document.createElement('button');button.className='tree-card'+(t[0]===chosen?' active':'');button.setAttribute('aria-label',e('选择树种 {name}',{name:name(t[0])}));button.setAttribute('aria-pressed',String(t[0]===chosen));
       const skin=filter==='seasonal'?'christmas':'normal';
-      const img=document.createElement('img');img.loading='lazy';img.alt=t[1]+(skin==='christmas'?' · 圣诞版':'');img.src=treeUrl(t[0],mature(t[0],skin),skin);
-      const label=document.createElement('span');label.textContent=t[1];button.append(img,label);button.title=t[1]+' · ID '+t[0];button.onclick=()=>chooseTree(t[0]);box.append(button);
+      const img=document.createElement('img');img.loading='lazy';img.alt=name(t[0])+(skin==='christmas'?e(' · 圣诞版'):'');img.src=treeUrl(t[0],mature(t[0],skin),skin);
+      const label=document.createElement('span');label.textContent=name(t[0]);button.append(img,label);button.title=name(t[0])+' · ID '+t[0];button.onclick=()=>chooseTree(t[0]);box.append(button);
     }
-    if(!rows.length){const empty=document.createElement('p');empty.className='microcopy';empty.textContent='没有找到匹配的树种';box.append(empty);}
+    if(!rows.length){const empty=document.createElement('p');empty.className='microcopy';empty.textContent=e('没有找到匹配的树种');box.append(empty);}
     box.scrollTop=scroll;
   }
   function renderStages(){
@@ -206,8 +211,8 @@
     $('tree-skin').value=chosenSkin;$('tree-skin').querySelector('[value="christmas"]').disabled=!stages(chosen,'christmas').length;
     const box=$('stage-list'),scroll=box.scrollLeft;box.replaceChildren();
     for(const p of stages(chosen,chosenSkin)){
-      const button=document.createElement('button');button.className='stage-card'+(p===phase?' active':'');button.draggable=true;button.setAttribute('aria-label','选择并拖动 '+name(chosen)+' '+phaseName(p));button.setAttribute('aria-pressed',String(p===phase));
-      const img=document.createElement('img');img.src=treeUrl(chosen,p,chosenSkin);img.alt=phaseName(p)+(chosenSkin==='christmas'?' 圣诞版':'');
+      const button=document.createElement('button');button.className='stage-card'+(p===phase?' active':'');button.draggable=true;button.setAttribute('aria-label',e('选择并拖动 {name} {phase}',{name:name(chosen),phase:phaseName(p)}));button.setAttribute('aria-pressed',String(p===phase));
+      const img=document.createElement('img');img.src=treeUrl(chosen,p,chosenSkin);img.alt=phaseName(p)+(chosenSkin==='christmas'?e(' 圣诞版'):'');
       const label=document.createElement('span');label.textContent=phaseName(p);button.append(img,label);
       button.onclick=()=>{randomMode=false;updateRandomMode();phase=p;setTool('place');renderStages();};
       button.addEventListener('dragstart',event=>{
@@ -222,10 +227,10 @@
   function renderThemes(){
     const box=$('theme-list');box.replaceChildren();
     for(const skin of themes){
-      const button=document.createElement('button');button.className='theme-card'+(skin.id===scene.theme?' active':'');button.title=skin.description;button.setAttribute('aria-label','地皮主题 '+skin.name);button.setAttribute('aria-pressed',String(skin.id===scene.theme));
-      const img=document.createElement('img');img.src=skin.tile;img.alt=skin.name;
-      const text=document.createElement('span');text.textContent=skin.name;button.append(img,text);
-      button.onclick=()=>{commit(()=>{scene.theme=skin.id;});groundKey='';renderThemes();renderLibrary();renderStages();scheduleDraw();notify('已切换为'+skin.name+'，树木位置保持不变');};box.append(button);
+      const button=document.createElement('button');button.className='theme-card'+(skin.id===scene.theme?' active':'');button.title=landDescription(skin);button.setAttribute('aria-label',e('地皮主题 {name}',{name:landName(skin)}));button.setAttribute('aria-pressed',String(skin.id===scene.theme));
+      const img=document.createElement('img');img.src=skin.tile;img.alt=landName(skin);
+      const text=document.createElement('span');text.textContent=landName(skin);button.append(img,text);
+      button.onclick=()=>{commit(()=>{scene.theme=skin.id;});groundKey='';renderThemes();renderLibrary();renderStages();scheduleDraw();notify(e('已切换为{name}，树木位置保持不变',{name:landName(skin)}));};box.append(button);
     }
   }
   function updateInspector(){
@@ -233,7 +238,7 @@
     $('selection-empty').hidden=!!tree;$('selection-details').hidden=!tree;$('selection-cell').textContent=tree?'#'+tree.id:'—';
     if(!tree)return;
     $('selection-img').src=treeUrl(tree.id,tree.phase,tree.skin)||'';$('selection-img').alt=name(tree.id);
-    $('selection-name').textContent=name(tree.id);$('selection-position').textContent='第 '+(tree.row+1)+' 行 · 第 '+(tree.col+1)+' 列';
+    $('selection-name').textContent=name(tree.id);$('selection-position').textContent=e('第 {row} 行 · 第 {col} 列',{row:tree.row+1,col:tree.col+1});
     const select=$('selection-phase');select.replaceChildren();
     $('selection-skin').value=tree.skin||'normal';$('selection-skin').querySelector('[value="christmas"]').disabled=!stages(tree.id,'christmas').length;
     for(const p of stages(tree.id,tree.skin)){const option=document.createElement('option');option.value=p;option.textContent=phaseName(p);select.append(option);}select.value=tree.phase;
@@ -241,7 +246,7 @@
   function selectTree(tree){selection=tree?.uid||null;updateInspector();scheduleDraw();}
   function deleteTree(tree){if(!tree)return;commit(()=>{scene.trees=scene.trees.filter(t=>t.uid!==tree.uid);selection=null;});}
   function placeAt(cell,moveUid){
-    if(!cell){notify('请放在地皮范围内');return;}
+    if(!cell){notify(e('请放在地皮范围内'));return;}
     let result;commit(()=>{result=C.place(scene,{uid:uid(),id:chosen,phase,skin:chosenSkin},cell.row,cell.col,moveUid);});
     if(!result.ok)notify(result.reason);else{selection=result.uid;updateInspector();scheduleDraw();}
   }
@@ -250,21 +255,21 @@
     $('random-mode').classList.toggle('active',randomMode);$('random-mode').setAttribute('aria-pressed',String(randomMode));
     $('random-scope-label').hidden=!randomMode;$('random-info').hidden=!randomMode;
     document.querySelector('.stage-picker').hidden=randomMode;
-    $('random-info').textContent=randomCandidates.length+' 个可用树种，每格独立随机树种和阶段（≥4），不含枯萎。';
-    $('fill-empty').textContent=randomMode?'用随机树种种满空地':'用当前树种 / 阶段种满空地';
+    $('random-info').textContent=e('{n} 个可用树种，每格独立随机树种和阶段（≥4），不含枯萎。',{n:randomCandidates.length});
+    $('fill-empty').textContent=randomMode?e('用随机树种种满空地'):e('用当前树种 / 阶段种满空地');
   }
   function createPlant(){const tree=randomMode?C.randomTree(randomCandidates):{id:chosen,phase,skin:chosenSkin};return tree?{uid:uid(),...tree}:null;}
-  function canPlant(){if(randomMode&&!randomCandidates.length){notify('这个外观范围没有阶段 4 及以上的可用树种');return false;}return true;}
+  function canPlant(){if(randomMode&&!randomCandidates.length){notify(e('这个外观范围没有阶段 4 及以上的可用树种'));return false;}return true;}
   function applyStrokeCells(cells){
     const todo=[];
     for(const cell of cells)for(const c of C.brushCells(scene.size,cell,Number($('brush-size').value))){const key=c.row+','+c.col;if(!drag.visited.has(key)){drag.visited.add(key);todo.push(c);}}
     drag.changed+=C.paintCells(scene,todo,drag.erase,createPlant);
-    $('placed-count').textContent=scene.trees.length+' 棵树';$('empty-help').hidden=scene.trees.length!==0;scheduleDraw();
+    $('placed-count').textContent=e('{n} 棵树',{n:scene.trees.length});$('empty-help').hidden=scene.trees.length!==0;scheduleDraw();
   }
   function finishStroke(){
     if(drag?.kind!=='stroke')return;
     const current=drag;drag=null;remember(current.before);
-    if(current.changed)notify((current.erase?'已连续删除 ':'已连续种植 ')+current.changed+' 棵树，可一次撤销');
+    if(current.changed)notify(e(current.erase?'已连续删除 {n} 棵树，可一次撤销':'已连续种植 {n} 棵树，可一次撤销',{n:current.changed}));
   }
   function updateHover(event){
     const point=world(event.clientX,event.clientY);hover=C.cellAt(geometry,point.x,point.y);scheduleDraw();return point;
@@ -303,7 +308,7 @@
   canvas.addEventListener('pointerup',event=>{
     if(drag?.kind==='stroke'){const point=world(event.clientX,event.clientY);applyStrokeCells(C.traceCells(geometry,drag.last,point));finishStroke();}
     if(drag?.kind==='rectangle'){
-      const rectangle=drag;drag=null;let changed=0;commit(()=>{changed=C.paintCells(scene,C.rectangleCells(scene.size,rectangle.start,rectangle.end),rectangle.erase,createPlant);selection=null;});notify((rectangle.erase?'已批量删除 ':'已批量种植 ')+changed+' 棵树，可一次撤销');
+      const rectangle=drag;drag=null;let changed=0;commit(()=>{changed=C.paintCells(scene,C.rectangleCells(scene.size,rectangle.start,rectangle.end),rectangle.erase,createPlant);selection=null;});notify(e(rectangle.erase?'已批量删除 {n} 棵树，可一次撤销':'已批量种植 {n} 棵树，可一次撤销',{n:changed}));
     }
     if(drag?.kind==='tree'&&drag.moved){const point=world(event.clientX,event.clientY);placeAt(C.cellAt(geometry,point.x,point.y),drag.uid);}
     drag=null;if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);scheduleDraw();
@@ -315,9 +320,9 @@
   canvas.addEventListener('drop',event=>{
     event.preventDefault();try{
       const payload=JSON.parse(event.dataTransfer.getData('application/x-forest-tree'));
-      if(!['normal','christmas'].includes(payload.skin)||!data.trees.some(t=>t[0]===payload.id)||!stages(payload.id,payload.skin).includes(String(payload.phase)))throw new Error('树种或阶段不可用');
+      if(!['normal','christmas'].includes(payload.skin)||!data.trees.some(t=>t[0]===payload.id)||!stages(payload.id,payload.skin).includes(String(payload.phase)))throw new Error(e('树种或阶段不可用'));
       chosen=payload.id;chosenSkin=payload.skin;phase=String(payload.phase);const point=world(event.clientX,event.clientY);placeAt(C.cellAt(geometry,point.x,point.y));renderStages();
-    }catch(error){notify(error.message||'无法放置这棵树');}drag=null;hover=null;scheduleDraw();
+    }catch(error){notify(error.message||e('无法放置这棵树'));}drag=null;hover=null;scheduleDraw();
   });
   function zoom(factor,point){
     const old=transform();view.zoom=Math.max(.35,Math.min(6,view.zoom*factor));
@@ -338,24 +343,24 @@
     return result;
   }
   function download(blob,filename){const url=URL.createObjectURL(blob),anchor=document.createElement('a');anchor.href=url;anchor.download=filename;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),30000);}
-  const filename=()=>((scene.title||'我的森林').replace(/[\\/:*?"<>|]/g,'_').slice(0,60));
+  const filename=()=>((scene.title||e('我的森林')).replace(/[\\/:*?"<>|]/g,'_').slice(0,60));
   async function exportImage(){
-    const button=$('export-image');button.disabled=true;button.textContent='正在绘制…';
+    const button=$('export-image');button.disabled=true;button.textContent=e('正在绘制…');
     try{
       const snapshot=JSON.stringify(scene);
       const skin=theme(),urls=[skin.tile,skin.left,skin.right,'assets/ground/tree-shadow.png',...scene.trees.map(t=>treeUrl(t.id,t.phase,t.skin))];
       urls.filter(Boolean).forEach(image);await Promise.all(urls.filter(Boolean).map(url=>images.get(url).promise));
-      if(JSON.stringify(scene)!==snapshot)throw new Error('画布已变化，请重新导出');
-      const missing=urls.filter(url=>!url||images.get(url)?.state!=='ready');if(missing.length)throw new Error('有 '+missing.length+' 个贴图尚不可用，请检查资源后再导出');
+      if(JSON.stringify(scene)!==snapshot)throw new Error(e('画布已变化，请重新导出'));
+      const missing=urls.filter(url=>!url||images.get(url)?.state!=='ready');if(missing.length)throw new Error(e('有 {n} 个贴图尚不可用，请检查资源后再导出',{n:missing.length}));
       const scale=Math.min(2.2,8192/Math.max(geometry.width,geometry.height)),output=document.createElement('canvas');
       output.width=Math.round(geometry.width*scale);output.height=Math.round(geometry.height*scale);
       const target=output.getContext('2d');target.scale(scale,scale);target.imageSmoothingQuality='high';
       const background=$('export-background').value;
       if(background!=='transparent'){target.fillStyle=background==='black'?'#000':'#f4f5ec';target.fillRect(0,0,geometry.width,geometry.height);}
       renderForest(target,false);
-      const blob=await new Promise(resolve=>output.toBlob(resolve,'image/png'));if(!blob)throw new Error('图片过大，无法导出');
-      download(blob,filename()+'.png');notify('已导出 '+output.width+' × '+output.height+' PNG');
-    }catch(error){notify(error.message);}finally{button.disabled=false;button.innerHTML='导出森林图 <span>↗</span>';}
+      const blob=await new Promise(resolve=>output.toBlob(resolve,'image/png'));if(!blob)throw new Error(e('图片过大，无法导出'));
+      download(blob,filename()+'.png');notify(e('已导出 {w} × {h} PNG',{w:output.width,h:output.height}));
+    }catch(error){notify(error.message);}finally{button.disabled=false;button.textContent=e('导出森林图')+' ↗';}
   }
   async function synchronize(){
     if(!['localhost','127.0.0.1','[::1]'].includes(location.hostname)||syncBusy||drag)return;syncBusy=true;
@@ -366,34 +371,34 @@
         data=next;revision=next.revision;if(!data.phases[chosen]){chosen=data.trees[0][0];chosenSkin='normal';phase=mature(chosen);}else {if(chosenSkin==='christmas'&&!stages(chosen,'christmas').length)chosenSkin='normal';if(!stages(chosen,chosenSkin).includes(phase))phase=mature(chosen,chosenSkin);}
         masks.clear();renderLibrary();renderStages();updateInspector();updateRandomMode();scheduleDraw();
       }
-      $('data-status').textContent='● 自动同步 · '+data.trees.length+' 个树种 · 布局已保留';
-    }catch(error){$('data-status').textContent='○ 保留当前资源 · 稍后自动重试';}finally{syncBusy=false;}
+      $('data-status').textContent=e('● 自动同步 · {n} 个树种 · 布局已保留',{n:data.trees.length});
+    }catch(error){$('data-status').textContent=e('○ 保留当前资源 · 稍后自动重试');}finally{syncBusy=false;}
   }
   document.querySelectorAll('[data-tool]').forEach(button=>button.onclick=()=>setTool(button.dataset.tool));
   document.querySelectorAll('[data-filter]').forEach(button=>button.onclick=()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-selected',String(b===button));});if(filter==='seasonal'){chosenSkin='christmas';if(!stages(chosen,'christmas').length)chosen=data.trees.find(t=>t[5])[0];}else chosenSkin='normal';phase=mature(chosen,chosenSkin);renderLibrary();renderStages();});
   $('tree-skin').onchange=()=>{chosenSkin=$('tree-skin').value;phase=mature(chosen,chosenSkin);renderStages();setTool('place');};
   $('random-mode').onclick=()=>{randomMode=!randomMode;updateRandomMode();setTool('place');};
   $('random-scope').onchange=updateRandomMode;
-  $('fill-empty').onclick=()=>{if(!canPlant())return;let changed=0;commit(()=>{changed=C.paintCells(scene,C.rectangleCells(scene.size,{row:0,col:0},{row:scene.size-1,col:scene.size-1}),false,createPlant);selection=null;});notify('已种植 '+changed+' 棵树，可一次撤销');};
+  $('fill-empty').onclick=()=>{if(!canPlant())return;let changed=0;commit(()=>{changed=C.paintCells(scene,C.rectangleCells(scene.size,{row:0,col:0},{row:scene.size-1,col:scene.size-1}),false,createPlant);selection=null;});notify(e('已种植 {n} 棵树，可一次撤销',{n:changed}));};
   $('tree-search').addEventListener('input',renderLibrary);$('show-grid').onchange=scheduleDraw;
   $('undo').onclick=()=>history(true);$('redo').onclick=()=>history(false);
   $('zoom-in').onclick=()=>zoom(1.25);$('zoom-out').onclick=()=>zoom(.8);$('fit-view').onclick=fitView;
-  $('forest-title').oninput=()=>{scene.title=$('forest-title').value;$('scene-title').textContent=scene.title||'我的森林';save();};
+  $('forest-title').oninput=()=>{scene.title=$('forest-title').value;$('scene-title').textContent=scene.title||e('我的森林');save();};
   $('apply-size').onclick=()=>{
-    const size=Number($('land-size').value);if(!Number.isInteger(size)||size<3||size>32){notify('地皮边长请输入 3–32 的整数');return;}
+    const size=Number($('land-size').value);if(!Number.isInteger(size)||size<3||size>32){notify(e('地皮边长请输入 3–32 的整数'));return;}
     const removed=scene.trees.filter(t=>t.row>=size||t.col>=size).length;
-    commit(()=>{scene.size=size;scene.trees=scene.trees.filter(t=>t.row<size&&t.col<size);});groundKey='';fitView();if(removed)notify('超出边界的 '+removed+' 棵树已移除，可撤销恢复');
+    commit(()=>{scene.size=size;scene.trees=scene.trees.filter(t=>t.row<size&&t.col<size);});groundKey='';fitView();if(removed)notify(e('超出边界的 {n} 棵树已移除，可撤销恢复',{n:removed}));
   };
   $('selection-phase').onchange=()=>{const tree=scene.trees.find(t=>t.uid===selection);if(tree)commit(()=>{tree.phase=$('selection-phase').value;});};
   $('selection-skin').onchange=()=>{const tree=scene.trees.find(t=>t.uid===selection);if(tree)commit(()=>{tree.skin=$('selection-skin').value;if(!stages(tree.id,tree.skin).includes(tree.phase))tree.phase=mature(tree.id,tree.skin);});};
   $('delete-selected').onclick=()=>deleteTree(scene.trees.find(t=>t.uid===selection));
-  $('load-example').onclick=()=>{commit(()=>{scene=example();selection=null;});groundKey='';fitView();renderThemes();renderLibrary();renderStages();notify('已载入示例森林，可撤销恢复之前的布局');};
-  $('clear-forest').onclick=()=>{commit(()=>{scene.trees=[];selection=null;});notify('地皮已清空，可撤销恢复');};
+  $('load-example').onclick=()=>{commit(()=>{scene=example();selection=null;});groundKey='';fitView();renderThemes();renderLibrary();renderStages();notify(e('已载入示例森林，可撤销恢复之前的布局'));};
+  $('clear-forest').onclick=()=>{commit(()=>{scene.trees=[];selection=null;});notify(e('地皮已清空，可撤销恢复'));};
   $('export-layout').onclick=()=>download(new Blob([JSON.stringify(scene,null,2)],{type:'application/json'}),filename()+'.json');
   $('import-layout').onclick=()=>$('layout-file').click();
   $('layout-file').onchange=async event=>{
     const file=event.target.files[0];if(!file)return;
-    try{if(file.size>2e6)throw new Error('布局文件不能超过 2 MB');const next=C.validateScene(JSON.parse(await file.text()),themes.map(t=>t.id));commit(()=>{scene=next;selection=null;});groundKey='';fitView();renderThemes();renderLibrary();renderStages();notify('布局已导入，缺失的贴图会显示提示');}catch(error){notify('导入失败：'+error.message);}event.target.value='';
+    try{if(file.size>2e6)throw new Error(e('布局文件不能超过 2 MB'));const next=C.validateScene(JSON.parse(await file.text()),themes.map(t=>t.id));commit(()=>{scene=next;selection=null;});groundKey='';fitView();renderThemes();renderLibrary();renderStages();notify(e('布局已导入，缺失的贴图会显示提示'));}catch(error){notify(e('导入失败：{reason}',{reason:e(error.message)}));}event.target.value='';
   };
   $('export-image').onclick=exportImage;
   document.addEventListener('keydown',event=>{
@@ -408,15 +413,34 @@
   document.addEventListener('keyup',event=>{if(event.code==='Space'){space=false;canvas.style.cursor=tool==='hand'?'grab':tool==='select'?'default':'crosshair';}});
   window.addEventListener('blur',()=>{space=false;finishStroke();drag=null;hover=null;scheduleDraw();});
   window.addEventListener('pagehide',()=>{if(scene){save();savePreferences();}});
+  function applyEditorLanguage(){
+    applyEditorStaticLanguage();
+    if(!scene)return;
+    $('save-state').textContent=e(saveMessage);
+    $('export-image').textContent=e($('export-image').disabled?'正在绘制…':'导出森林图')+' ↗';
+    renderLibrary();renderStages();renderThemes();updateRandomMode();refreshScene();setTool(tool);
+    $('hover-label').hidden=true;$('toast').classList.remove('show');
+  }
+  $('editor-language').onchange=event=>{
+    if(!Object.hasOwn(FOREST_MESSAGES,event.target.value))return;
+    forestLanguage=event.target.value;
+    try{localStorage.setItem('forest-language',forestLanguage);}catch(error){}
+    applyEditorLanguage();
+  };
+  function syncLanguage(){const next=readForestLanguage();if(next!==forestLanguage){forestLanguage=next;applyEditorLanguage();}}
+  window.addEventListener('storage',event=>{if(event.key==='forest-language'||event.key===null)syncLanguage();});
+  window.addEventListener('pageshow',syncLanguage);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncLanguage();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&scene){save();savePreferences();}});
   for(const event of ['click','change','pointerup'])document.addEventListener(event,()=>{setTimeout(savePreferences,0);});
   async function init(){
     try{
-      if(!data||!themes.length)throw new Error('资源索引缺失，请运行准备脚本');
-      let saved=null;try{const raw=localStorage.getItem(STORE);if(raw)saved=C.validateScene(JSON.parse(raw),themes.map(t=>t.id));}catch(error){notify('已保存的布局无法读取，已载入示例');}
+      if(!data||!themes.length)throw new Error(e('资源索引缺失，请运行准备脚本'));
+      let saved=null;try{const raw=localStorage.getItem(STORE);if(raw)saved=C.validateScene(JSON.parse(raw),themes.map(t=>t.id));}catch(error){notify(e('已保存的布局无法读取，已载入示例'));}
       scene=saved||example();chosen=data.phases[117]?117:data.trees[0][0];phase=mature(chosen);geometry=C.geometry(scene.size);
       restorePreferences();
       new ResizeObserver(resize).observe(canvas);resize();renderLibrary();renderStages();renderThemes();updateRandomMode();refreshScene();save();
+      applyEditorLanguage();
       if(['localhost','127.0.0.1','[::1]'].includes(location.hostname)){await synchronize();setInterval(synchronize,5000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)synchronize();});}
     }catch(error){$('data-status').textContent=error.message;notify(error.message);}
   }

@@ -1,0 +1,136 @@
+/* Editor copy: source strings stay stable; user-authored forest titles are untouched. */
+const EDITOR_MESSAGES={
+  '森林造景':['Forest Studio','Atelier de forêt'],
+  '森林造景 · Forest Studio':['Forest Studio','Atelier de forêt · Forest Studio'],
+  '森林名称':['Forest name','Nom de la forêt'],
+  '我的森林':['My forest','Ma forêt'],
+  '正在载入…':['Loading…','Chargement…'],
+  '返回主网页 ↗':['Planting page ↗','Page de plantation ↗'],
+  '导入布局':['Import layout','Importer'],
+  '保存布局':['Save layout','Enregistrer'],
+  '导出森林图':['Export PNG','Exporter en PNG'],
+  '挑选一棵树':['Choose a tree','Choisissez un arbre'],
+  '搜索名称或 ID':['Search by name or ID','Rechercher un nom ou un ID'],
+  '搜索树种':['Search trees','Rechercher un arbre'],
+  '树种分类':['Tree categories','Catégories d’arbres'],
+  '全部树种':['All trees','Tous les arbres'],
+  '圣诞系列':['Christmas','Noël'],
+  '⚄ 随机树种':['⚄ Random trees','⚄ Arbres aléatoires'],
+  '仅阶段 4+':['Stage 4+ only','Stades 4+ uniquement'],
+  '随机外观':['Random appearance','Apparence aléatoire'],
+  '随机树种外观范围':['Random tree appearance range','Apparences des arbres aléatoires'],
+  '普通系列':['Normal','Classique'],
+  '两种混合':['Mixed','Les deux'],
+  '树种列表':['Tree library','Bibliothèque d’arbres'],
+  '选择树种':['Choose a tree','Choisir un arbre'],
+  '树木外观':['Appearance','Apparence'],
+  '选择种植的树木外观':['Tree appearance to plant','Apparence de l’arbre à planter'],
+  '普通外观':['Normal','Classique'],
+  '圣诞外观':['Christmas','Noël'],
+  '选择阶段，拖到任意地皮上的空位。':['Choose a stage and drag it to an empty plot.','Choisissez un stade et faites-le glisser sur une case libre.'],
+  '生长阶段':['Growth stage','Stade de croissance'],
+  '返回画布，点击空地种植 ↑':['Back to canvas · Tap an empty plot ↑','Retour au canevas · Touchez une case libre ↑'],
+  '森林编辑区':['Forest workspace','Espace de création'],
+  '等距森林画布，选择树木后点击空地种植，也可拖动阶段图片到空位':['Isometric forest canvas. Choose a tree and click an empty plot, or drag a stage image onto it.','Canevas isométrique. Choisissez un arbre et cliquez sur une case libre, ou glissez-y une image de stade.'],
+  '画布工具':['Canvas tools','Outils du canevas'],
+  '种植 (B)':['Plant (B)','Planter (B)'], '种植工具':['Plant tool','Outil de plantation'], '种植':['Plant','Planter'],
+  '选择与移动 (V)':['Select and move (V)','Sélectionner et déplacer (V)'], '选择移动工具':['Select and move tool','Outil de déplacement'], '移动':['Move','Déplacer'],
+  '平移 (H / 空格)':['Pan (H / Space)','Déplacer la vue (H / Espace)'], '平移工具':['Pan tool','Outil de navigation'], '平移':['Pan','Vue'],
+  '移除 (E)':['Erase (E)','Effacer (E)'], '移除工具':['Erase tool','Outil de suppression'], '移除':['Erase','Effacer'],
+  '框选种植 (R)':['Area planting (R)','Planter une zone (R)'], '框选种植工具':['Area planting tool','Outil de plantation par zone'], '框种':['Fill','Zone +'],
+  '框选删除 (X)':['Area removal (X)','Effacer une zone (X)'], '框选删除工具':['Area removal tool','Outil de suppression par zone'], '框删':['Clear','Zone −'],
+  '撤销 (Ctrl+Z)':['Undo (Ctrl+Z)','Annuler (Ctrl+Z)'], '撤销':['Undo','Annuler'], '重做 (Ctrl+Y)':['Redo (Ctrl+Y)','Rétablir (Ctrl+Y)'], '重做':['Redo','Rétablir'],
+  '从一棵树开始':['Start with one tree','Commencez par un arbre'],
+  '拖入左侧的阶段图片，或选择后点击空地。':['Drag a stage image from the library, or select it and click an empty plot.','Glissez une image depuis la bibliothèque, ou sélectionnez-la puis cliquez sur une case libre.'],
+  '缩小':['Zoom out','Dézoomer'], '放大':['Zoom in','Zoomer'], '适应画布':['Fit view','Ajuster la vue'],
+  '按住鼠标涂抹种植 · 空格拖动画布':['Drag to plant · Hold Space to pan','Glissez pour planter · Espace pour déplacer la vue'],
+  '笔刷':['Brush','Pinceau'], '笔刷大小':['Brush size','Taille du pinceau'], '网格':['Grid','Grille'],
+  '地皮与主题':['Land & atmosphere','Terrain et ambiance'], '地皮主题':['Land theme','Thème du terrain'],
+  '地皮与树木外观独立，可自由混搭。':['Mix land themes and tree appearances freely.','Combinez librement le terrain et l’apparence des arbres.'],
+  '地皮大小':['Land size','Taille du terrain'], '边长':['Side','Côté'], '地皮边长':['Land side length','Longueur du côté'], '应用':['Apply','Appliquer'],
+  '3–32 格；缩小时超出的树可通过撤销找回。':['3–32 tiles per side. Undo restores trees removed when shrinking.','3 à 32 cases par côté. Annulez pour récupérer les arbres retirés lors d’une réduction.'],
+  '选中的树':['Selected tree','Arbre sélectionné'],
+  '点击画布上的树，查看或调整它的生长阶段。':['Select a tree on the canvas to view or change its growth stage.','Sélectionnez un arbre pour consulter ou modifier son stade.'],
+  '调整选中树木外观':['Change selected tree appearance','Modifier l’apparence de l’arbre sélectionné'],
+  '调整选中树木阶段':['Change selected tree stage','Modifier le stade de l’arbre sélectionné'],
+  '移除这棵树':['Remove tree','Supprimer cet arbre'], '批量操作':['Batch actions','Actions groupées'],
+  '框种 / 框删：从一格拖到另一格。按住种植 / 移除工具可连续涂抹，每一笔支持一次撤销。':['Drag between tiles to plant or clear an area. Hold the plant or erase tool to paint; each stroke can be undone.','Glissez entre deux cases pour planter ou effacer une zone. Maintenez l’outil pour peindre ; chaque trait peut être annulé.'],
+  '用当前模式种满空地':['Fill empty plots','Remplir les cases libres'],
+  '场景':['Scene','Scène'], '载入示例森林':['Load example','Charger l’exemple'], '清空地皮':['Clear land','Vider le terrain'],
+  '导出背景':['Export background','Fond d’exportation'], '透明背景':['Transparent','Transparent'], '黑色背景（参考图）':['Black','Noir'], '浅色背景':['Light','Clair'],
+  'PNG 使用原图绘制，导出时不包含网格、选框和工具栏。':['PNG uses original textures, without the grid, selections or toolbar.','Le PNG utilise les textures originales, sans grille, sélection ni outils.'],
+  '原版地皮与树木贴图':['Original land and tree textures','Textures originales du terrain et des arbres'],
+  '等距排列 · 按深度遮挡 · 自动保存':['Isometric layout · Depth sorting · Auto-save','Vue isométrique · Gestion de la profondeur · Sauvegarde automatique'],
+  '树 #':['Tree #','Arbre nº '], '枯萎':['Withered','Fané'], '阶段 {n}':['Stage {n}','Stade {n}'],
+  '已自动保存':['Saved automatically','Enregistré automatiquement'],
+  '浏览器存储不可用，请保存布局':['Storage unavailable; please save your layout','Stockage indisponible ; enregistrez votre disposition'],
+  '{n} 棵树':['{n} trees','{n} arbres'], '{n} × {n} 地皮':['{n} × {n} plots','{n} × {n} cases'],
+  '载入中…':['Loading…','Chargement…'], '图片缺失':['Image unavailable','Image indisponible'],
+  '按住涂抹随机种植 · 只种阶段 4+ 的树':['Drag to plant random trees · Stages 4+ only','Glissez pour planter au hasard · Stades 4+'],
+  '按住鼠标涂抹种植 · 已占用地块自动跳过':['Drag to plant · Occupied plots are skipped','Glissez pour planter · Les cases occupées sont ignorées'],
+  '点击选中树木 · 拖到空地移动 · Delete 移除':['Click to select · Drag to move · Delete to remove','Cliquez pour sélectionner · Glissez pour déplacer · Suppr pour effacer'],
+  '拖动画布平移 · 滚轮缩放 · 适应画布还原':['Drag to pan · Scroll to zoom · Fit view to reset','Glissez pour déplacer la vue · Molette pour zoomer · Ajuster pour réinitialiser'],
+  '按住鼠标经过地块，连续删除 · 一笔可撤销':['Drag to erase · Undo restores each stroke','Glissez pour effacer · Chaque trait peut être annulé'],
+  '拖出一个地块区域，批量种植空位':['Drag an area to plant its empty plots','Tracez une zone pour planter ses cases libres'],
+  '拖出一个地块区域，批量删除区域内的树':['Drag an area to remove its trees','Tracez une zone pour supprimer ses arbres'],
+  '选择树种 {name}':['Choose tree: {name}','Choisir : {name}'], ' · 圣诞版':[' · Christmas',' · Noël'], ' 圣诞版':[' Christmas',' Noël'],
+  '没有找到匹配的树种':['No matching trees','Aucun arbre correspondant'],
+  '选择并拖动 {name} {phase}':['Select and drag {name}, {phase}','Sélectionner et glisser {name}, {phase}'],
+  '地皮主题 {name}':['Land theme: {name}','Thème du terrain : {name}'],
+  '已切换为{name}，树木位置保持不变':['Theme changed to {name}; tree positions preserved','Thème choisi : {name} ; positions conservées'],
+  '第 {row} 行 · 第 {col} 列':['Row {row} · Column {col}','Ligne {row} · Colonne {col}'],
+  '请放在地皮范围内':['Place within the land boundary','Placez l’arbre dans les limites du terrain'],
+  '这块地已经有树了，请选择空地':['This plot is occupied; choose an empty plot','Cette case est occupée ; choisissez une case libre'],
+  '找不到这棵树':['Tree not found','Arbre introuvable'],
+  '{n} 个可用树种，每格独立随机树种和阶段（≥4），不含枯萎。':['{n} available trees. Each plot gets a random tree and stage (≥4), excluding withered trees.','{n} arbres disponibles. Chaque case reçoit un arbre et un stade aléatoires (≥4), sans arbres fanés.'],
+  '用随机树种种满空地':['Fill with random trees','Remplir d’arbres aléatoires'], '用当前树种 / 阶段种满空地':['Fill with this tree and stage','Remplir avec cet arbre et ce stade'],
+  '这个外观范围没有阶段 4 及以上的可用树种':['No stage 4+ trees available for this appearance','Aucun arbre de stade 4+ pour cette apparence'],
+  '已连续删除 {n} 棵树，可一次撤销':['Erased {n} trees · Undo available','{n} arbres effacés · Annulation possible'],
+  '已连续种植 {n} 棵树，可一次撤销':['Planted {n} trees · Undo available','{n} arbres plantés · Annulation possible'],
+  '已批量删除 {n} 棵树，可一次撤销':['Removed {n} trees in area · Undo available','{n} arbres supprimés dans la zone · Annulation possible'],
+  '已批量种植 {n} 棵树，可一次撤销':['Planted {n} trees in area · Undo available','{n} arbres plantés dans la zone · Annulation possible'],
+  '树种或阶段不可用':['Tree or stage unavailable','Arbre ou stade indisponible'], '无法放置这棵树':['Cannot place this tree','Impossible de placer cet arbre'],
+  '正在绘制…':['Rendering…','Création de l’image…'], '画布已变化，请重新导出':['Canvas changed; please export again','Le canevas a changé ; relancez l’exportation'],
+  '有 {n} 个贴图尚不可用，请检查资源后再导出':['{n} textures unavailable; check resources before exporting','{n} textures indisponibles ; vérifiez les ressources avant d’exporter'],
+  '图片过大，无法导出':['Image too large to export','Image trop grande pour l’exportation'], '已导出 {w} × {h} PNG':['Exported {w} × {h} PNG','PNG exporté : {w} × {h}'],
+  '● 自动同步 · {n} 个树种 · 布局已保留':['● Auto-sync · {n} trees · Layout preserved','● Synchronisation · {n} arbres · Disposition conservée'],
+  '○ 保留当前资源 · 稍后自动重试':['○ Keeping current resources · Retrying later','○ Ressources conservées · Nouvel essai ultérieur'],
+  '已种植 {n} 棵树，可一次撤销':['Planted {n} trees · Undo available','{n} arbres plantés · Annulation possible'],
+  '地皮边长请输入 3–32 的整数':['Enter an integer from 3 to 32','Saisissez un entier de 3 à 32'],
+  '超出边界的 {n} 棵树已移除，可撤销恢复':['Removed {n} trees outside the boundary · Undo available','{n} arbres hors limites supprimés · Annulation possible'],
+  '已载入示例森林，可撤销恢复之前的布局':['Example loaded · Undo restores your previous layout','Exemple chargé · Annulez pour restaurer la disposition précédente'],
+  '地皮已清空，可撤销恢复':['Land cleared · Undo available','Terrain vidé · Annulation possible'],
+  '布局文件不能超过 2 MB':['Layout file must be under 2 MB','Le fichier doit faire moins de 2 Mo'],
+  '布局已导入，缺失的贴图会显示提示':['Layout imported; missing textures will be indicated','Disposition importée ; les textures manquantes seront signalées'],
+  '导入失败：{reason}':['Import failed: {reason}','Échec de l’importation : {reason}'],
+  '资源索引缺失，请运行准备脚本':['Resource index missing; run the preparation script','Index des ressources manquant ; exécutez le script de préparation'],
+  '已保存的布局无法读取，已载入示例':['Saved layout unreadable; example loaded','Disposition enregistrée illisible ; exemple chargé'],
+  '布局格式不正确，地皮边长应为 3–32 格':['Invalid layout; side length must be 3–32 tiles','Disposition invalide ; le côté doit mesurer de 3 à 32 cases'],
+  '布局使用了未知地皮主题':['Unknown land theme','Thème du terrain inconnu'],
+  '布局中有无效的树种、阶段或坐标':['Invalid tree, stage or coordinates','Arbre, stade ou coordonnées invalides'],
+  '布局中有重叠地块':['Overlapping plots in layout','Cases superposées dans la disposition'],
+  '布局中有重复的树木编号':['Duplicate tree IDs in layout','Identifiants d’arbres en double'],
+  '布局中有未知的树木外观':['Unknown tree appearance','Apparence d’arbre inconnue']
+};
+function editorTr(source,values={}){
+  const entry=EDITOR_MESSAGES[source];
+  return (forestLanguage==='zh'?source:entry?.[forestLanguage==='fr'?1:0]||source).replace(/\{(\w+)\}/g,(_,key)=>String(values[key]??''));
+}
+// Capture only the original interface nodes, never user-entered or generated content.
+const editorStaticText=[],editorStaticAttrs=[];
+const editorWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+while(editorWalker.nextNode()){
+  const node=editorWalker.currentNode,source=node.nodeValue.trim();
+  if(EDITOR_MESSAGES[source]&&!node.parentElement.closest('script,style,#save-state,#forest-title,#scene-title,#chosen-name,#interaction-hint,#fill-empty'))editorStaticText.push([node,node.nodeValue,source]);
+}
+for(const element of document.querySelectorAll('[title],[aria-label],[placeholder]'))for(const attr of ['title','aria-label','placeholder']){
+  const source=element.getAttribute(attr);if(EDITOR_MESSAGES[source])editorStaticAttrs.push([element,attr,source]);
+}
+function applyEditorStaticLanguage(){
+  document.documentElement.lang=forestLanguage==='zh'?'zh-CN':forestLanguage;
+  document.title=editorTr('森林造景 · Forest Studio');
+  for(const [node,original,source] of editorStaticText)if(node.isConnected)node.nodeValue=original.replace(source,editorTr(source));
+  for(const [element,attr,source] of editorStaticAttrs)element.setAttribute(attr,editorTr(source));
+  document.getElementById('editor-language').value=forestLanguage;
+  document.getElementById('editor-language').setAttribute('aria-label',tr('language'));
+}

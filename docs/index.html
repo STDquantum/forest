@@ -31,10 +31,12 @@ img{-webkit-user-drag:none;}
 .cloud::before,.cloud::after{content:"";position:absolute;background:inherit;border-radius:50%;}
 .cloud::before{width:60%;height:80%;left:-25%;top:-40%;}
 .cloud::after{width:70%;height:90%;right:-30%;top:-35%;}
-.c1{width:180px;height:46px;left:8%;top:16%;animation:drift 46s linear infinite;}
-.c2{width:140px;height:38px;left:58%;top:26%;animation:drift 62s linear infinite 12s;}
-.c3{width:110px;height:30px;left:34%;top:9%;animation:drift 55s linear infinite 28s;}
-@keyframes drift{from{transform:translateX(-10vw)}to{transform:translateX(110vw)}}
+.c1{width:min(28vw,180px);height:46px;left:12%;top:16%;opacity:.9;animation:drift-near 29s ease-in-out infinite alternate -7s;}
+.c2{width:min(22vw,140px);height:38px;left:64%;top:26%;opacity:.72;animation:drift-middle 47s cubic-bezier(.37,0,.63,1) infinite alternate -31s;}
+.c3{width:min(18vw,110px);height:30px;left:38%;top:9%;opacity:.58;animation:drift-far 71s ease-in-out infinite alternate -46s;}
+@keyframes drift-near{from{transform:translate(-4vw,0)}to{transform:translate(7vw,8px)}}
+@keyframes drift-middle{from{transform:translate(3vw,-5px)}to{transform:translate(-6vw,5px)}}
+@keyframes drift-far{from{transform:translate(-2vw,3px)}to{transform:translate(3vw,-3px)}}
 
 /* ===== 顶栏（root_top）===== */
 #top-bar{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;}
@@ -43,7 +45,7 @@ img{-webkit-user-drag:none;}
 #timer-text{font-size:30px;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.18);font-variant-numeric:tabular-nums;min-width:118px;text-align:center;}
 
 /* ===== 球区（plant_ball 1:1 + 辉光 + 背景图 + 地面）===== */
-#ball-stage{position:fixed;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);width:min(66vw,430px);aspect-ratio:1;display:flex;align-items:center;justify-content:center;}
+#ball-stage{position:fixed;z-index:3;left:50%;top:calc(50% - 36px);transform:translate(-50%,-50%);width:min(76vw,430px,calc(100svh - 260px));aspect-ratio:1;display:flex;align-items:center;justify-content:center;}
 #ball-deco{position:absolute;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
 #ball-deco img{width:100%;height:100%;object-fit:contain;opacity:.9;transition:opacity .8s;}
 #ball-back{position:absolute;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
@@ -59,6 +61,17 @@ img{-webkit-user-drag:none;}
 
 /* ===== 底部（root_bottom）===== */
 #bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:5;padding:0 24px 30px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.plant-controls{width:min(100%,480px);display:flex;align-items:center;gap:20px;padding:12px 12px 12px 20px;border:1px solid rgba(255,255,255,.45);border-radius:24px;background:rgba(255,255,255,.64);box-shadow:0 8px 32px rgba(30,68,49,.08);backdrop-filter:blur(18px);}
+#btn-plant{flex:1;min-width:0;display:flex;align-items:center;gap:12px;text-align:left;color:var(--txt);border-radius:12px;}
+#btn-plant .tree-mark{width:38px;height:38px;flex:none;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.65);color:var(--accent);}
+.tree-choice{min-width:0;display:flex;flex-direction:column;gap:4px;}
+#tag-name{display:block;overflow:hidden;text-overflow:ellipsis;font-size:15px;}
+.tree-choice-hint{font-size:12px;color:var(--txt-sub);}
+#bottom-bar #btn-start{flex:none;width:148px;height:52px;border-radius:17px;font-size:16px;box-shadow:0 4px 12px var(--accent-soft);}
+#btn-start:hover{filter:brightness(1.06);}
+#btn-plant:hover .tree-choice-hint{color:var(--accent);}
+#btn-plant:focus-visible,#btn-start:focus-visible{outline:3px solid var(--accent);outline-offset:4px;}
+@media(max-width:420px){#bottom-bar{padding:0 16px max(20px,env(safe-area-inset-bottom));}.plant-controls{gap:12px;padding:10px 10px 10px 14px;}#btn-plant{gap:8px;}#bottom-bar #btn-start{width:118px;}#btn-plant .tree-mark{display:none;}}
 .primary-btn{width:100%;max-width:420px;height:56px;border-radius:28px;font-size:17px;font-weight:700;color:#fff;background:var(--accent);box-shadow:0 6px 18px var(--accent-soft);transition:transform .15s,opacity .2s;}
 .primary-btn:active{transform:scale(.97);}
 .primary-btn:disabled{opacity:.55;}
@@ -171,7 +184,7 @@ body[data-theme="blossomingturf"] #bg-gradient{background:linear-gradient(180deg
   .plant-summary{font-size:16px;margin-bottom:12px;}
   #btn-confirm{height:64px;min-height:64px;font-size:21px;border-radius:18px;gap:12px;}
   #btn-confirm svg{width:26px;height:26px;}
-  #ball-stage{width:min(52vw,540px);}
+  #ball-stage{width:min(52vw,540px,calc(100svh - 260px));}
   #timer-text{font-size:40px;}
   #tag-row{bottom:112px;padding:10px 20px;}
   #tag-name{font-size:18px;}
@@ -185,7 +198,11 @@ body[data-theme="blossomingturf"] #bg-gradient{background:linear-gradient(180deg
 }
 #data-sync-status{flex:none;font-size:12px;color:var(--txt-sub);padding:0 4px 8px;}@media(min-width:900px){#data-sync-status{font-size:14px;padding-bottom:12px;}}
 .editor-entry{width:auto;min-height:48px;padding:0 18px;gap:9px;border-radius:16px;font-size:17px;font-weight:700;background:rgba(255,255,255,.9);text-decoration:none;white-space:nowrap;}
+.top-settings{display:flex;align-items:center;gap:10px;}
+#language-select{max-width:125px;height:44px;padding:0 10px;border:1px solid rgba(255,255,255,.5);border-radius:16px;background:rgba(255,255,255,.72);color:var(--txt);font:inherit;font-size:14px;cursor:pointer;}
+#language-select:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
 @media(max-width:480px){.editor-entry{padding:0 12px;font-size:14px;gap:5px;}}
+@media(max-width:480px){.editor-entry{max-width:calc(100vw - 194px);min-width:44px;padding:0 9px;font-size:12px;}.editor-entry svg{flex:none;}.editor-entry span{overflow:hidden;text-overflow:ellipsis;}#top-bar{padding:10px;}.top-settings{gap:6px;}#language-select{max-width:105px;font-size:13px;}.favorite-button{max-width:44%;white-space:normal;font-size:13px;}}
 </style>
 </head>
 <body data-theme="default" data-state="plant">
@@ -200,27 +217,33 @@ body[data-theme="blossomingturf"] #bg-gradient{background:linear-gradient(180deg
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3 4 15h5v6h6v-6h5Z"/></svg><span>森林编辑器 ↗</span>
     </button>
     <div id="timer-text" hidden>00:00</div>
+    <div class="top-settings">
+    <select id="language-select" aria-label="语言"><option value="zh">中文</option><option value="en">English</option><option value="fr">Français</option></select>
     <button id="btn-theme" class="icon-btn" aria-label="切换主题">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
     </button>
+    </div>
   </header>
 
   <!-- 球区 -->
   <main id="ball-stage">
     <div id="ball-deco"><img id="ball-ground" alt="地面装饰" style="display:none"></div>
     <div id="ball-back"><img id="ball-bg-img" alt="球背景" src="assets/ball/plant_ball.webp"></div>
-    <div id="ball-tree"><img id="tree-img" alt="树" src="assets/frames/frame_idle_tree_type_88_phase_1_00.webp"></div>
+    <div id="ball-tree"><img id="tree-img" alt="树" src="assets/trees/tree_type_88_phase_4.webp"></div>
     <div id="ball-glow"></div>
   </main>
 
-  <!-- 标签 -->
-  <div id="tag-row"><span id="tag-dot"></span><span id="tag-name">TinyTAN 1</span></div>
-
   <!-- 底部 -->
   <footer id="bottom-bar">
-    <button id="btn-plant" class="primary-btn">选择树种</button>
+    <div id="plant-controls" class="plant-controls">
+      <button id="btn-plant" aria-label="选择树种">
+        <span class="tree-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9M12 16C5 16 3 11 3 6c6 0 9 3 9 8M12 12c0-6 4-9 9-9 0 6-3 10-9 10"/></svg></span>
+        <span class="tree-choice"><span id="tag-name">TinyTAN 1</span><span class="tree-choice-hint">更换树种 ↗</span></span>
+      </button>
+      <button id="btn-start" class="primary-btn">开始种植</button>
+    </div>
     <div id="growing-info" style="display:none;">
-      <div>专注中 · 剩余 <b id="grow-remain">00:00</b></div>
+      <div><span id="grow-label">专注中 · 剩余</span> <b id="grow-remain">00:00</b></div>
       <div id="progress-track"><div id="progress-fill"></div></div>
     </div>
     <button id="btn-harvest" class="primary-btn" style="display:none;">收获完成</button>
@@ -257,7 +280,7 @@ body[data-theme="blossomingturf"] #bg-gradient{background:linear-gradient(180deg
     <div id="tree-grid" class="tree-grid"></div>
     <div class="plant-action">
       <div class="plant-summary"><span id="plant-selection">已选择树种</span><span class="plant-duration">专注 25 分钟</span></div>
-      <button id="btn-confirm" class="primary-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-9M12 16C5 16 3 11 3 6c6 0 9 3 9 8M12 12c0-6 4-9 9-9 0 6-3 10-9 10M8 21h8"/></svg><span>开始种植</span></button>
+      <button id="btn-confirm" class="primary-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-9M12 16C5 16 3 11 3 6c6 0 9 3 9 8M12 12c0-6 4-9 9-9 0 6-3 10-9 10M8 21h8"/></svg><span>确认选择</span></button>
     </div>
   </section>
 
@@ -271,6 +294,7 @@ body[data-theme="blossomingturf"] #bg-gradient{background:linear-gradient(180deg
     <div id="theme-grid" class="theme-grid"></div>
   </section>
 
+<script src="forest-i18n.js"></script>
 <script>
 /* ===== 树数据（id, 中文名, 枚举名, 是否有帧动画）===== */
 let TREES=[[0,"雪松","Cedar",0,7,1,7],[1,"一棵开花的树","Flower Tree",0,7,1,7],[2,"树屋","Treehouse",0,7,1,7],[3,"鸟巢","Nest",0,7,1,7],[4,"柠檬树","Lemon Tree",0,7,1,7],[5,"三兄弟","Triplets",0,7,1,7],[6,"小树丛","Bush",0,4,1,4],[7,"章鱼","Octopus",0,7,1,7],[8,"樱花","Cherry Blossom",0,7,1,7],[9,"椰子树","Coconut Tree",0,7,1,7],[10,"猫咪","Kitty",0,7,1,7],[11,"一株很大的草","Flourishing Grass",0,4,1,4],[12,"中国松","Chinese Pine Tree",0,7,1,7],[13,"仙人掌球","Ball Cactus",0,4,1,4],[14,"南瓜","Pumpkin",0,4,1,4],[15,"稻草人","Scarecrow",0,7,1,7],[16,"圣诞树","Christmas Tree",0,4,0,4],[17,"中国新年竹","Chinese New Year Bamboo",0,4,0,4],[18,"蘑菇","Mushroom",0,4,1,4],[19,"仙人掌","Cactus",0,7,1,7],[20,"银杏","Ginkgo",0,7,1,7],[21,"紫藤","Wisteria",0,7,1,7],[22,"西瓜","Watermelon",0,4,1,4],[23,"竹","Bamboo",0,7,1,7],[24,"糖果树","Candy Tree",0,7,1,7],[25,"向日葵","Sunflower",0,4,1,4],[26,"玫瑰","Rose",0,4,1,4],[27,"枫树","Maple",0,7,1,7],[28,"猴面包树","Baobab",0,7,1,7],[29,"大王花","Rafflesia",0,4,1,4],[30,"香蕉","Banana",0,7,1,7],[31,"摇钱树","Money Tree",0,7,0,7],[32,"地球树","Earth Day Tree",0,4,1,4],[33,"康乃馨","Carnation",0,4,1,4],[34,"苹果树","Apple Tree",0,7,1,7],[35,"星空树","Starry Tree",0,7,1,7],[36,"咕咕钟","Cuckoo Clock",0,7,1,7],[37,"月亮树","Moon Tree",0,7,1,7],[38,"彩虹花","Rainbow Flower",0,4,1,4],[39,"幽灵草","Ghost Mushroom",0,4,1,4],[40,"蓝色橡树","Blue Oak Tree",0,7,1,7],[41,"橡树","Oak Tree",0,7,1,7],[42,"粉红色橡树","Pink Oak Tree",0,7,1,7],[43,"黄色橡树","Yellow Oak Tree",0,7,1,7],[44,"紫色橡树","Purple Oak Tree",0,7,1,7],[45,"银柳","Cat-tail Willow",0,4,0,4],[46,"小蓝花","Blue Flower",0,4,1,4],[47,"星星珊瑚","Star Coral",0,4,1,4],[48,"巧克力草莓蛋糕","Chocolate Strawberry Cake",0,4,1,4],[49,"樱桃起士蛋糕","Cherry Cheese Cake",0,4,1,4],[50,"提拉米苏","Tiramisu",0,4,1,4],[51,"抹茶红豆蛋糕","Matcha Azuki Cake",0,4,1,4],[52,"柠檬蛋糕","Lemon Cake",0,4,1,4],[53,"黑森林蛋糕","Black Forest Cake",0,4,1,4],[54,"蓝莓蛋糕","Blueberry Cake",0,4,1,4],[55,"草莓戚风蛋糕","Strawberry Chiffon Cake",0,4,1,4],[56,"蛋糕树","Cake Tree",0,7,1,7],[57,"狗狗树","Doggo Tree",0,7,1,7],[58,"熊童子","\"Bear's Paw\"",0,4,1,4],[59,"烟花树","Starburst Tree",0,7,1,7],[60,"独角兽树","Unicorn Tree",0,4,1,4],[61,"太空树","Space Tree",0,4,1,4],[62,"仙树","Celestial Tree",0,7,1,7],[63,"柳树","Weeping Willow",0,7,1,7],[64,"幸运草","Four-Leaf Clover",0,4,1,4],[65,"森林之心","Forest Spirit",0,4,1,4],[66,"六周年蛋糕树","6th Anniversary Cake Tree",0,7,1,7],[67,"水之心","Water Spirit",0,4,1,4],[68,"圣代树","Sundae Tree",0,4,1,4],[69,"情人树","Lover Tree",0,4,1,4],[70,"梨子树屋","Pear Tree House",0,7,1,7],[71,"女巫魔菇","Witch Mushroom",0,7,1,7],[72,"百合花","Lily Flower",0,4,1,4],[73,"冬日之光","Twilight Guardian",1,7,1,7],[74,"郁金香","Tulip",0,4,1,4],[75,"梅花","Plum Blossom",0,7,1,7],[76,"山茶花","Camellia",0,4,1,4],[77,"Luminie","Luminie",0,7,1,7],[78,"七周年蛋糕树","7th Anniversary Cake Tree",0,7,1,7],[79,"薰衣草","Lavender",0,7,1,7],[80,"水稻","Rice",0,4,1,4],[81,"达达石像","Statue of Tada",0,4,1,4],[82,"羽翼精灵","Golden Wings",0,7,1,7],[83,"桂花","Osmanthus",0,7,1,7],[84,"波斯菊","Cosmos",0,7,1,7],[85,"祈愿树","Wishing Tree",0,7,1,7],[86,"灯花","Lantern Flower",0,7,1,7],[87,"水仙花","Narcissus",0,7,1,7],[88,"TinyTAN - RM （铁线莲）","TinyTAN - RM (Clematis)",1,4,0,4],[89,"TinyTAN - Jin （酸模）","TinyTAN - Jin (Rumex)",1,4,0,4],[90,"TinyTAN - SUGA （落叶松）","TinyTAN - SUGA (Larch)",1,4,0,4],[91,"TinyTAN - j-hope （毛茛）","TinyTAN - j-hope (Buttercup)",1,4,0,4],[92,"TinyTAN - Jimin （绣线菊）","TinyTAN - Jimin (Spirea)",1,4,0,4],[93,"TinyTAN - V （蜡梅）","TinyTAN - V (Wintersweet)",1,4,0,4],[94,"TinyTAN - Jung Kook （卷丹）","TinyTAN - Jung Kook (Tiger Flower)",1,4,0,4],[95,"八周年蛋糕树","8th Anniversary Cake Tree",0,7,1,7],[96,"荷花","Lotus",0,7,1,7],[97,"橘子树","Tangerine Tree",0,7,1,7],[98,"黄金风铃木","Golden Trumpet Tree",0,7,1,7],[99,"九周年蛋糕树","9th Anniversary Cake Tree",0,7,1,7],[100,"蓝花楹","Jacaranda",0,7,1,7],[101,"天竺葵","Geraniums",0,7,1,7],[102,"树 #102","",0,7,1,7],[103,"十周年蛋糕树","10th Anniversary Cake Tree",0,7,0,7],[104,"蓝花楹仙子","Jacaranda fairy",0,4,0,4],[105,"天竺葵仙子","Geraniums fairy",0,4,0,4],[106,"龟背竹","Monstera",0,4,0,4],[107,"月饼树","Mooncake Tree",0,7,0,7],[108,"云月树","Cloud Moon Tree",0,4,0,4],[109,"阴森森树","Spooky Tree",0,4,0,4],[110,"白雪木","Snowflake Bush",0,7,0,7],[111,"冬夜星辰","Winter Starlight",0,7,0,7],[112,"槲寄生花环","Mistletoe Wreath",0,7,0,7],[113,"纯白海芋","White Calla Lily",0,4,0,4],[114,"祈愿花","Wishing Flower",0,4,0,4],[115,"蝴蝶兰","Moth Orchid",0,4,0,4],[116,"桔梗","Balloon Flower",0,4,0,4],[117,"白玫瑰","White Rose",0,4,0,4],[118,"鸢尾花","Iris",0,4,0,4],[119,"招财树","Money Fortune Tree",0,7,0,7],[120,"金运竹","Golden Prosperity Bowl",0,7,0,7],[121,"虞美人","Corn Poppy",0,4,0,4],[122,"茱丽叶","Juliet",0,4,0,4],[123,"仙客来","Cyclamen",0,7,0,7],[124,"风铃草","Bellflower",0,4,0,4],[125,"文心兰","Dancing Lady Orchid",0,4,0,4],[126,"昙花","Epiphyllum",0,7,0,7],[127,"杏花","Apricot Tree",0,7,0,7],[128,"金鱼草","Snapdragons",0,4,0,4],[129,"风信子","Hyacinth",0,4,0,4],[130,"大丽花","Dahlia",0,4,0,4],[131,"金盏花","Calendula",0,7,0,7],[132,"森绿球","Greensphere",0,7,0,7],[133,"十一周年蛋糕树","11th Anniversary Cake Tree",0,7,0,7],[134,"鹿角蕨","Staghorn Fern",0,4,0,4],[135,"天堂鸟","Bird of Paradise",0,4,0,4],[136,"杜鹃花","Azalea",0,7,0,7],[137,"粉玫瑰","Pink Rose",0,4,0,4],[138,"石蒜","Red Spider Lily",0,4,0,4],[139,"长寿花","Flaming Katy",0,4,0,4],[140,"卷瓣菊花","Incurved Chrysanthemum",0,4,0,4],[141,"木芙蓉","Confederate Rose",0,4,0,4],[142,"凤凰木","Royal Poinciana",0,7,0,7],[143,"彩虹桉","Rainbow Eucalyptus",0,7,0,7],[144,"捕蝇草","Venus Flytrap",0,4,0,4],[145,"蒲公英","Dandelion",0,4,0,4],[146,"巧克力棉花糖树","Choco Marshmallow Tree",0,7,0,7],[147,"柿子树","Persimmon Tree",0,7,0,7],[148,"雪滴花","Snowdrop",0,4,0,4],[149,"光圣木","Sacred Light Tree",0,7,0,7],[150,"暗夜树","Nightshade Tree",0,7,0,7],[151,"水珍珠","Aqua Pearl",0,7,0,7],[152,"焰火花","Flame Bloom",0,7,0,7],[153,"冰晶花","Ice Crystal Bloom",0,7,0,7],[154,"芦苇","Reed",0,4,0,4],[155,"马鞭草","Verbena",0,4,0,4],[156,"白桦","White Birch",0,7,0,7],[157,"杜松","Juniper",0,4,0,4],[158,"愈疮木","Guaiacum",0,7,0,7],[159,"落羽杉","Bald Cypress",0,7,0,7],[160,"大花葱","Allium",0,4,0,4],[161,"山梅花","Mock Orange",0,4,0,4],[162,"木棉","Red Silk Cotton",0,7,0,7],[163,"守星木","Planet Guardian",0,7,0,7],[164,"柑橘马卡龙","Citrus Macaron",0,4,0,4],[165,"青提马卡龙","Muscat Macaron",0,4,0,4],[166,"咖啡马卡龙","Coffee Macaron",0,4,0,4],[167,"蓝莓马卡龙","Blueberry Macaron",0,4,0,4],[168,"草莓马卡龙","Strawberry Macaron",0,4,0,4],[169,"十二周年蛋糕树","12th Anniversary Cake Tree",0,7,0,7],[170,"抹茶纸杯蛋糕","Matcha Cupcake",0,4,0,4],[171,"可可碎纸杯蛋糕","Choco Chip Cupcake",0,4,0,4],[172,"蓝莓纸杯蛋糕","Blueberry Cupcake",0,4,0,4],[173,"柠檬纸杯蛋糕","Lemon Cupcake",0,4,0,4],[174,"草莓纸杯蛋糕","Strawberry Cupcake",0,4,0,4],[175,"银叶菊","Dusty Miller",0,4,0,4],[176,"辣椒","Chili Pepper",0,4,0,4],[177,"鸡蛋花","Plumeria",0,7,0,7],[178,"凤梨树屋","Pineapple Tree House",0,7,0,7],[179,"西瓜树屋","Watermelon Tree House",0,7,0,7],[180,"绿萝","Golden Pothos",0,4,0,4],[181,"斑点秋海棠","Polka Dot Begonia",0,4,0,4],[182,"木槿","Rose of Sharon",0,7,0,7]];
@@ -304,7 +328,7 @@ let TREE_IMAGE_PATHS={"0_1":"assets/trees/tree_type_0_phase_1.webp?v=17930026152
 const ssrc=(id,ph,suf)=>{const p=TREE_IMAGE_PATHS[id+'_'+ph+(suf||'')];return p?[p]:[];};
 const IMAGE_PLACEHOLDER='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="18" fill="#edf5ef"/><path d="M60 20L30 76H52V99H68V76H90Z" fill="#6b9a75"/></svg>');
 const skinSuf=()=>ST.theme==='xmas'?'_christmas':'';
-function zhOf(id){const t=TREES.find(r=>r[0]===id);return t?t[1]:('树 #'+id);}
+function zhOf(id){return treeText(id);}
 function hasFrames(st,id,ph){return Boolean(FRAME_PATHS[st+'_'+id+'_'+ph]?.length);}
 function loadImg(el,urls){ /* 直接设置实际图片元素的路径，失败时按清单回退 */
   const requestId=(Number(el.dataset.loadRequest)||0)+1;
@@ -313,7 +337,7 @@ function loadImg(el,urls){ /* 直接设置实际图片元素的路径，失败�
   let i=0;
   const tryNext=()=>{
     if(requestId!==Number(el.dataset.loadRequest))return;
-    if(i>=candidates.length){el.onload=null;el.onerror=null;el.classList.remove('image-missing');el.src=IMAGE_PLACEHOLDER;el.alt='暂无此树种图片';return;}
+    if(i>=candidates.length){el.onload=null;el.onerror=null;el.classList.remove('image-missing');el.src=IMAGE_PLACEHOLDER;el.alt=tr('missing');return;}
     el.classList.remove('image-missing');
     el.onload=()=>{if(requestId===Number(el.dataset.loadRequest)){el.onload=null;el.onerror=null;el.classList.remove('image-missing');}};
     el.onerror=()=>{if(requestId===Number(el.dataset.loadRequest))tryNext();};
@@ -376,8 +400,6 @@ function playSeq(seq,onDone){
   step();
   player.timer=setInterval(step,FRAME_MS);
 }
-/* 种植 Flow（TinyTANAnimateSpec：start×1 → idle×2 → active×1 → idle×1）*/
-const plantSeq=()=>[{st:'start',ph:1,rep:1},{st:'idle',ph:1,rep:2},{st:'active',ph:1,rep:1},{st:'idle',ph:1,rep:1}];
 /* 日常 Flow（active×1 → idle×2 → active×1 → idle×3 → active×1 → idle×1，无限）*/
 function dailySeq(ph){return[{st:'active',ph,rep:1},{st:'idle',ph,rep:2},{st:'active',ph,rep:1},{st:'idle',ph,rep:3},{st:'active',ph,rep:1},{st:'idle',ph,rep:1}];}
 function startDaily(){
@@ -389,10 +411,9 @@ function startDaily(){
 /* ===== 状态渲染 ===== */
 function renderState(){
   const s=ST.state;
-  btnPlant.style.display=(s==='plant')?'block':'none';
+  $('plant-controls').style.display=(s==='plant')?'flex':'none';
   growingInfo.style.display=(s==='growing')?'block':'none';
   btnHarvest.style.display=(s==='result')?'block':'none';
-  btnPlant.textContent=(s==='plant')?'选择树种':'';
 }
 function setTreeVisual(scaleAnim){
   if(scaleAnim){
@@ -402,12 +423,21 @@ function setTreeVisual(scaleAnim){
   tagName.textContent=zhOf(ST.tree);
 }
 function showPlantTree(){
-  if(ANIM_ID.has(ST.tree)){
-    playSeq([{st:'idle',ph:1,rep:99999}],null);
+  stopPlayer();
+  ST.phase=Math.max(...(TREE_PHASES[ST.tree]||[1]));
+  if(hasFrames('idle',ST.tree,ST.phase)){
+    playSeq([{st:'idle',ph:ST.phase,rep:Infinity}],null);
   }else{
-    stopPlayer();
-    loadImg(treeImg,staticUrls(ST.tree,1,skinSuf()));
+    loadImg(treeImg,matureUrls(ST.tree));
   }
+}
+function resetPlantPreview(){
+  clearInterval(tickTimer);tickTimer=null;growStart=0;
+  ST.state='plant';btnPlant.disabled=false;
+  $('btn-start').disabled=false;
+  timerText.textContent=fmt(ST.dur*60);
+  growRemain.textContent=timerText.textContent;progressFill.style.width='0%';
+  renderState();showPlantTree();
 }
 function beginGrow(){
   btnPlant.disabled=false;clearInterval(tickTimer);ST.state='growing';ST.phase=1;growStart=Date.now();
@@ -463,16 +493,17 @@ function renderThemeGrid(){
     const item=document.createElement('button');
     item.className='theme-item'+(ST.theme===k?' sel':'');
     const sw=document.createElement('div');sw.className='theme-swatch';
-    const img=document.createElement('img');img.alt=T.name;loadImg(img,[T.ground||T.ball]);
+    const [themeName,themeDescription]=themeText(k);
+    const img=document.createElement('img');img.alt=themeName;loadImg(img,[T.ground||T.ball]);
     sw.appendChild(img);
     const info=document.createElement('div');info.className='tinfo';
-    const n=document.createElement('div');n.className='tn';n.textContent=T.name+(T.snow?' · 雪':'');
-    const d=document.createElement('div');d.className='td';d.textContent=T.sub;
+    const n=document.createElement('div');n.className='tn';n.textContent=themeName+(T.snow?' · '+tr('snow'):'');
+    const d=document.createElement('div');d.className='td';d.textContent=themeDescription;
     info.appendChild(n);info.appendChild(d);
     const ck=document.createElement('div');ck.className='tcheck';
     if(ST.theme===k)ck.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg>';
     item.appendChild(sw);item.appendChild(info);item.appendChild(ck);
-    item.onclick=()=>{ST.theme=k;applyTheme();closeThemeSheet();if(k==='xmas')toast('已切换 Xmas 圣诞主题 · 下雪中');else toast('已切换主题：'+T.name);};
+    item.onclick=()=>{ST.theme=k;applyTheme();closeThemeSheet();toast(tr('themeChanged',{name:themeName}));};
     tg.appendChild(item);
   });
 }
@@ -499,10 +530,11 @@ function renderGrid(){
   const kw=$('search-input').value.trim().toLowerCase();
   grid.innerHTML='';
   TREES.forEach(t=>{
-    const id=t[0],zh=t[1],en=t[2],anim=t[3];
+    const id=t[0],zh=treeText(id),en=t[2],anim=t[3];
     if(ST.tab==='anim'&&!anim)return;
     if(ST.tab==='fav'&&!ST.fav.has(id))return;
-    if(kw&&!zh.toLowerCase().includes(kw)&&!en.toLowerCase().includes(kw)&&!String(id).includes(kw))return;
+    const meta=TREE_METADATA[id]||{};
+    if(kw&&![zh,en,t[1],meta.nameFR,String(id)].some(name=>String(name||'').toLocaleLowerCase().includes(kw)))return;
     const cell=document.createElement('button');
     cell.className='tree-cell'+(id===ST.selTree?' sel':'');
     cell.dataset.treeId=id;cell.setAttribute('aria-pressed',String(id===ST.selTree));
@@ -511,24 +543,25 @@ function renderGrid(){
     cell.appendChild(img);
     const n=document.createElement('div');n.className='tname';n.textContent=zh;
     cell.appendChild(n);
-    if(anim){const a=document.createElement('div');a.className='tanim';a.textContent='动画';cell.appendChild(a);}
+    if(anim){const a=document.createElement('div');a.className='tanim';a.textContent=tr('badge');cell.appendChild(a);}
     cell.onclick=()=>selectTree(id);
     grid.appendChild(cell);
   });
   if(ST.tab==='fav'&&!grid.children.length){
     const empty=document.createElement('p');empty.className='favorites-empty';
-    empty.textContent=ST.fav.size?'没有匹配的收藏树种':'还没有收藏。去“全部”选一棵树，点击“☆ 收藏”。';grid.appendChild(empty);
+    empty.textContent=tr(ST.fav.size?'noMatch':'noFavorites');grid.appendChild(empty);
   }
 }
 function updatePreview(id){
   const t=TREES.find(r=>r[0]===id);if(!t)return;
   const meta=TREE_METADATA[id]||{};
-  previewName.textContent=t[1];
+  const name=treeText(id);
+  previewName.textContent=name;
   const favorite=$('btn-favorite'),saved=ST.fav.has(id);
-  favorite.textContent=saved?'★ 已收藏':'☆ 收藏';favorite.setAttribute('aria-pressed',String(saved));
-  favorite.setAttribute('aria-label',(saved?'取消收藏':'收藏')+' '+t[1]);
-  $('plant-selection').textContent=t[1];
-  previewSub.textContent=(meta.descriptionZH||meta.descriptionEN||'')+' · '+(t[3]?'含帧动画':'静态生长图')+' · '+TREE_PHASES[id].length+' 个生长阶段 · ID '+id;
+  favorite.textContent=(saved?'★ ':'☆ ')+tr(saved?'favorited':'favorite');favorite.setAttribute('aria-pressed',String(saved));
+  favorite.setAttribute('aria-label',tr(saved?'unfavorite':'favorite')+' '+name);
+  $('plant-selection').textContent=name;
+  previewSub.textContent=[treeText(id,'description'),tr(t[3]?'animated':'static'),tr('stages',{n:TREE_PHASES[id].length}),'ID '+id].filter(Boolean).join(' · ');
   loadImg(previewImg,matureUrls(id));
 }
 function selectTree(id){
@@ -541,22 +574,27 @@ function selectTree(id){
 /* ===== 种植交互 ===== */
 function plantSelected(){
   if(ST.selTree==null)return;
-  ST.tree=ST.selTree;btnPlant.disabled=true;
+  ST.tree=ST.selTree;
   closeSheet();
+  resetPlantPreview();
   setTreeVisual(true);
-  if(ANIM_ID.has(ST.tree)){
-    playSeq(plantSeq(),()=>{beginGrow();});
-  }else{
+  saveMainState();
+}
+function startPlanting(){
+  if(ST.state!=='plant'||$('btn-start').disabled)return;
+  btnPlant.disabled=true;$('btn-start').disabled=true;
+  setTreeVisual(true);
+  if(!ANIM_ID.has(ST.tree)){
     loadImg(treeImg,staticUrls(ST.tree,1,skinSuf()));
-    beginGrow();
   }
+  beginGrow();
 }
 
 /* ===== 事件绑定 ===== */
 $('btn-favorite').onclick=()=>{
   const id=ST.selTree;if(id==null)return;
   if(ST.fav.has(id))ST.fav.delete(id);else ST.fav.add(id);
-  try{localStorage.setItem(FAVORITES_KEY,JSON.stringify([...ST.fav]));}catch(error){toast('浏览器未能保存收藏，本次打开仍可使用');}
+  try{localStorage.setItem(FAVORITES_KEY,JSON.stringify([...ST.fav]));}catch(error){toast(tr('saveError'));}
   renderGrid();updatePreview(id);
 };
 btnPlant.onclick=()=>{selectTree(ST.selTree??ST.tree);openSheet();};
@@ -565,7 +603,7 @@ $('btn-theme').onclick=openThemeSheet;
 $('btn-close-theme').onclick=closeThemeSheet;
 mask.onclick=()=>{closeSheet();closeThemeSheet();};
 $('btn-menu').onclick=()=>{location.href='forest-editor.html';};
-btnHarvest.onclick=()=>{fxFlash();ST.state='plant';timerText.textContent=fmt(ST.dur*60);renderState();showPlantTree();toast('树木已收获 · 可以种新树了');};
+btnHarvest.onclick=()=>{fxFlash();resetPlantPreview();toast(tr('harvested'));};
 document.querySelectorAll('.sheet-tabs .tab').forEach(tab=>{
   tab.onclick=()=>{
     document.querySelectorAll('.sheet-tabs .tab').forEach(t=>t.classList.remove('active'));
@@ -576,10 +614,11 @@ document.querySelectorAll('.sheet-tabs .tab').forEach(tab=>{
 });
 $('search-input').addEventListener('input',renderGrid);
 $('btn-confirm').onclick=plantSelected;
+$('btn-start').onclick=startPlanting;
 $('growing-info').addEventListener('click',()=>{
   const now=Date.now(),elapsed=(now-growStart)*ST.speed;
   ST.speed=ST.speed===120?1:120;growStart=now-elapsed/ST.speed;
-  toast(ST.speed===120?'演示加速 ×120':'恢复真实速度 ×1');
+  toast(tr(ST.speed===120?'fast':'normal'));
 });
 
 /* ===== 初始化 ===== */
@@ -597,14 +636,21 @@ function restoreMainState(){
   if(['all','anim','fav'].includes(saved.tab))ST.tab=saved.tab;
   if(Number.isFinite(saved.dur)&&saved.dur>=1&&saved.dur<=180)ST.dur=saved.dur;
   if([1,120].includes(saved.speed))ST.speed=saved.speed;
-  if(['growing','result'].includes(saved.state))ST.state=saved.state;
-  if((TREE_PHASES[ST.tree]||[]).includes(saved.phase))ST.phase=saved.phase;
-  if(Number.isFinite(saved.growStart)&&saved.growStart>0&&saved.growStart<=Date.now())growStart=saved.growStart;
-  if(ST.state==='growing'&&!growStart)ST.state='plant';
   if(typeof saved.search==='string')$('search-input').value=saved.search.slice(0,200);
   document.querySelectorAll('.sheet-tabs .tab').forEach(button=>button.classList.toggle('active',button.dataset.tab===ST.tab));
 }
 restoreMainState();
+$('language-select').onchange=event=>{
+  if(!Object.hasOwn(FOREST_MESSAGES,event.target.value))return;
+  forestLanguage=event.target.value;
+  try{localStorage.setItem('forest-language',forestLanguage);}catch(error){}
+  applyLanguage();
+};
+applyLanguage();
+function syncLanguage(){const next=readForestLanguage();if(next!==forestLanguage){forestLanguage=next;applyLanguage();}}
+window.addEventListener('storage',event=>{if(event.key==='forest-language'||event.key===null)syncLanguage();});
+window.addEventListener('pageshow',syncLanguage);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncLanguage();});
 window.addEventListener('pagehide',saveMainState);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)saveMainState();});
 for(const event of ['click','change','input'])document.addEventListener(event,()=>{setTimeout(saveMainState,0);});
@@ -614,9 +660,7 @@ renderThemeGrid();
 applyTheme();
 renderState();
 setTreeVisual(false);
-if(ST.state==='growing'){tickGrow();if(ST.state==='growing'){startDaily();tickTimer=setInterval(tickGrow,250);}}
-else if(ST.state==='result')loadImg(treeImg,matureUrls(ST.tree));
-else showPlantTree();
+resetPlantPreview();
 renderGrid();
 selectTree(ST.selTree);
 // Only the loopback app server exposes this read-only endpoint.
@@ -631,8 +675,8 @@ async function syncTreeData(){
     if(!response.ok)throw new Error('暂时无法读取树种数据');
     const data=await response.json();
     if(!Array.isArray(data.trees)||!data.trees.length||!data.metadata||!data.phases||!data.frames||!data.imagePaths||!data.revision)throw new Error('数据不完整');
-    if(data.revision===liveRevision){status.textContent='自动同步中 · '+TREES.length+' 个树种';return;}
-    if(ST.state!=='plant'||btnPlant.disabled){status.textContent='发现数据更新 · 本轮种植结束后同步';return;}
+    if(data.revision===liveRevision){status.textContent=tr('synced',{n:TREES.length});return;}
+    if(ST.state!=='plant'||btnPlant.disabled){status.textContent=tr('pending');return;}
     TREES=data.trees;TREE_METADATA=data.metadata;TREE_PHASES=data.phases;
     FRAME_PATHS=data.frames;TREE_IMAGE_PATHS=data.imagePaths;
     ANIM_ID.clear();TREES.filter(t=>t[3]).forEach(t=>ANIM_ID.add(t[0]));
@@ -640,9 +684,9 @@ async function syncTreeData(){
     if(!TREES.some(t=>t[0]===ST.selTree))ST.selTree=ST.tree;
     liveRevision=data.revision;
     setTreeVisual(false);renderGrid();updatePreview(ST.selTree);showPlantTree();
-    status.textContent='自动同步中 · '+TREES.length+' 个树种';
+    status.textContent=tr('synced',{n:TREES.length});
   }catch(error){
-    status.textContent='同步暂不可用 · 保留当前数据，稍后自动重试';
+    status.textContent=tr('syncError');
   }finally{liveSyncBusy=false;}
 }
 function startLiveUpdates(){
