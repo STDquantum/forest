@@ -143,5 +143,37 @@
       "ground": null,
       "color": "linear-gradient(180deg,#d3f6c3,#f5efa6)"
     }
+  },
+  {
+    "id": "ground09",
+    "color": "#a6cd49",
+    "name": "南瓜彩糖",
+    "description": "踩着糖果缤纷的金橙地面，与森林里的小骨头展开一场森林奇遇。",
+    "tile": "assets/ground/ground09-tile.webp",
+    "left": "assets/ground/ground09-left.webp",
+    "right": "assets/ground/ground09-right.webp",
+    "plant": {
+      "name": "南瓜彩糖",
+      "sub": "踩着糖果缤纷的金橙地面，与森林里的小骨头展开一场森林奇遇。",
+      "ball": "assets/ball/ground09_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#A3D9C6,#74B29D)"
+    }
+  },
+  {
+    "id": "ground10",
+    "color": "#a6cd49",
+    "name": "秋叶林垫",
+    "description": "让秋叶点缀柔软林地，为森林铺上一床暖意。",
+    "tile": "assets/ground/ground10-tile.webp",
+    "left": "assets/ground/ground10-left.webp",
+    "right": "assets/ground/ground10-right.webp",
+    "plant": {
+      "name": "秋叶林垫",
+      "sub": "让秋叶点缀柔软林地，为森林铺上一床暖意。",
+      "ball": "assets/ball/ground10_plant_ball.webp",
+      "ground": null,
+      "color": "linear-gradient(180deg,#A3D9C6,#74B29D)"
+    }
   }
 ]
