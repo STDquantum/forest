@@ -84,6 +84,60 @@ def _resource_text(root, resource_name):
     return element.text if element is not None and element.text is not None else ""
 
 
+def _image_size(path):
+    """Read PNG/WEBP pixel dimensions using only the standard library.
+
+    CI runs on a bare Python without Pillow, so the header is parsed manually.
+    Returns (width, height) or None when the format is unreadable.
+    """
+    try:
+        with open(path, 'rb') as file:
+            header = file.read(12)
+            if len(header) < 12:
+                return None
+            if header[:8] == b'\x89PNG\r\n\x1a\n':
+                ihdr = file.read(16)
+                if len(ihdr) < 16:
+                    return None
+                # ihdr[0:4] = "IHDR", [4:8] = width, [8:12] = height
+                return (int.from_bytes(ihdr[4:8], 'big'),
+                        int.from_bytes(ihdr[8:12], 'big'))
+            if header[:4] != b'RIFF' or header[8:12] != b'WEBP':
+                return None
+            offset = 12
+            while True:
+                file.seek(offset)
+                chunk_header = file.read(8)
+                if len(chunk_header) < 8:
+                    return None
+                fourcc = chunk_header[:4]
+                chunk_size = int.from_bytes(chunk_header[4:8], 'little')
+                data_offset = offset + 8
+                if fourcc == b'VP8X':
+                    data = file.read(chunk_size)
+                    if len(data) < 10:
+                        return None
+                    return (1 + int.from_bytes(data[4:7], 'little'),
+                            1 + int.from_bytes(data[7:10], 'little'))
+                if fourcc == b'VP8L':
+                    data = file.read(chunk_size)
+                    if len(data) < 5 or data[0] != 0x2F:
+                        return None
+                    bits = int.from_bytes(data[1:5], 'little')
+                    return (1 + (bits & 0x3FFF),
+                            1 + ((bits >> 14) & 0x3FFF))
+                if fourcc == b'VP8 ':
+                    data = file.read(chunk_size)
+                    if len(data) < 10:
+                        return None
+                    return (int.from_bytes(data[6:8], 'little') & 0x3FFF,
+                            int.from_bytes(data[8:10], 'little') & 0x3FFF)
+                # RIFF chunks are word-aligned with a one-byte pad when odd.
+                offset = data_offset + chunk_size + (chunk_size & 1)
+    except OSError:
+        return None
+
+
 def _sync_landscapes(decoded_dir, project_dir):
     """Refresh usable landscape skins, skipping text-only future releases."""
     web = project_dir / 'docs'
@@ -107,8 +161,25 @@ def _sync_landscapes(decoded_dir, project_dir):
             return None
         source = source[1]
         destination = web / 'assets' / folder / ((name or stem) + source.suffix.lower())
-        shutil.copy2(source, destination)
+        protected = folder == 'ground' and name in {'default-tile', 'default-left', 'default-right'}
         alternate = destination.with_suffix('.png' if source.suffix.lower() == '.webp' else '.webp')
+        existing = destination if destination.is_file() else alternate
+        source_size = _image_size(source) if protected else None
+        target_size = _image_size(existing) if protected and existing.is_file() else None
+        if source_size and target_size:
+            source_area = source_size[0] * source_size[1]
+            target_area = target_size[0] * target_size[1]
+            smaller_pixels = source_area < target_area
+            same_pixels_smaller_file = (
+                source_area == target_area
+                and source.stat().st_size < existing.stat().st_size
+            )
+            if smaller_pixels or same_pixels_smaller_file:
+                # Never let a smaller source overwrite a larger existing
+                # texture (fewer pixels, or same pixels in a smaller file),
+                # e.g. the hand-upgraded default ground.
+                return existing.relative_to(web).as_posix()
+        shutil.copy2(source, destination)
         if alternate.is_file():
             alternate.unlink()
         return destination.relative_to(web).as_posix()
@@ -138,6 +209,10 @@ def _sync_landscapes(decoded_dir, project_dir):
         theme['description'] = _resource_text(strings, f'landskin_{number}_description') or theme.get('description', '')
         for part, stem in zip(('tile', 'left', 'right'), stems):
             theme[part] = copy(stem, 'ground', f'{theme_id}-{part}')
+        # 地面装饰：与 treeShadow 同一套地块装饰体系，但只有部分地块有美术
+        # （tinytan / ground03 / 05 / 07 / 08），缺失时写入 null 由网页端跳过。
+        deco_stem = 'tinytan_ground_decorations' if number == 2 else prefix + 'ground_decorations'
+        theme['decoration'] = copy(deco_stem, 'ground', f'{theme_id}-deco')
         plant = theme.setdefault('plant', {})
         plant.update(name=theme['name'], sub=theme['description'])
         if number >= 3:

@@ -51,7 +51,7 @@ def selected(tree: TreeProps):
     return tree.year == 2022 and ((tree.month == 1 and tree.day >= 20) or (tree.month == 2))
 
 def init_from_json():
-    d = load(open(rootDir + "treeType.json", "r", encoding = "utf-8"))
+    d = load(open(rootDir + "docs\\treeType.json", "r", encoding = "utf-8"))
     trees = load(open(rootDir + "databases\\plant.json", "r", encoding = "utf-8"))
     rooms = load(open(rootDir + "databases\\rooms.json", "r", encoding = "utf-8"))
     room = {}
@@ -88,7 +88,7 @@ def init_from_json():
     return res, total
 
 def personnalization():
-    d = load(open(rootDir + "treeType.json", "r", encoding = "utf-8"))
+    d = load(open(rootDir + "docs\\treeType.json", "r", encoding = "utf-8"))
 
     res = []
     total = 0
@@ -116,7 +116,7 @@ def combine(img, pos: Pos):
 def forest(trees, edgeLen, theme = default, isRandom = False):
     # 建立从文件名称到图片的映射
     treeMap = {}
-    treesFileNames = os.listdir(rootDir + "trees")
+    treesFileNames = os.listdir(rootDir + "docs\\assets\\trees")
     for tree in treesFileNames:
         treeName = os.path.splitext(tree)[0]
         treeMap[treeName] = tree
@@ -171,44 +171,44 @@ def forest(trees, edgeLen, theme = default, isRandom = False):
 
     # groundPieces
     groundPng = {
-        0: "ground_piece.png",
-        1: "ground_piece_xmas.png",
-        2: "tinytan_ground_piece.png"
+        0: "default-tile.webp",
+        1: "xmas-tile.webp",
+        2: "tinytan-tile.webp"
     }
-    piece = cv2.imread(rootDir + f"background\\{groundPng[theme]}", cv2.IMREAD_UNCHANGED)
+    piece = cv2.imread(rootDir + f"docs\\assets\\ground\\{groundPng[theme]}", cv2.IMREAD_UNCHANGED)
     piece = cv2.resize(piece, dsize = (pieceWidth, pieceHeight))
     for pos in piecePosList:
         combine(piece, pos)
 
     # groundL
     groundLPng = {
-        0: "ground_left_side.png",
-        1: "left_xmas.png",
-        2: "tinytan_ground_left_side.png"
+        0: "default-left.webp",
+        1: "xmas-left.webp",
+        2: "tinytan-left.webp"
     }
-    groundL = cv2.imread(rootDir + f"background\\{groundLPng[theme]}", cv2.IMREAD_UNCHANGED)
+    groundL = cv2.imread(rootDir + f"docs\\assets\\ground\\{groundLPng[theme]}", cv2.IMREAD_UNCHANGED)
     groundL = cv2.resize(groundL, dsize = (edgeWidth + 1, edgeHeight))
     for pos in leftGroundPosList:
         combine(groundL, pos)
 
     # groundR
     groundRPng = {
-        0: "ground_right_side.png",
-        1: "right_xmas.png",
-        2: "tinytan_ground_right_side.png"
+        0: "default-right.webp",
+        1: "xmas-right.webp",
+        2: "tinytan-right.webp"
     }
-    groundR = cv2.imread(rootDir + f"background\\{groundRPng[theme]}", cv2.IMREAD_UNCHANGED)
+    groundR = cv2.imread(rootDir + f"docs\\assets\\ground\\{groundRPng[theme]}", cv2.IMREAD_UNCHANGED)
     groundR = cv2.resize(groundR, dsize = (edgeWidth, edgeHeight))
     for pos in rightGroundPosList:
         combine(groundR, pos)
 
     # emptyPositions
-    treeData = load(open(rootDir + "treeType.json", "r", encoding = "utf-8"))
+    treeData = load(open(rootDir + "docs\\treeType.json", "r", encoding = "utf-8"))
     fileList = []
     for tree, phases in trees:
         gid = str(tree)
         nameFile = f"tree_type_{gid}"
-        base = rootDir + f"trees\\"
+        base = rootDir + f"docs\\assets\\trees\\"
         for phase in phases:
             if phase == 7:
                 if treeData[gid]["phase"]["hasDead"] == True:

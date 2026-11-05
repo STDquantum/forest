@@ -7,6 +7,7 @@
     "tile": "assets/ground/default-tile.webp",
     "left": "assets/ground/default-left.webp",
     "right": "assets/ground/default-right.webp",
+    "decoration": null,
     "plant": {
       "name": "经典草地",
       "sub": "回到熟悉的绿色草地，让森林保留最纯粹的模样。",
@@ -23,6 +24,7 @@
     "tile": "assets/ground/xmas-tile.webp",
     "left": "assets/ground/xmas-left.webp",
     "right": "assets/ground/xmas-right.webp",
+    "decoration": null,
     "plant": {
       "name": "霜白雪原",
       "sub": "白雪覆盖大地，把森林带进宁静冬日。",
@@ -40,6 +42,7 @@
     "tile": "assets/ground/tinytan-tile.webp",
     "left": "assets/ground/tinytan-left.webp",
     "right": "assets/ground/tinytan-right.webp",
+    "decoration": "assets/ground/tinytan-deco.webp",
     "plant": {
       "name": "TinyTAN 主题",
       "sub": "让梦幻紫色走进森林，打造充满陪伴感的专属天地。",
@@ -56,6 +59,7 @@
     "tile": "assets/ground/softpink-tile.webp",
     "left": "assets/ground/softpink-left.webp",
     "right": "assets/ground/softpink-right.webp",
+    "decoration": "assets/ground/softpink-deco.webp",
     "plant": {
       "name": "落樱缤纷",
       "sub": "沉浸在粉色包围的森林里，让思绪随花瓣慢慢安定。",
@@ -72,6 +76,7 @@
     "tile": "assets/ground/oceanblue-tile.webp",
     "left": "assets/ground/oceanblue-left.webp",
     "right": "assets/ground/oceanblue-right.webp",
+    "decoration": null,
     "plant": {
       "name": "苏打涟漪",
       "sub": "让植物在粼粼水光之间生长，让森林染上一抹沁凉蓝意。",
@@ -88,6 +93,7 @@
     "tile": "assets/ground/creammeadow-tile.webp",
     "left": "assets/ground/creammeadow-left.webp",
     "right": "assets/ground/creammeadow-right.webp",
+    "decoration": "assets/ground/creammeadow-deco.webp",
     "plant": {
       "name": "棉绵水洼",
       "sub": "柔软蓬松的土地迎接每一株新芽，让森林变得轻盈又温柔。",
@@ -104,6 +110,7 @@
     "tile": "assets/ground/sunlitlime-tile.webp",
     "left": "assets/ground/sunlitlime-left.webp",
     "right": "assets/ground/sunlitlime-right.webp",
+    "decoration": null,
     "plant": {
       "name": "青柠草毯",
       "sub": "踏进明亮绿意，为森林添上一点阳光活力！",
@@ -120,6 +127,7 @@
     "tile": "assets/ground/blossomingturf-tile.webp",
     "left": "assets/ground/blossomingturf-left.webp",
     "right": "assets/ground/blossomingturf-right.webp",
+    "decoration": "assets/ground/blossomingturf-deco.webp",
     "plant": {
       "name": "繁花草茵",
       "sub": "在花草环绕的天地中，让专注盛放成缤纷森林。",
@@ -136,6 +144,7 @@
     "tile": "assets/ground/pineapple-tile.webp",
     "left": "assets/ground/pineapple-left.webp",
     "right": "assets/ground/pineapple-right.webp",
+    "decoration": "assets/ground/pineapple-deco.webp",
     "plant": {
       "name": "凤梨蜜境",
       "sub": "明亮金黄色铺满土地，把森林变成甜美又俏皮的热带秘境！",
@@ -146,34 +155,36 @@
   },
   {
     "id": "ground09",
-    "color": "#a6cd49",
+    "color": "#e8a456",
     "name": "南瓜彩糖",
     "description": "踩着糖果缤纷的金橙地面，与森林里的小骨头展开一场森林奇遇。",
     "tile": "assets/ground/ground09-tile.webp",
     "left": "assets/ground/ground09-left.webp",
     "right": "assets/ground/ground09-right.webp",
+    "decoration": "assets/ground/ground09-deco.webp",
     "plant": {
       "name": "南瓜彩糖",
       "sub": "踩着糖果缤纷的金橙地面，与森林里的小骨头展开一场森林奇遇。",
       "ball": "assets/ball/ground09_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#A3D9C6,#74B29D)"
+      "color": "linear-gradient(180deg,#FCE4BD,#F4BD83 52%,#E49462)"
     }
   },
   {
     "id": "ground10",
-    "color": "#a6cd49",
+    "color": "#c5a478",
     "name": "秋叶林垫",
     "description": "让秋叶点缀柔软林地，为森林铺上一床暖意。",
     "tile": "assets/ground/ground10-tile.webp",
     "left": "assets/ground/ground10-left.webp",
     "right": "assets/ground/ground10-right.webp",
+    "decoration": null,
     "plant": {
       "name": "秋叶林垫",
       "sub": "让秋叶点缀柔软林地，为森林铺上一床暖意。",
       "ball": "assets/ball/ground10_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#A3D9C6,#74B29D)"
+      "color": "linear-gradient(180deg,#F2E5D2,#DDC4A3 52%,#C5A57F)"
     }
   }
 ]

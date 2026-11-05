@@ -6,7 +6,8 @@
   function cellAt(g,x,y){const dx=(x-g.originX)/100,dy=(y-g.originY)/50,col=Math.floor((dx+dy)/2),row=Math.floor((dy-dx)/2);return row>=0&&col>=0&&row<g.size&&col<g.size?{row,col}:null;}
   function center(g,row,col){const p=tile(g,row,col);return {x:p.x+100,y:p.y+50};}
   function treeRect(g,tree){const p=tile(g,tree.row,tree.col);return {x:p.x+20,y:p.y+75-160,width:160,height:160};}
-  function depth(trees){return [...trees].sort((a,b)=>(a.row+a.col)-(b.row+b.col)||a.row-b.row);}
+  // getForest.py traverses columns within each row when compositing trees.
+  function depth(trees){return [...trees].sort((a,b)=>a.row-b.row||a.col-b.col);}
   function occupied(scene,row,col,except){return scene.trees.find(tree=>tree.row===row&&tree.col===col&&tree.uid!==except);}
   function place(scene,tree,row,col,moveUid){
     if(!Number.isInteger(row)||!Number.isInteger(col)||row<0||col<0||row>=scene.size||col>=scene.size)return {ok:false,reason:'请放在地皮范围内'};

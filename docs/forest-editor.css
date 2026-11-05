@@ -20,11 +20,23 @@ html:not([lang="zh-CN"]) .field-label{flex-wrap:wrap;}
 .canvas-tools button{height:40px}.canvas-footer>span{flex:1;min-width:180px}@media(max-width:800px){.canvas-tools button{height:37px}}
 
 .mobile-canvas-link{display:none}
+.home-link{display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:48px;padding:0 18px;gap:9px;border-radius:16px;background:rgba(255,255,255,.9);color:#2e3a33;box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:17px;font-weight:700;white-space:nowrap;transition:transform .15s}
+.home-link:hover{transform:scale(1.04)}
+.canvas-panel{background:var(--scene-background,linear-gradient(180deg,#A3D9C6,#8BC7B2 55%,#74B29D))}
+.canvas-shell{background:transparent}
+.canvas-panel[data-theme="xmas"] .scene-header,.canvas-panel[data-theme="xmas"] .scene-meta,.canvas-panel[data-theme="xmas"] .canvas-footer,.canvas-panel[data-theme="xmas"] .empty-help{color:#f1f7f5}
+.canvas-panel[data-theme="xmas"] .empty-help span{color:#dbe9e5}
+.topbar .project-name{display:flex;min-width:0}
+.project-title{display:flex;align-items:center;gap:9px;min-width:0;padding:0 12px;color:#52765a;background:#f3f7ee;border:1px solid #dce8d7;border-radius:14px;transition:border-color .15s,box-shadow .15s}
+.project-title:focus-within{border-color:#83a77d;box-shadow:0 0 0 3px #dcebd6}
+.project-title input{width:170px;min-width:0;padding:12px 0;border:0!important;outline:0;background:transparent;font-size:16px;font-weight:700;color:var(--ink)}
+.project-title .edit-icon{flex:none;color:#91a58d}
+@media(max-width:1150px){.home-link span{display:none}.home-link{width:48px;padding:0}}
 @media(max-width:800px){
   .topbar{height:auto;min-height:110px;padding:14px 12px 10px;gap:12px;flex-wrap:wrap}
   .brand{font-size:18px;gap:9px}.brand-mark{width:36px;height:36px;font-size:30px}.brand small{font-size:8px}
-  .project-name{display:none}
-  .top-actions{width:100%;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .topbar .project-name{flex:1}.project-title{flex:1}.project-title input{width:100%}#save-state{display:none}
+  .top-actions{width:100%;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
   .top-actions button,.top-actions .quiet-link{display:flex;align-items:center;justify-content:center;min-height:40px;padding:8px 3px;margin:0;font-size:12px;white-space:nowrap}
   .top-actions button.primary span{display:none}
   .workspace{display:flex;flex-direction:column;height:auto;min-height:0;min-width:0}

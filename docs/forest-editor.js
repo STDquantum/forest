@@ -12,6 +12,25 @@
   let undoStack=[],redoStack=[],groundCanvas=null,groundKey='',toastTimer,syncBusy=false,revision='';
   const images=new Map(),masks=new Map();
   let randomMode=false,randomCandidates=[];
+  // 种子洗牌（与APK ForestPatternUtil一致：避免装饰点排成对角线）
+  function seededShuffle(arr,seed){
+    const result=[...arr];
+    let s=seed;
+    for(let i=result.length-1;i>0;i--){
+      s=(s*9301+49297)%233280;
+      const j=Math.floor(s/233280*(i+1));
+      [result[i],result[j]]=[result[j],result[i]];
+    }
+    return result;
+  }
+  function isDiagonalLine(cells,edgeLen){
+    if(cells.length<edgeLen)return false;
+    const sorted=[...cells].sort((a,b)=>a.row-b.row);
+    const cols=sorted.map(c=>c.col);
+    const forward=Array.from({length:edgeLen},(_,i)=>i);
+    const backward=Array.from({length:edgeLen},(_,i)=>edgeLen-1-i);
+    return cols.every((v,i)=>v===forward[i])||cols.every((v,i)=>v===backward[i]);
+  }
   function savePreferences(){
     if(!scene)return;
     try{localStorage.setItem(PREFS,JSON.stringify({chosen,chosenSkin,phase,filter,tool,randomMode,
@@ -52,8 +71,8 @@
     const entry=images.get(url);return entry.state==='ready'?entry.img:null;
   }
   function treeUrl(id,p,skin='normal'){
-    // Product textures are higher-resolution artwork for the final growth stage.
-    if(skin==='normal'&&(p==='product'||String(p)===mature(id))&&data.imagePaths[id+'_product'])return data.imagePaths[id+'_product'];
+    // Use the same phase artwork as getForest.py; product images have different framing.
+    if(p==='product')p=mature(id,skin);
     const key=id+'_'+p;
     return skin==='christmas'?(data.imagePaths[key+'_christmas']||null):(data.imagePaths[key]||null);
   }
@@ -64,6 +83,7 @@
   }
   function mature(id,skin='normal'){const values=stages(id,skin).filter(p=>/^\d+$/.test(p));return values.at(-1)||'1';}
   function theme(){return themes.find(t=>t.id===scene.theme)||themes[0];}
+  function decoration(skin){return skin?.decoration||null;}
   function save(){
     try{localStorage.setItem(STORE,JSON.stringify(scene));saveMessage='已自动保存';}
     catch(error){saveMessage='浏览器存储不可用，请保存布局';}
@@ -84,6 +104,9 @@
   function refreshScene(){
     for(const tree of scene.trees)if(tree.phase==='product')tree.phase=mature(tree.id,tree.skin);
     geometry=C.geometry(scene.size);
+    const panel=document.querySelector('.canvas-panel');
+    panel.style.setProperty('--scene-background',theme()?.plant?.color||'linear-gradient(180deg,#A3D9C6,#8BC7B2 55%,#74B29D)');
+    panel.dataset.theme=scene.theme;
     view.fit=Math.max(.01,Math.min((view.width-64)/geometry.width,(view.height-84)/geometry.height));
     $('forest-title').value=scene.title;$('scene-title').textContent=scene.title||e('我的森林');
     $('placed-count').textContent=e('{n} 棵树',{n:scene.trees.length});$('land-count').textContent=e('{n} × {n} 地皮',{n:scene.size});
@@ -105,7 +128,10 @@
     const skin=theme();if(!skin)return null;
     const tile=image(skin.tile),left=image(skin.left),right=image(skin.right);
     if(!tile||!left||!right)return null;
-    const key=scene.size+'-'+skin.id;
+    // 地面装饰与树影同一规则：只贴在“这一格上有树”的位置（APK 用 decorationPositions 列表）。
+    const deco=decoration(skin),decoImage=deco?image(deco):null;
+    const cells=scene.trees.map(tree=>tree.row+','+tree.col).sort().join(';');
+    const key=scene.size+'-'+skin.id+'-'+cells+'-'+(decoImage?'1':'0');
     if(groundCanvas&&groundKey===key)return groundCanvas;
     const ground=document.createElement('canvas');ground.width=geometry.width;ground.height=geometry.height;
     const target=ground.getContext('2d');target.imageSmoothingEnabled=true;target.imageSmoothingQuality='high';
@@ -125,6 +151,27 @@
     const x=geometry.originX-scene.size*100,y=geometry.originY+scene.size*50;
     for(let i=0;i<scene.size;i++)target.drawImage(left,x+i*100,y+i*50-1,101.5,150);
     for(let i=0;i<scene.size;i++)target.drawImage(right,geometry.originX+(scene.size-1-i)*100,y+i*50-1,101.5,150);
+    // 装饰：贴在空地块上，最多10个，按seed洗牌（与APK ForestPatternUtil一致）
+    if(decoImage){
+      const occupied=new Set(scene.trees.map(t=>t.row+','+t.col));
+      const empty=[];
+      for(let r=0;r<scene.size;r++)for(let c=0;c<scene.size;c++){
+        if(!occupied.has(r+','+c))empty.push({row:r,col:c});
+      }
+      if(empty.length>0){
+        let seed=scene.size*31+scene.trees.length*7;
+        let decoCells=[];
+        for(let attempt=0;attempt<10&&empty.length>0;attempt++){
+          const shuffled=seededShuffle(empty,seed+attempt);
+          decoCells=shuffled.slice(0,Math.min(10,shuffled.length));
+          if(!isDiagonalLine(decoCells,scene.size))break;
+        }
+        for(const cell of decoCells){
+          const p=C.tile(geometry,cell.row,cell.col);
+          target.drawImage(decoImage,p.x,p.y,C.TILE_W,C.TILE_H);
+        }
+      }
+    }
     groundCanvas=ground;groundKey=key;return ground;
   }
   function renderTree(target,tree,opacity=1){
@@ -132,7 +179,7 @@
     target.save();target.globalAlpha=opacity;
     if(img){
       const shadow=image('assets/ground/tree-shadow.png');
-      if(shadow)target.drawImage(shadow,r.x,r.y+125,160,50);
+      if(shadow)target.drawImage(shadow,r.x,r.y+90,160,85);
       target.drawImage(img,r.x,r.y,r.width,r.height);
     }else{
       const p=C.center(geometry,tree.row,tree.col);target.fillStyle='#72935c';target.font='16px sans-serif';target.textAlign='center';target.fillText(url?e('载入中…'):e('图片缺失'),p.x,p.y);
@@ -145,7 +192,6 @@
       target.save();target.strokeStyle=scene.theme==='xmas'?'#7a9da533':'#46612629';target.lineWidth=.9;
       for(let r=0;r<scene.size;r++)for(let c=0;c<scene.size;c++){tilePath(target,r,c);target.stroke();}target.restore();
     }
-    if(overlays&&selection){const tree=scene.trees.find(t=>t.uid===selection);if(tree){tilePath(target,tree.row,tree.col);target.fillStyle='#ffffff5a';target.fill();target.strokeStyle='#ffffff';target.lineWidth=3;target.stroke();}}
     if(overlays&&drag?.kind==='rectangle'){
       const cells=C.rectangleCells(scene.size,drag.start,drag.end);target.fillStyle=drag.erase?'#df776956':'#f7ffcb85';target.strokeStyle=drag.erase?'#d37969':'#fff';target.lineWidth=1.5;
       for(const cell of cells){tilePath(target,cell.row,cell.col);target.fill();target.stroke();}
@@ -272,7 +318,8 @@
     if(current.changed)notify(e(current.erase?'已连续删除 {n} 棵树，可一次撤销':'已连续种植 {n} 棵树，可一次撤销',{n:current.changed}));
   }
   function updateHover(event){
-    const point=world(event.clientX,event.clientY);hover=C.cellAt(geometry,point.x,point.y);scheduleDraw();return point;
+    const point=world(event.clientX,event.clientY),offset=drag?.kind==='tree'?drag.offset:{x:0,y:0};
+    hover=C.cellAt(geometry,point.x-offset.x,point.y-offset.y);scheduleDraw();return point;
   }
   function setHoverLabel(event,tree){
     const label=$('hover-label');if(!tree||drag){label.hidden=true;return;}
@@ -294,7 +341,7 @@
       applyStrokeCells(cell?[cell]:[]);canvas.setPointerCapture(event.pointerId);return;
     }
     const tree=hitTree(point);
-    if(tree){selectTree(tree);drag={kind:'tree',uid:tree.uid,x:event.clientX,y:event.clientY,moved:false};canvas.setPointerCapture(event.pointerId);return;}
+    if(tree){const center=C.center(geometry,tree.row,tree.col);selectTree(tree);drag={kind:'tree',uid:tree.uid,x:event.clientX,y:event.clientY,offset:{x:point.x-center.x,y:point.y-center.y},moved:false};canvas.setPointerCapture(event.pointerId);return;}
     if(tool==='place')placeAt(C.cellAt(geometry,point.x,point.y));else selectTree(null);
   });
   canvas.addEventListener('pointermove',event=>{
@@ -310,7 +357,7 @@
     if(drag?.kind==='rectangle'){
       const rectangle=drag;drag=null;let changed=0;commit(()=>{changed=C.paintCells(scene,C.rectangleCells(scene.size,rectangle.start,rectangle.end),rectangle.erase,createPlant);selection=null;});notify(e(rectangle.erase?'已批量删除 {n} 棵树，可一次撤销':'已批量种植 {n} 棵树，可一次撤销',{n:changed}));
     }
-    if(drag?.kind==='tree'&&drag.moved){const point=world(event.clientX,event.clientY);placeAt(C.cellAt(geometry,point.x,point.y),drag.uid);}
+    if(drag?.kind==='tree'&&drag.moved){const point=world(event.clientX,event.clientY);placeAt(C.cellAt(geometry,point.x-drag.offset.x,point.y-drag.offset.y),drag.uid);}
     drag=null;if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);scheduleDraw();
   });
   canvas.addEventListener('pointercancel',()=>{finishStroke();drag=null;hover=null;scheduleDraw();});
@@ -348,7 +395,7 @@
     const button=$('export-image');button.disabled=true;button.textContent=e('正在绘制…');
     try{
       const snapshot=JSON.stringify(scene);
-      const skin=theme(),urls=[skin.tile,skin.left,skin.right,'assets/ground/tree-shadow.png',...scene.trees.map(t=>treeUrl(t.id,t.phase,t.skin))];
+      const skin=theme(),urls=[skin.tile,skin.left,skin.right,...(decoration(skin)?[decoration(skin)]:[]),'assets/ground/tree-shadow.png',...scene.trees.map(t=>treeUrl(t.id,t.phase,t.skin))];
       urls.filter(Boolean).forEach(image);await Promise.all(urls.filter(Boolean).map(url=>images.get(url).promise));
       if(JSON.stringify(scene)!==snapshot)throw new Error(e('画布已变化，请重新导出'));
       const missing=urls.filter(url=>!url||images.get(url)?.state!=='ready');if(missing.length)throw new Error(e('有 {n} 个贴图尚不可用，请检查资源后再导出',{n:missing.length}));
