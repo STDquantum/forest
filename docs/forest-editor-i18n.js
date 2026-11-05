@@ -1,5 +1,18 @@
 /* Editor copy: source strings stay stable; user-authored forest titles are untouched. */
 const EDITOR_MESSAGES={
+  '移动装饰':['Move decoration','Déplacer une décoration'], '添加装饰':['Add decoration','Ajouter une décoration'], '删除装饰':['Remove decoration','Supprimer une décoration'],
+  '选择操作后点击地块；移动时先选装饰，再选目标空地。装饰只能放在空地上。':['Choose an action, then click a plot. To move, select a decoration and then an empty plot.','Choisissez une action puis une case. Pour déplacer, sélectionnez une décoration puis une case libre.'],
+  '点击空地添加装饰':['Click an empty plot to add a decoration','Cliquez sur une case libre pour ajouter une décoration'], '点击装饰将其删除':['Click a decoration to remove it','Cliquez sur une décoration pour la supprimer'],
+  '请选择没有树和装饰的空地':['Choose a plot without a tree or decoration','Choisissez une case sans arbre ni décoration'], '请点击要删除的装饰':['Click the decoration to remove','Cliquez sur la décoration à supprimer'], '装饰不能排成对角线':['Decorations cannot form a diagonal','Les décorations ne peuvent pas former une diagonale'],
+  '地面装饰':['Ground decorations','Décorations du sol'],
+  '装饰数量':['Decoration count','Nombre de décorations'],
+  '装饰数量应为 0–1024 的整数':['Enter a decoration count from 0 to 1024','Saisissez un nombre de décorations entre 0 et 1024'],
+  '重新随机':['Shuffle','Mélanger'], '调整位置':['Move decorations','Déplacer les décorations'],
+  '装饰仅出现在空地，实际数量受空地数量限制。选择调整位置后，依次点击装饰和目标空地。':['Decorations occupy empty plots only. Choose Move decorations, then select a decoration and an empty plot.','Les décorations occupent les cases libres. Choisissez Déplacer les décorations, puis une décoration et une case libre.'],
+  '点击装饰，再点击目标空地移动':['Select a decoration, then an empty plot','Sélectionnez une décoration, puis une case libre'],
+  '请选择空地，装饰不能重叠或排成对角线':['Choose an empty plot; decorations cannot overlap or form a diagonal','Choisissez une case libre ; les décorations ne peuvent pas se chevaucher ni former une diagonale'],
+  '装饰位置已重新随机':['Decorations shuffled','Décorations mélangées'],
+  '布局中的装饰位置无效':['Invalid decoration positions in layout','Positions des décorations invalides'],
   '森林造景':['Forest Studio','Atelier de forêt'],
   '森林造景 · Forest Studio':['Forest Studio','Atelier de forêt · Forest Studio'],
   '森林名称':['Forest name','Nom de la forêt'],

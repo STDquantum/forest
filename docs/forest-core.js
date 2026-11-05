@@ -15,6 +15,32 @@
     if(moveUid){const current=scene.trees.find(t=>t.uid===moveUid);if(!current)return {ok:false,reason:'找不到这棵树'};current.row=row;current.col=col;return {ok:true,uid:moveUid};}
     scene.trees.push({...tree,row,col});return {ok:true,uid:tree.uid};
   }
+  function diagonal(cells,size){
+    if(cells.length!==size)return false;
+    const sorted=[...cells].sort((a,b)=>a.row-b.row);
+    return sorted.every((p,i)=>p.row===i&&p.col===i)||sorted.every((p,i)=>p.row===i&&p.col===size-1-i);
+  }
+  function decorationCells(scene,seed=scene.size*31+scene.trees.length*7,keep=[]){
+    const limit=scene.decorationCount??10,occupied=new Set(scene.trees.map(t=>t.row+','+t.col)),seen=new Set();
+    const valid=keep.filter(p=>{const k=p.row+','+p.col;if(!Number.isInteger(p.row)||!Number.isInteger(p.col)||p.row<0||p.col<0||p.row>=scene.size||p.col>=scene.size||occupied.has(k)||seen.has(k))return false;seen.add(k);return true;}).slice(0,limit);
+    const empty=[];for(let row=0;row<scene.size;row++)for(let col=0;col<scene.size;col++)if(!occupied.has(row+','+col)&&!seen.has(row+','+col))empty.push({row,col});
+    for(let attempt=0;attempt<10;attempt++){
+      const shuffled=[...empty];let n=(seed+attempt)%233280;
+      for(let i=shuffled.length-1;i>0;i--){n=(n*9301+49297)%233280;const j=Math.floor(n/233280*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
+      const result=valid.concat(shuffled.slice(0,Math.max(0,limit-valid.length)));
+      if(!diagonal(result,scene.size))return result;
+    }
+    const fallback=valid.concat(empty.slice(0,Math.max(0,limit-valid.length)));
+    if(diagonal(fallback,scene.size))fallback.pop();
+    return fallback;
+  }
+  function moveDecoration(scene,from,to){
+    if(!to||!Number.isInteger(to.row)||!Number.isInteger(to.col)||to.row<0||to.col<0||to.row>=scene.size||to.col>=scene.size||occupied(scene,to.row,to.col))return false;
+    const cells=scene.decorations||decorationCells(scene),index=cells.findIndex(p=>p.row===from.row&&p.col===from.col);
+    if(index<0||cells.some((p,i)=>i!==index&&p.row===to.row&&p.col===to.col))return false;
+    const next=cells.map((p,i)=>i===index?{row:to.row,col:to.col}:p);if(diagonal(next,scene.size))return false;
+    scene.decorations=next;return true;
+  }
   function validateScene(input,themes){
     if(!input||input.version!==1||!Number.isInteger(input.size)||input.size<3||input.size>32||!Array.isArray(input.trees)||input.trees.length>input.size**2)throw new Error('布局格式不正确，地皮边长应为 3–32 格');
     if(!themes.includes(input.theme))throw new Error('布局使用了未知地皮主题');
@@ -26,7 +52,17 @@
       if(t.skin!==undefined&&!['normal','christmas'].includes(t.skin))throw new Error('布局中有未知的树木外观');
       return {uid,id:t.id,phase:String(t.phase),skin:t.skin||'normal',row:t.row,col:t.col};
     });
-    return {version:1,title:typeof input.title==='string'?input.title.slice(0,80):'我的森林',size:input.size,theme:input.theme,trees};
+    const result={version:1,title:typeof input.title==='string'?input.title.slice(0,80):'我的森林',size:input.size,theme:input.theme,trees};
+    if(input.decorationCount!==undefined){
+      if(!Number.isInteger(input.decorationCount)||input.decorationCount<0||input.decorationCount>1024)throw new Error('装饰数量应为 0–1024 的整数');
+      result.decorationCount=input.decorationCount;
+    }
+    if(input.decorations!==undefined){
+      if(!Array.isArray(input.decorations)||input.decorations.length>(result.decorationCount??10))throw new Error('布局中的装饰位置无效');
+      const used=new Set();result.decorations=input.decorations.map(p=>{const key=p?.row+','+p?.col;if(!p||!Number.isInteger(p.row)||!Number.isInteger(p.col)||p.row<0||p.col<0||p.row>=input.size||p.col>=input.size||positions.has(key)||used.has(key))throw new Error('布局中的装饰位置无效');used.add(key);return {row:p.row,col:p.col};});
+      if(diagonal(result.decorations,input.size))throw new Error('布局中的装饰位置无效');
+    }
+    return result;
   }
   function brushCells(size,cell,width=1){
     if(!cell)return [];
@@ -61,5 +97,5 @@
     for(const cell of unique){const key=cell.row+','+cell.col;if(filled.has(key))continue;const tree=create();if(!tree)continue;scene.trees.push({...tree,row:cell.row,col:cell.col});filled.add(key);changed++;}
     return changed;
   }
-  return {TILE_W,TILE_H,geometry,tile,center,cellAt,treeRect,depth,occupied,place,validateScene,brushCells,rectangleCells,traceCells,randomPool,randomTree,paintCells};
+  return {TILE_W,TILE_H,geometry,tile,center,cellAt,treeRect,depth,occupied,place,validateScene,brushCells,rectangleCells,traceCells,randomPool,randomTree,paintCells,diagonal,decorationCells,moveDecoration};
 });

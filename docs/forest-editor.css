@@ -70,3 +70,10 @@ html:not([lang="zh-CN"]) .field-label{flex-wrap:wrap;}
   .setting-block{margin-top:22px}.source-note{display:none}.preset-actions button,.fill-empty{min-height:44px;font-size:13px}
   #canvas-shell{scroll-margin-top:12px}#toast{bottom:16px;font-size:13px}
 }
+
+.decoration-actions button.active{background:var(--green);color:white;border-color:var(--green)}
+
+#forest-canvas.pointer-focus{outline:none}
+#forest-canvas:focus-visible:not(.pointer-focus){outline:3px solid #a5c386}
+
+.decoration-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 12px}.decoration-actions button{font-size:12px;padding:9px 6px}
