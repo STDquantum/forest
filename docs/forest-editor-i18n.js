@@ -18,7 +18,7 @@ const EDITOR_MESSAGES={
   '森林名称':['Forest name','Nom de la forêt'],
   '我的森林':['My forest','Ma forêt'],
   '正在载入…':['Loading…','Chargement…'],
-  '返回主网页 ↗':['Planting page ↗','Page de plantation ↗'],
+  '返回主网页 ↖':['Planting page ↖','Page de plantation ↖'],
   '导入布局':['Import layout','Importer'],
   '保存布局':['Save layout','Enregistrer'],
   '导出森林图':['Export PNG','Exporter en PNG'],

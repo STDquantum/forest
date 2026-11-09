@@ -46,9 +46,9 @@
     "plant": {
       "name": "TinyTAN 主题",
       "sub": "让梦幻紫色走进森林，打造充满陪伴感的专属天地。",
-      "ball": "assets/ball/tinytan_plant_ball.webp",
+      "ball": "assets/ball/ground02_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#FCE9C4,#F7D9A0 52%,#EFC685)"
+      "color": "linear-gradient(180deg,#F5F0FC,#E9DDF8 52%,#D9C8EE)"
     }
   },
   {
@@ -184,7 +184,7 @@
       "sub": "让秋叶点缀柔软林地，为森林铺上一床暖意。",
       "ball": "assets/ball/ground10_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#F2E5D2,#DDC4A3 52%,#C5A57F)"
+      "color": "linear-gradient(180deg,#FAF1E5,#F2DEC6 52%,#E5C8A6)"
     }
   }
 ]

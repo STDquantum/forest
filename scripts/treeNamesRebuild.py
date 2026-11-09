@@ -184,9 +184,6 @@ def _sync_landscapes(decoded_dir, project_dir):
             alternate.unlink()
         return destination.relative_to(web).as_posix()
 
-    # Refresh backgrounds already used by the home page, preserving their URLs.
-    for image in (web / 'assets' / 'ball').iterdir():
-        copy(image.stem, 'ball')
     ids = {0: 'default', 1: 'xmas', 2: 'tinytan', 3: 'softpink',
            4: 'oceanblue', 5: 'creammeadow', 6: 'sunlitlime', 7: 'blossomingturf', 8: 'pineapple'}
     numbers = {0, 1} | {int(match.group(1)) for stem in resources
@@ -202,7 +199,8 @@ def _sync_landscapes(decoded_dir, project_dir):
             continue
         theme_id = ids.get(number, f'ground{number:02d}')
         theme = next((item for item in themes if item['id'] == theme_id), None)
-        if theme is None:
+        new_theme = theme is None
+        if new_theme:
             theme = {'id': theme_id, 'color': '#f4d64d' if number == 8 else '#a6cd49'}
             themes.append(theme)
         theme['name'] = _resource_text(strings, f'landskin_{number}_title') or theme.get('name', f'土地主题 {number}')
@@ -215,14 +213,16 @@ def _sync_landscapes(decoded_dir, project_dir):
         theme['decoration'] = copy(deco_stem, 'ground', f'{theme_id}-deco')
         plant = theme.setdefault('plant', {})
         plant.update(name=theme['name'], sub=theme['description'])
-        if number >= 3:
-            ball = copy(prefix + 'plant_ball', 'ball')
+        if number >= 9:
+            rendered = web / 'assets' / 'ball' / (prefix + 'plant_ball.webp')
+            ball = rendered.relative_to(web).as_posix() if new_theme and rendered.is_file() else copy(prefix + 'plant_ball', 'ball')
             if ball:
                 # New APK textures include the complete globe and its ground.
                 plant.update(ball=ball, ground=None)
-        elif not plant.get('ball'):
-            stem = ('plant_ball', 'plant_ball_christmas', 'tinytan_plant_ball')[number]
-            plant.update(ball=copy(stem, 'ball'), ground=None)
+        elif number <= 2 and not plant.get('ball'):
+            # Legacy globes are maintained locally; never import their old APK images.
+            stem = ('plant_ball', 'plant_ball_christmas', 'ground02_plant_ball')[number]
+            plant.update(ball=f'assets/ball/{stem}.webp', ground=None)
         plant.setdefault('color', 'linear-gradient(180deg,#d3f6c3,#f5efa6)' if number == 8 else 'linear-gradient(180deg,#A3D9C6,#74B29D)')
         if number == 1:
             plant['snow'] = True

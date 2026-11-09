@@ -17,7 +17,7 @@ TREE_FILE = re.compile(r'tree_type_(\d+)_phase_(\d+|dead|product)(_christmas)?\.
 
 def catalog():
     metadata = json.loads((WEB / 'treeType.json').read_text(encoding='utf-8-sig'))
-    paths, phases, frames = {}, {}, {}
+    paths, phases = {}, {}
     selected = {}
     # All tree images live in the single workspace resource directory.
     for directory in (WEB / 'assets' / 'trees',):
@@ -36,22 +36,15 @@ def catalog():
         paths[key] = f'assets/trees/{file.name}?v={revision}'
         if not suffix and phase.isdigit():
             phases.setdefault(tid, set()).add(int(phase))
-    for file in sorted((WEB / 'assets' / 'frames').iterdir()):
-        match = re.fullmatch(r'frame_(\w+)_tree_type_(\d+)_phase_(\d+)_(\d+)\.(webp|png)', file.name)
-        if match:
-            state, tid, phase, frame, _ = match.groups()
-            frames.setdefault(f'{state}_{tid}_{phase}', []).append((int(frame), 'assets/frames/' + file.name))
-    frames = {key: [url for _, url in sorted(value)] for key, value in frames.items()}
     rows = []
-    animated = {key.split('_')[1] for key in frames}
     for tid in sorted(phases, key=int):
         tree = metadata.get(tid, {})
         growth = sorted(phases[tid])
         xmas = [int(key.split('_')[1]) for key in paths if key.startswith(tid + '_') and key.endswith('_christmas')]
         rows.append([int(tid), tree.get('nameZH') or tree.get('nameEN') or f'树 #{tid}', tree.get('nameEN', ''),
-                     int(tid in animated), max(growth), int(bool(xmas)), max(xmas or growth)])
+                     0, max(growth), int(bool(xmas)), max(xmas or growth)])
     result = dict(trees=rows, metadata=metadata, phases={key: sorted(value) for key, value in phases.items()},
-                  frames=frames, imagePaths=paths)
+                  imagePaths=paths)
     result['revision'] = hashlib.sha256(json.dumps(result, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
     return result
 
@@ -77,12 +70,9 @@ def refresh_snapshots():
         offline_file.write_text(offline_source, encoding='utf-8')
     page = WEB / 'index.html'
     html = page.read_text(encoding='utf-8-sig')
-    plant_themes = {theme['id']: theme['plant'] for theme in themes if theme.get('plant')}
-    if plant_themes:
-        html = re.sub(r'(?:const|let) THEMES=[\s\S]*?;\s*\n',
-                      lambda match: 'const THEMES=' + encoded(plant_themes) + ';\n', html, count=1)
+    # index.html 在运行时直接读取 land-themes.json，不再把主题写进页面。
     for variable, value in {'TREES': data['trees'], 'TREE_METADATA': data['metadata'], 'TREE_PHASES': data['phases'],
-                            'FRAME_PATHS': data['frames'], 'TREE_IMAGE_PATHS': data['imagePaths']}.items():
+                            'TREE_IMAGE_PATHS': data['imagePaths']}.items():
         html = re.sub(r'(?:const|let) ' + variable + r'=.*?;\s*\n',
                       lambda match: 'let ' + variable + '=' + encoded(value) + ';\n', html, count=1)
     page.write_text(html, encoding='utf-8')
@@ -135,7 +125,7 @@ class ForestHTTPServer(ThreadingHTTPServer):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--port', type=int, default=8766)
+    parser.add_argument('--port', type=int, default=410)
     parser.add_argument('--open', action='store_true')
     parser.add_argument('--page', choices=('forest-editor.html', 'index.html'), default='index.html')
     args = parser.parse_args()
