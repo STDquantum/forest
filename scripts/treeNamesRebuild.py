@@ -215,13 +215,13 @@ def _sync_landscapes(decoded_dir, project_dir):
         plant.update(name=theme['name'], sub=theme['description'])
         if number >= 9:
             rendered = web / 'assets' / 'ball' / (prefix + 'plant_ball.webp')
-            ball = rendered.relative_to(web).as_posix() if new_theme and rendered.is_file() else copy(prefix + 'plant_ball', 'ball')
+            ball = rendered.relative_to(web).as_posix() if rendered.is_file() else copy(prefix + 'plant_ball', 'ball')
             if ball:
                 # New APK textures include the complete globe and its ground.
                 plant.update(ball=ball, ground=None)
         elif number <= 2 and not plant.get('ball'):
             # Legacy globes are maintained locally; never import their old APK images.
-            stem = ('plant_ball', 'plant_ball_christmas', 'ground02_plant_ball')[number]
+            stem = f'ground{number:02d}_plant_ball'
             plant.update(ball=f'assets/ball/{stem}.webp', ground=None)
         plant.setdefault('color', 'linear-gradient(180deg,#d3f6c3,#f5efa6)' if number == 8 else 'linear-gradient(180deg,#A3D9C6,#74B29D)')
         if number == 1:

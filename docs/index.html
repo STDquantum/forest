@@ -215,7 +215,7 @@ body[data-theme="blossomingturf"]{--accent:#4E9E63;--accent-soft:rgba(78,158,99,
   <!-- 球区 -->
   <main id="ball-stage">
     <div id="ball-deco"><img id="ball-ground" alt="地面装饰" style="display:none"></div>
-    <div id="ball-back"><img id="ball-bg-img" alt="球背景" src="assets/ball/plant_ball.webp"></div>
+    <div id="ball-back"><img id="ball-bg-img" alt="球背景" src="assets/ball/ground00_plant_ball.webp"></div>
     <div id="ball-tree"><img id="tree-img" alt="树" src="assets/trees/tree_type_88_phase_4.webp"></div>
     <div id="ball-glow"></div>
   </main>
@@ -314,7 +314,7 @@ async function loadThemes(){
   const themes=themeMap(window.FOREST_BOOTSTRAP?.themes);
   if(Object.keys(themes).length){THEMES=themes;return;}
   console.warn('无法读取主题快照，使用默认主题。');
-  THEMES={default:{name:'Forest',sub:'',ball:'assets/ball/plant_ball.webp',ground:null,color:'linear-gradient(180deg,#A3D9C6,#8BC7B2 55%,#74B29D)'}};
+  THEMES={default:{name:'Forest',sub:'',ball:'assets/ball/ground00_plant_ball.webp',ground:null,color:'linear-gradient(180deg,#A3D9C6,#8BC7B2 55%,#74B29D)'}};
 }
 /* ===== 全局状态 ===== */
 const FAVORITES_KEY='forest-favorite-trees-v1';

@@ -11,7 +11,7 @@
     "plant": {
       "name": "经典草地",
       "sub": "回到熟悉的绿色草地，让森林保留最纯粹的模样。",
-      "ball": "assets/ball/plant_ball.webp",
+      "ball": "assets/ball/ground00_plant_ball.webp",
       "ground": null,
       "color": "linear-gradient(180deg,#A3D9C6,#8BC7B2 55%,#74B29D)"
     }
@@ -28,7 +28,7 @@
     "plant": {
       "name": "霜白雪原",
       "sub": "白雪覆盖大地，把森林带进宁静冬日。",
-      "ball": "assets/ball/plant_ball_christmas.webp",
+      "ball": "assets/ball/ground01_plant_ball.webp",
       "ground": null,
       "color": "linear-gradient(180deg,#3C4F77,#2B3A5C 48%,#1E2A44)",
       "snow": true
@@ -48,7 +48,7 @@
       "sub": "让梦幻紫色走进森林，打造充满陪伴感的专属天地。",
       "ball": "assets/ball/ground02_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#F5F0FC,#E9DDF8 52%,#D9C8EE)"
+      "color": "linear-gradient(180deg,#F5F0FC,#C5A9E8)"
     }
   },
   {
@@ -150,7 +150,7 @@
       "sub": "明亮金黄色铺满土地，把森林变成甜美又俏皮的热带秘境！",
       "ball": "assets/ball/ground08_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#d3f6c3,#f5efa6)"
+      "color": "linear-gradient(180deg,#FBEA9B,#F2E16E)"
     }
   },
   {
@@ -167,7 +167,7 @@
       "sub": "踩着糖果缤纷的金橙地面，与森林里的小骨头展开一场森林奇遇。",
       "ball": "assets/ball/ground09_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#FCE4BD,#F4BD83 52%,#E49462)"
+      "color": "linear-gradient(180deg,#51436F 0%,#95647A 52%,#F2A16B 100%)"
     }
   },
   {
@@ -184,7 +184,7 @@
       "sub": "让秋叶点缀柔软林地，为森林铺上一床暖意。",
       "ball": "assets/ball/ground10_plant_ball.webp",
       "ground": null,
-      "color": "linear-gradient(180deg,#FAF1E5,#F2DEC6 52%,#E5C8A6)"
+      "color": "linear-gradient(180deg,#E9C98E,#DDB16F)"
     }
   }
 ]
